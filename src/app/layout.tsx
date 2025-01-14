@@ -32,8 +32,8 @@ export default function RootLayout({
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Contact</h3>
-                  <p className="text-gray-300">Email: contact@yourstartup.com</p>
-                  <p className="text-gray-300">Phone: (123) 456-7890</p>
+                  <p className="text-gray-300">Email: gorollth@outlook.com</p>
+                  <p className="text-gray-300">Phone: +66 456-7890</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Follow Us</h3>

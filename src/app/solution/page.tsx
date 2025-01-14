@@ -1,7 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
+import { useState } from "react";
 
 interface Solution {
   id: number;
@@ -16,74 +15,77 @@ interface Solution {
 const solutions: Solution[] = [
   {
     id: 1,
-    title: "Enterprise Management System",
-    description: "A comprehensive solution for managing your enterprise operations with advanced analytics and reporting capabilities.",
+    title: "Map",
+    description:
+      "Provide information on accessible locations with routes and method.",
     features: [
-      "Real-time performance monitoring",
-      "Automated workflow management",
-      "Advanced data analytics",
-      "Custom reporting tools"
+      "Real-time location tracking",
+      "Accessible route planning",
+      "Obstacle reporting system",
+      "Community-verified paths",
     ],
     benefits: [
-      "Increase operational efficiency by 50%",
-      "Reduce manual work by 70%",
-      "Improve decision making with real-time insights",
-      "Scale operations seamlessly"
+      "Find wheelchair-friendly routes easily",
+      "Save time on journey planning",
+      "Access reliable accessibility information",
+      "Contribute to community knowledge",
     ],
     image: "/api/placeholder/600/400",
-    category: "Enterprise"
+    category: "Navigation",
   },
   {
     id: 2,
-    title: "Cloud Integration Platform",
-    description: "Seamlessly integrate your existing systems with our cloud-based platform for enhanced scalability and performance.",
+    title: "Community",
+    description:
+      "Provide information, situation happened in society, leading people aware and change into UD places.",
     features: [
-      "Multi-cloud support",
-      "Automated deployments",
-      "Security compliance",
-      "API management"
+      "Social networking platform",
+      "Experience sharing",
+      "Location reviews",
+      "Accessibility awareness",
     ],
     benefits: [
-      "Reduce infrastructure costs by 40%",
-      "Improve system reliability",
-      "Enhanced security measures",
-      "Faster deployment cycles"
+      "Connect with like-minded people",
+      "Share valuable experiences",
+      "Promote inclusive design",
+      "Build supportive community",
     ],
     image: "/api/placeholder/600/400",
-    category: "Cloud"
+    category: "Social",
   },
   {
     id: 3,
-    title: "AI-Powered Analytics",
-    description: "Leverage the power of artificial intelligence to gain deeper insights from your data and make informed decisions.",
+    title: "Carpool",
+    description:
+      "Provide suitable cost-saving transportation options (GOROLL Carpool service/other choices for transport) which fit with their wheelchair.",
     features: [
-      "Predictive analytics",
-      "Machine learning algorithms",
-      "Natural language processing",
-      "Automated reporting"
+      "Wheelchair-friendly vehicle matching",
+      "Real-time ride tracking",
+      "Secure payment system",
+      "Driver verification",
     ],
     benefits: [
-      "Increase forecast accuracy by 85%",
-      "Automate data analysis",
-      "Identify patterns and trends",
-      "Real-time decision support"
+      "Reduce transportation costs",
+      "Access reliable transport options",
+      "Ensure safety and comfort",
+      "Support from verified drivers",
     ],
     image: "/api/placeholder/600/400",
-    category: "Analytics"
-  }
+    category: "Transport",
+  },
 ];
 
 export default function SolutionPage() {
   const [selectedSolution, setSelectedSolution] = useState<Solution | null>(null);
-  const [activeTab, setActiveTab] = useState<'features' | 'benefits'>('features');
+  const [activeTab, setActiveTab] = useState<"features" | "benefits">("features");
 
   return (
-    <div className="space-y-12">
+    <div className="max-w-7xl mx-auto px-4 py-16 space-y-16">
       {/* Hero Section */}
-      <section className="text-center">
+      <section className="text-center bg-gradient-to-r from-orange-400 to-orange-500 text-white py-16 rounded-xl">
         <h1 className="text-4xl font-bold mb-4">Our Solutions</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Discover our innovative solutions designed to transform your business and drive growth
+        <p className="text-xl max-w-3xl mx-auto px-4">
+          Innovative solutions designed to make mobility accessible and inclusive for everyone
         </p>
       </section>
 
@@ -92,31 +94,31 @@ export default function SolutionPage() {
         {solutions.map((solution) => (
           <div
             key={solution.id}
-            className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+            className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
             onClick={() => setSelectedSolution(solution)}
           >
-            <div className="relative h-48 w-full">
-              <Image
+            <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
+              <img
                 src={solution.image}
                 alt={solution.title}
-                fill
-                className="rounded-t-lg object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="p-6">
-              <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm mb-4">
+              <span className="inline-block px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm mb-4">
                 {solution.category}
               </span>
               <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
               <p className="text-gray-600 mb-4">{solution.description}</p>
-              <button 
-                className="text-indigo-600 hover:text-indigo-800 font-medium"
+              <button
+                className="text-orange-500 hover:text-orange-600 font-medium flex items-center gap-1 transition-colors"
                 onClick={(e) => {
                   e.stopPropagation();
                   setSelectedSolution(solution);
                 }}
               >
-                Learn More →
+                Learn More 
+                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
               </button>
             </div>
           </div>
@@ -129,21 +131,25 @@ export default function SolutionPage() {
           <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <div className="flex justify-between items-start mb-4">
-                <h2 className="text-2xl font-bold">{selectedSolution.title}</h2>
-                <button 
+                <div>
+                  <h2 className="text-2xl font-bold">{selectedSolution.title}</h2>
+                  <span className="inline-block px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm mt-2">
+                    {selectedSolution.category}
+                  </span>
+                </div>
+                <button
                   onClick={() => setSelectedSolution(null)}
                   className="text-gray-500 hover:text-gray-700"
                 >
                   ✕
                 </button>
               </div>
-              
-              <div className="relative h-64 w-full mb-6">
-                <Image
+
+              <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden">
+                <img
                   src={selectedSolution.image}
                   alt={selectedSolution.title}
-                  fill
-                  className="rounded-lg object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
@@ -155,21 +161,21 @@ export default function SolutionPage() {
                 <div className="flex space-x-4">
                   <button
                     className={`pb-2 px-4 ${
-                      activeTab === 'features'
-                        ? 'border-b-2 border-indigo-600 text-indigo-600'
-                        : 'text-gray-500'
+                      activeTab === "features"
+                        ? "border-b-2 border-orange-500 text-orange-500"
+                        : "text-gray-500"
                     }`}
-                    onClick={() => setActiveTab('features')}
+                    onClick={() => setActiveTab("features")}
                   >
                     Features
                   </button>
                   <button
                     className={`pb-2 px-4 ${
-                      activeTab === 'benefits'
-                        ? 'border-b-2 border-indigo-600 text-indigo-600'
-                        : 'text-gray-500'
+                      activeTab === "benefits"
+                        ? "border-b-2 border-orange-500 text-orange-500"
+                        : "text-gray-500"
                     }`}
-                    onClick={() => setActiveTab('benefits')}
+                    onClick={() => setActiveTab("benefits")}
                   >
                     Benefits
                   </button>
@@ -177,24 +183,28 @@ export default function SolutionPage() {
               </div>
 
               <div className="space-y-4">
-                {activeTab === 'features' ? (
+                {activeTab === "features" ? (
                   <ul className="list-disc list-inside space-y-2">
                     {selectedSolution.features.map((feature, index) => (
-                      <li key={index} className="text-gray-600">{feature}</li>
+                      <li key={index} className="text-gray-600">
+                        {feature}
+                      </li>
                     ))}
                   </ul>
                 ) : (
                   <ul className="list-disc list-inside space-y-2">
                     {selectedSolution.benefits.map((benefit, index) => (
-                      <li key={index} className="text-gray-600">{benefit}</li>
+                      <li key={index} className="text-gray-600">
+                        {benefit}
+                      </li>
                     ))}
                   </ul>
                 )}
               </div>
 
               <div className="mt-8 flex justify-end">
-                <button 
-                  className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
+                <button
+                  className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors"
                   onClick={() => setSelectedSolution(null)}
                 >
                   Close
@@ -206,15 +216,21 @@ export default function SolutionPage() {
       )}
 
       {/* Call to Action */}
-      <section className="text-center bg-gray-50 py-12 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h2>
+      <section className="text-center bg-orange-50 py-12 rounded-xl">
+        <h2 className="text-2xl font-bold mb-4">
+          Ready to Make Mobility Accessible?
+        </h2>
         <p className="text-gray-600 mb-6">
-          Contact us today to learn how our solutions can help you achieve your goals
+          Join us in creating an inclusive community where everyone can travel with confidence
         </p>
-        <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+        <button className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors">
           Get Started
         </button>
       </section>
+
+      {/* Decorative Elements */}
+      <div className="fixed -z-10 top-20 right-0 w-64 h-64 bg-orange-400 rounded-full opacity-10 blur-3xl"></div>
+      <div className="fixed -z-10 bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl"></div>
     </div>
   );
 }

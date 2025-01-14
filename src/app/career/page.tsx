@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { Briefcase, MapPin, Clock, DollarSign, Search } from 'lucide-react';
+import { useState } from "react";
+import Image from "next/image";
+import { Briefcase, MapPin, Clock, DollarSign, Search } from "lucide-react";
 
 interface JobPosting {
   id: number;
@@ -18,126 +18,70 @@ interface JobPosting {
 
 const jobPostings: JobPosting[] = [
   {
-    id: 1,
-    title: "Senior Software Engineer",
-    department: "Engineering",
-    location: "San Francisco, CA",
+    id: 3,
+    title: "UX/UI Designer",
+    department: "Design",
+    location: "Bangkok, Thailand  & Remote",
     type: "Full-time",
-    salary: "$120,000 - $180,000",
-    description: "We're looking for a Senior Software Engineer to join our growing team and help build the next generation of our platform.",
+    salary: "-",
+    description:
+      "We're seeking a talented UX/UI Designer to create beautiful and intuitive user experiences.",
     requirements: [
-      "5+ years of experience in software development",
-      "Strong proficiency in React, Node.js, and TypeScript",
-      "Experience with cloud platforms (AWS, GCP, or Azure)",
-      "Bachelor's degree in Computer Science or related field"
+      "1+ years of UX/UI design experience",
+      "Proficiency in Figma and design tools",
+      "Strong portfolio demonstrating UI/UX work",
+      "Experience with user research and testing",
     ],
     responsibilities: [
-      "Design and implement new features for our platform",
-      "Lead technical projects and mentor junior developers",
-      "Collaborate with product and design teams",
-      "Optimize application performance and scalability"
-    ]
+      "Design user interfaces for mobile applications",
+      "Create wireframes, prototypes, and high-fidelity designs",
+      "Conduct user research and usability testing",
+      "Collaborate with product and engineering teams",
+    ],
   },
   {
     id: 2,
-    title: "Product Manager",
-    department: "Product",
-    location: "New York, NY",
+    title: "Legal Executive (Coming Soon)",
+    department: "Legal",
+    location: "Bangkok, Thailand  & Remote",
     type: "Full-time",
-    salary: "$110,000 - $160,000",
-    description: "Join our product team to help define and execute our product strategy and roadmap.",
+    salary: "-",
+    description:
+      "Join our product team to help define and execute our product strategy and roadmap.",
     requirements: [
       "3+ years of product management experience",
       "Strong analytical and problem-solving skills",
       "Excellent communication and leadership abilities",
-      "Experience with agile methodologies"
+      "Experience with agile methodologies",
     ],
     responsibilities: [
       "Define product vision and strategy",
       "Work closely with engineering and design teams",
       "Gather and analyze user feedback",
-      "Prioritize features and create product roadmaps"
-    ]
-  },
-  {
-    id: 3,
-    title: "UX/UI Designer",
-    department: "Design",
-    location: "Remote",
-    type: "Full-time",
-    salary: "$90,000 - $140,000",
-    description: "We're seeking a talented UX/UI Designer to create beautiful and intuitive user experiences.",
-    requirements: [
-      "3+ years of UX/UI design experience",
-      "Proficiency in Figma and design tools",
-      "Strong portfolio demonstrating UI/UX work",
-      "Experience with user research and testing"
+      "Prioritize features and create product roadmaps",
     ],
-    responsibilities: [
-      "Design user interfaces for web and mobile applications",
-      "Create wireframes, prototypes, and high-fidelity designs",
-      "Conduct user research and usability testing",
-      "Collaborate with product and engineering teams"
-    ]
-  }
-];
-
-const benefits = [
-  {
-    title: "Health & Wellness",
-    items: [
-      "Comprehensive health insurance",
-      "Dental and vision coverage",
-      "Mental health support",
-      "Gym membership reimbursement"
-    ]
   },
-  {
-    title: "Time Off",
-    items: [
-      "Unlimited PTO",
-      "Paid parental leave",
-      "Paid holidays",
-      "Sabbatical program"
-    ]
-  },
-  {
-    title: "Growth",
-    items: [
-      "Learning & development budget",
-      "Conference attendance",
-      "Career mentorship",
-      "Skills workshops"
-    ]
-  },
-  {
-    title: "Perks",
-    items: [
-      "Remote work options",
-      "Home office stipend",
-      "Company events",
-      "Stock options"
-    ]
-  }
 ];
 
 export default function CareerPage() {
   const [selectedJob, setSelectedJob] = useState<JobPosting | null>(null);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredJobs = jobPostings.filter(job =>
-    job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.location.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredJobs = jobPostings.filter(
+    (job) =>
+      job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.location.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div className="max-w-7xl mx-auto space-y-16">
+    <div className="max-w-7xl mx-auto space-y-16 px-4 py-8">
       {/* Hero Section */}
-      <section className="text-center">
+      <section className="text-center bg-gradient-to-r from-orange-400 to-orange-500 text-white py-16 rounded-xl">
         <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          We're building something special and we're always looking for talented individuals to join our journey.
+        <p className="text-xl max-w-3xl mx-auto">
+          We're building something special and we're always looking for talented
+          individuals to join our journey.
         </p>
       </section>
 
@@ -146,24 +90,25 @@ export default function CareerPage() {
         <div className="space-y-6">
           <h2 className="text-3xl font-bold">Our Culture</h2>
           <p className="text-gray-600">
-            We believe in creating an environment where people can do their best work.
-            Our culture is built on collaboration, innovation, and mutual respect.
+            We believe in creating an environment where people can do their best
+            work. Our culture is built on collaboration, innovation, and mutual
+            respect.
           </p>
           <ul className="space-y-4">
             <li className="flex items-start space-x-3">
-              <span className="text-indigo-600">✓</span>
+              <span className="text-orange-500">✓</span>
               <span>Collaborative and supportive environment</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-indigo-600">✓</span>
+              <span className="text-orange-500">✓</span>
               <span>Focus on innovation and creativity</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-indigo-600">✓</span>
-              <span>Work-life balance</span>
+              <span className="text-orange-500">✓</span>
+              <span>Work hard play hard (NO WORK-LIFE BALANCE)</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-indigo-600">✓</span>
+              <span className="text-orange-500">✓</span>
               <span>Opportunities for growth and learning</span>
             </li>
           </ul>
@@ -178,7 +123,7 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Benefits Section
       <section className="bg-gray-50 py-16 px-4 rounded-xl">
         <h2 className="text-3xl font-bold text-center mb-12">Benefits & Perks</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -196,12 +141,12 @@ export default function CareerPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Job Listings Section */}
       <section>
         <h2 className="text-3xl font-bold mb-8">Open Positions</h2>
-        
+
         {/* Search Bar */}
         <div className="relative mb-8">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -210,13 +155,13 @@ export default function CareerPage() {
             placeholder="Search positions..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
         </div>
 
         {/* Job Cards */}
         <div className="space-y-4">
-          {filteredJobs.map(job => (
+          {filteredJobs.map((job) => (
             <div
               key={job.id}
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
@@ -245,8 +190,8 @@ export default function CareerPage() {
                     </span>
                   </div>
                 </div>
-                <button 
-                  className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
+                <button
+                  className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors"
                   onClick={(e) => {
                     e.stopPropagation();
                     setSelectedJob(job);
@@ -267,7 +212,9 @@ export default function CareerPage() {
             <div className="p-6">
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">{selectedJob.title}</h2>
+                  <h2 className="text-2xl font-bold mb-2">
+                    {selectedJob.title}
+                  </h2>
                   <div className="flex flex-wrap gap-4">
                     <span className="flex items-center text-gray-600">
                       <Briefcase className="w-4 h-4 mr-1" />
@@ -287,7 +234,7 @@ export default function CareerPage() {
                     </span>
                   </div>
                 </div>
-                <button 
+                <button
                   onClick={() => setSelectedJob(null)}
                   className="text-gray-500 hover:text-gray-700"
                 >
@@ -305,30 +252,34 @@ export default function CareerPage() {
                   <h3 className="text-xl font-semibold mb-3">Requirements</h3>
                   <ul className="list-disc list-inside space-y-2">
                     {selectedJob.requirements.map((req, index) => (
-                      <li key={index} className="text-gray-600">{req}</li>
+                      <li key={index} className="text-gray-600">
+                        {req}
+                      </li>
                     ))}
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">Responsibilities</h3>
+                  <h3 className="text-xl font-semibold mb-3">
+                    Responsibilities
+                  </h3>
                   <ul className="list-disc list-inside space-y-2">
                     {selectedJob.responsibilities.map((resp, index) => (
-                      <li key={index} className="text-gray-600">{resp}</li>
+                      <li key={index} className="text-gray-600">
+                        {resp}
+                      </li>
                     ))}
                   </ul>
                 </div>
 
                 <div className="flex justify-end space-x-4">
-                  <button 
+                  <button
                     className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                     onClick={() => setSelectedJob(null)}
                   >
                     Cancel
                   </button>
-                  <button 
-                    className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
-                  >
+                  <button className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors">
                     Apply Now
                   </button>
                 </div>

@@ -19,3 +19,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* globals.css */
+h2, h3 {
+  @apply text-orange-500;  /* หรือสีที่ต้องการ */
+}

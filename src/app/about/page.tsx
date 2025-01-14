@@ -22,7 +22,7 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Title",
     role: "CEO & Co-founder",
-    bio: "Sarah brings 15 years of industry experience and a passion for innovation. She previously led product strategy at major tech companies.",
+    bio: "Physiotherapist",
     image: "/api/placeholder/400/400",
     social: {
       linkedin: "#",
@@ -31,9 +31,9 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 2,
-    name: "Waranthorn Chansawang",
+    name: "Film",
     role: "CTO & Co-founder",
-    bio: "With a B.Eng. in Computer Engineering, Michael leads our technical strategy and ensures we're always pushing technological boundaries.",
+    bio: "B.Eng. in Computer Engineering",
     image: "/about/teammember/film.JPG",
     social: {
       linkedin: "#",
@@ -44,7 +44,7 @@ const teamMembers: TeamMember[] = [
     id: 3,
     name: "Maprang",
     role: "Head of Marketing & Co-founder",
-    bio: "Emma's eye for design and user experience has shaped our product into what it is today. She advocates for user-centered design in everything we do.",
+    bio: "ห",
     image: "/api/placeholder/400/400",
     social: {
       linkedin: "#",
@@ -55,7 +55,7 @@ const teamMembers: TeamMember[] = [
     id: 4,
     name: "Prima",
     role: "Head of Design & Co-founder",
-    bio: "David ensures our company runs smoothly and efficiently. His background in operations management has been crucial to our growth.",
+    bio: "BAScii",
     image: "/api/placeholder/400/400",
     social: {
       linkedin: "#",
@@ -101,18 +101,18 @@ const milestones = [
     title: "Series A Funding",
     description: "Raised THB 500K to accelerate growth and expand our team.",
   },
-  {
-    year: "2021",
-    title: "First Major Product Launch",
-    description:
-      "Successfully launched our flagship product and secured initial customers.",
-  },
-  {
-    year: "2025",
-    title: "Major Milestone",
-    description:
-      "Reached 100 users and launched revolutionary new features.",
-  },
+  // {
+  //   year: "2021",
+  //   title: "First Major Product Launch",
+  //   description:
+  //     "Successfully launched our flagship product and secured initial customers.",
+  // },
+  // {
+  //   year: "2025",
+  //   title: "Major Milestone",
+  //   description:
+  //     "Reached 100 users and launched revolutionary new features.",
+  // },
 ];
 
 export default function AboutPage() {

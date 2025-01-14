@@ -1,7 +1,45 @@
-import React from 'react';
-import { MapPin, Users, Shield } from 'lucide-react';
+'use client';
+
+import React, { useState } from 'react';
+import { MapPin, Users, Shield, X } from 'lucide-react';
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
+
+  const ComingSoonModal = () => (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div 
+        className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
+        onClick={() => setShowModal(false)}
+      ></div>
+      <div className="relative bg-white rounded-2xl p-6 max-w-md w-full m-4 shadow-xl transform transition-all">
+        <div className="absolute top-4 right-4">
+          <button
+            onClick={() => setShowModal(false)}
+            className="text-gray-400 hover:text-gray-500 transition-colors"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        <div className="text-center pt-4">
+          <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <span className="text-3xl">🚀</span>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Coming Soon!</h3>
+          <p className="text-gray-600 mb-6">
+            We're working hard to bring you something amazing. Stay tuned!
+          </p>
+          <button
+            onClick={() => setShowModal(false)}
+            className="bg-orange-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-600 transition-colors"
+          >
+            Got it!
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="space-y-16">
       {/* Hero Section */}
@@ -13,7 +51,10 @@ export default function Home() {
           <p className="text-xl md:text-2xl mb-8">
             A platform for accessible journeys and inclusive communities
           </p>
-          <button className="bg-white text-orange-500 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+          <button 
+            onClick={() => setShowModal(true)}
+            className="bg-white text-orange-500 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+          >
             Start Your Journey
           </button>
         </div>
@@ -51,7 +92,10 @@ export default function Home() {
           <p className="text-xl text-gray-600 mb-8">
             Connect with others, share accessible routes, and make mobility easier for everyone
           </p>
-          <button className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors">
+          <button 
+            onClick={() => setShowModal(true)}
+            className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors"
+          >
             Get Started Now
           </button>
         </div>
@@ -60,6 +104,9 @@ export default function Home() {
       {/* Decorative Elements */}
       <div className="fixed -z-10 top-0 left-0 w-64 h-64 bg-orange-400 rounded-full opacity-20 blur-3xl"></div>
       <div className="fixed -z-10 bottom-0 right-0 w-96 h-96 bg-orange-500 rounded-full opacity-20 blur-3xl"></div>
+
+      {/* Modal */}
+      {showModal && <ComingSoonModal />}
     </div>
   );
 }

@@ -47,18 +47,12 @@ const jobPostings: JobPosting[] = [
     type: "Full-time",
     salary: "-",
     description:
-      "Join our product team to help define and execute our product strategy and roadmap.",
+      "Coming Soon",
     requirements: [
-      "3+ years of product management experience",
-      "Strong analytical and problem-solving skills",
-      "Excellent communication and leadership abilities",
-      "Experience with agile methodologies",
+      "Coming Soon",
     ],
     responsibilities: [
-      "Define product vision and strategy",
-      "Work closely with engineering and design teams",
-      "Gather and analyze user feedback",
-      "Prioritize features and create product roadmaps",
+      "Coming Soon",
     ],
   },
 ];
@@ -94,7 +88,7 @@ export default function CareerPage() {
             work. Our culture is built on collaboration, innovation, and mutual
             respect.
           </p>
-          <ul className="space-y-4">
+          <ul className="space-y-4 text-gray-700">
             <li className="flex items-start space-x-3">
               <span className="text-orange-500">✓</span>
               <span>Collaborative and supportive environment</span>
@@ -115,7 +109,7 @@ export default function CareerPage() {
         </div>
         <div className="relative h-96">
           <Image
-            src="/api/placeholder/800/600"
+            src="/career/achievement2.jpg"
             alt="Company Culture"
             fill
             className="rounded-lg object-cover"

@@ -1,19 +1,19 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Navbar from './components/navbar'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Navbar from "./components/navbar";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Your Startup Name',
-  description: 'Your startup description',
-}
+  title: "Your Startup Name",
+  description: "Your startup description",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -28,7 +28,7 @@ export default function RootLayout({
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                   <h3 className="text-lg font-semibold mb-4">About Us</h3>
-                  <p className="text-gray-300">Your startup description here</p>
+                  <p className="text-gray-300">We are on the ROLL to GO for ALL</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Contact</h3>
@@ -38,9 +38,18 @@ export default function RootLayout({
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                   <div className="space-x-4">
-                    <a href="#" className="text-gray-300 hover:text-white">Twitter</a>
-                    <a href="#" className="text-gray-300 hover:text-white">LinkedIn</a>
-                    <a href="#" className="text-gray-300 hover:text-white">GitHub</a>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      Facebook
+                    </a>
+                    <a href="https://www.instagram.com/gorollth/" className="text-gray-300 hover:text-white">
+                      Instagram
+                    </a>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      Twitter
+                    </a>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      LinkedIn
+                    </a>
                   </div>
                 </div>
               </div>
@@ -49,5 +58,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-  )
+  );
 }

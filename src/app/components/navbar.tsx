@@ -13,9 +13,9 @@ export default function Navbar() {
 
   const navigation = [
     { name: 'About', href: '/about' },
-    { name: 'Career', href: '/career' },
-    { name: 'Achievements', href: '/achievement' },
     { name: 'Solutions', href: '/solution' },
+    { name: 'Achievements', href: '/achievement' },
+    { name: 'Career', href: '/career' },
     { name: 'Contact', href: '/contact' },
   ];
 

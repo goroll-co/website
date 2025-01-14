@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
+import { X } from 'lucide-react';
 
 interface Solution {
   id: number;
@@ -78,9 +79,44 @@ const solutions: Solution[] = [
 export default function SolutionPage() {
   const [selectedSolution, setSelectedSolution] = useState<Solution | null>(null);
   const [activeTab, setActiveTab] = useState<"features" | "benefits">("features");
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
+  const ComingSoonModal = () => (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div 
+        className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
+        onClick={() => setShowComingSoon(false)}
+      ></div>
+      <div className="relative bg-white rounded-2xl p-6 max-w-md w-full m-4 shadow-xl transform transition-all">
+        <div className="absolute top-4 right-4">
+          <button
+            onClick={() => setShowComingSoon(false)}
+            className="text-gray-400 hover:text-gray-500 transition-colors"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        <div className="text-center pt-4">
+          <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <span className="text-3xl">🚀</span>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Coming Soon!</h3>
+          <p className="text-gray-600 mb-6">
+            We're working hard to bring you something amazing. Stay tuned!
+          </p>
+          <button
+            onClick={() => setShowComingSoon(false)}
+            className="bg-orange-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-600 transition-colors"
+          >
+            Got it!
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16 space-y-16">
+    <div className="space-y-16">
       {/* Hero Section */}
       <section className="text-center bg-gradient-to-r from-orange-400 to-orange-500 text-white py-16 rounded-xl">
         <h1 className="text-4xl font-bold mb-4">Our Solutions</h1>
@@ -223,10 +259,16 @@ export default function SolutionPage() {
         <p className="text-gray-600 mb-6">
           Join us in creating an inclusive community where everyone can travel with confidence
         </p>
-        <button className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors">
+        <button 
+          onClick={() => setShowComingSoon(true)}
+          className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+        >
           Get Started
         </button>
       </section>
+
+      {/* Coming Soon Modal */}
+      {showComingSoon && <ComingSoonModal />}
 
       {/* Decorative Elements */}
       <div className="fixed -z-10 top-20 right-0 w-64 h-64 bg-orange-400 rounded-full opacity-10 blur-3xl"></div>

@@ -1,16 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Achievement {
+  id: number;
   title: string;
   description: string;
   date: string;
   icon: string;
   category: string;
-  coverImage: string; // Separate cover image
-  images: string[]; // Additional images for the carousel
+  organizer: string;
+  coverImage: string;
+  images: string[];
   longDescription?: string;
 }
 
@@ -19,7 +21,8 @@ const AchievementCard = ({
   description, 
   date, 
   icon, 
-  category, 
+  category,
+  organizer,
   coverImage,
   images, 
   onClick 
@@ -30,10 +33,12 @@ const AchievementCard = ({
       onClick={onClick}
     >
       <div className="bg-gradient-to-r from-orange-400 to-orange-500 p-4 text-white">
-        <span className="text-3xl">{icon}</span>
-        <span className="ml-2 text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
-          {category}
-        </span>
+        <div className="flex justify-between items-center">
+          <span className="text-3xl">{icon}</span>
+          <span className="ml-2 text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
+            {category}
+          </span>
+        </div>
       </div>
       
       {/* Cover Image */}
@@ -50,11 +55,12 @@ const AchievementCard = ({
         )}
       </div>
 
-      <div className="p-6 space-y-4">
+      <div className="p-6 space-y-3">
         <div className="flex justify-between items-start">
           <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
           <span className="text-orange-500 text-sm font-medium">{date}</span>
         </div>
+        <p className="text-gray-600 text-sm">By {organizer}</p>
         <p className="text-gray-600 line-clamp-2">{description}</p>
       </div>
     </div>
@@ -138,6 +144,7 @@ const AchievementModal = ({
             <div className="flex justify-between items-start">
               <div>
                 <h2 className="text-2xl font-bold">{achievement.title}</h2>
+                <p className="text-gray-600">By {achievement.organizer}</p>
                 <span className="text-orange-500 text-sm font-medium">{achievement.date}</span>
               </div>
               <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
@@ -159,33 +166,37 @@ export default function AchievementPage() {
 
   const achievements: Achievement[] = [
     {
+      id: 1,
       title: "BIT Social Scale Up 2024",
       description: "Selected for business, project management, and soft skills training in BIT Social Scale Up 2024: Incubation Program by Edvisory and NIA",
       longDescription: "Extended description about the BIT Social Scale Up 2024 achievement and its significance...",
       date: "2024",
       icon: "🚀",
       category: "Product",
-      coverImage: "/api/placeholder/800/600", // Cover image
-      images: ["/api/placeholder/800/600", "/api/placeholder/800/600"] // Additional images
+      organizer: "Edvisory and NIA",
+      coverImage: "/achievements/achievement1/achievement1.jpg",
+      images: ["/achievements/achievement1/achievement1_1.jpg", "/achievements/achievement1/achievement1_2.jpg"]
     },
     {
+      id: 2,
       title: "HealthTech X 2 The Future",
       description: "Finalist in the top 22 teams, received a fund for development from HealthTech X 2 The Future by ThaiHealth",
       longDescription: "Extended description about the HealthTech X 2 achievement and what it means for our project...",
       date: "2024",
       icon: "🏆",
       category: "Recognition",
-      coverImage: "/achievement/453412227_474906031960278_5194156106555151823_n.jpg",
-      images: ["/api/placeholder/800/600"]
+      organizer: "ThaiHealth",
+      coverImage: "/achievements/achievement2/achievement2.jpg",
+      images: ["/achievements/achievement2/achievement2_1.jpg", "/achievements/achievement2/achievement2_2.jpg"]
     }
   ].reverse();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16 space-y-16">
+    <div className="space-y-16">
       {/* Hero Section */}
       <div className="text-center space-y-6">
         <div className="inline-block">
-          <h1 className="text-4xl font-bold mb-4 relative text-gray-600">
+          <h1 className="text-4xl font-bold mb-4 relative text-gray-700">
             Our Achievements
             <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"></div>
           </h1>
@@ -222,10 +233,6 @@ export default function AchievementPage() {
           <span className="text-orange-500 font-medium">Stay tuned for more exciting milestones!</span>
         </p>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="fixed -z-10 top-20 right-0 w-64 h-64 bg-orange-400 rounded-full opacity-10 blur-3xl"></div>
-      <div className="fixed -z-10 bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl"></div>
     </div>
   );
 }

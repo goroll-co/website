@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,17 +27,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="flex-shrink-0 flex items-center">
+            <Link href="/" className="flex-shrink-0 flex items-center">
               <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
                 GOROLL
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop menu */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
@@ -46,7 +47,7 @@ export default function Navbar() {
                 }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -77,9 +78,9 @@ export default function Navbar() {
         <div className="relative float-right bg-white h-full w-64 shadow-xl">
           <div className="pt-5 pb-6 px-5">
             <div className="flex items-center justify-between mb-6">
-              <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+              <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
                 GOROLL
-              </span>
+              </Link>
               <button
                 onClick={() => setIsOpen(false)}
                 className="rounded-lg p-2 text-gray-400 hover:text-orange-500 hover:bg-orange-50"
@@ -89,7 +90,7 @@ export default function Navbar() {
             </div>
             <div className="space-y-1">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className={`block px-3 py-2 rounded-lg text-base font-medium transition-colors ${
@@ -100,7 +101,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

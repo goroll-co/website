@@ -23,7 +23,7 @@ const teamMembers: TeamMember[] = [
     name: "Title",
     role: "CEO & Co-founder",
     bio: "Physiotherapist",
-    image: "/api/placeholder/400/400",
+    image: "/about/teammember/title.jpg",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -33,7 +33,7 @@ const teamMembers: TeamMember[] = [
     id: 2,
     name: "Film",
     role: "CTO & Co-founder",
-    bio: "B.Eng. in Computer Engineering",
+    bio: "Studying in Computer Engineering",
     image: "/about/teammember/film.JPG",
     social: {
       linkedin: "#",
@@ -44,8 +44,8 @@ const teamMembers: TeamMember[] = [
     id: 3,
     name: "Maprang",
     role: "Head of Marketing & Co-founder",
-    bio: "ห",
-    image: "/api/placeholder/400/400",
+    bio: "Studying in Marketing",
+    image: "/about/teammember/maprang.jpg",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -55,8 +55,8 @@ const teamMembers: TeamMember[] = [
     id: 4,
     name: "Prima",
     role: "Head of Design & Co-founder",
-    bio: "BAScii",
-    image: "/api/placeholder/400/400",
+    bio: "Studying in BAScii",
+    image: "/about/teammember/np.jpg",
     social: {
       linkedin: "#",
     },

@@ -19,7 +19,7 @@ interface JobPosting {
 const jobPostings: JobPosting[] = [
   {
     id: 3,
-    title: "UX/UI Designer",
+    title: "UX/UI Designer (This work can help boost your portfolio.)",
     department: "Design",
     location: "Bangkok, Thailand & Remote",
     type: "Full-time",
@@ -129,7 +129,7 @@ export default function CareerPage() {
             <div
               key={job.id}
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-              onClick={() => !job.applicationUrl && setSelectedJob(job)}
+              onClick={() => setSelectedJob(job)}
             >
               <div className="flex flex-wrap justify-between items-start gap-4">
                 <div>
@@ -154,17 +154,7 @@ export default function CareerPage() {
                     </span>
                   </div>
                 </div>
-                {job.applicationUrl ? (
-                  <a
-                    href={job.applicationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors text-center"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Apply Now
-                  </a>
-                ) : (
+                <div className="flex space-x-2">
                   <button
                     className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors"
                     onClick={(e) => {
@@ -174,7 +164,18 @@ export default function CareerPage() {
                   >
                     View Details
                   </button>
-                )}
+                  {job.applicationUrl && (
+                    <a
+                      href={job.applicationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors text-center"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Apply Now
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
@@ -251,6 +252,16 @@ export default function CareerPage() {
                   >
                     Close
                   </button>
+                  {selectedJob.applicationUrl && (
+                    <a
+                      href={selectedJob.applicationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors text-center"
+                    >
+                      Apply Now
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

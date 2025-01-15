@@ -33,4 +33,4 @@ GOROLL is a platform dedicated to making mobility accessible and inclusive for w
 
 ### Prerequisites
 - Node.js 18+ 
-- npm/yarn   
+- npm/yarn  

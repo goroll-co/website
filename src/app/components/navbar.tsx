@@ -13,8 +13,8 @@ export default function Navbar() {
 
   const navigation = [
     { name: 'About', href: '/about' },
-    { name: 'Solutions', href: '/solution' },
-    { name: 'Achievements', href: '/achievement' },
+    { name: 'Solutions', href: '/solutions' },
+    { name: 'Achievements', href: '/achievements' },
     { name: 'Career', href: '/career' },
     { name: 'Contact', href: '/contact' },
   ];

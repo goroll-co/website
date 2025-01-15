@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Achievement {
   id: number;
@@ -16,20 +16,20 @@ interface Achievement {
   longDescription?: string;
 }
 
-const AchievementCard = ({ 
-  title, 
-  description, 
-  date, 
-  icon, 
+const AchievementCard = ({
+  title,
+  description,
+  date,
+  icon,
   category,
   organizer,
   coverImage,
-  images, 
-  onClick 
+  images,
+  onClick,
 }: Achievement & { onClick: () => void }) => {
   return (
-    <div 
-      className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer" 
+    <div
+      className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
       onClick={onClick}
     >
       <div className="bg-gradient-to-r from-orange-400 to-orange-500 p-4 text-white">
@@ -40,7 +40,7 @@ const AchievementCard = ({
           </span>
         </div>
       </div>
-      
+
       {/* Cover Image */}
       <div className="relative h-48 bg-gray-100">
         <img
@@ -67,23 +67,23 @@ const AchievementCard = ({
   );
 };
 
-const AchievementModal = ({ 
-  achievement, 
-  onClose 
-}: { 
-  achievement: Achievement; 
+const AchievementModal = ({
+  achievement,
+  onClose,
+}: {
+  achievement: Achievement;
   onClose: () => void;
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => 
+    setCurrentImageIndex((prev) =>
       prev === achievement.images.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => 
+    setCurrentImageIndex((prev) =>
       prev === 0 ? achievement.images.length - 1 : prev - 1
     );
   };
@@ -116,7 +116,7 @@ const AchievementModal = ({
                 className="w-full h-full object-contain"
               />
             )}
-            
+
             {achievement.images.length > 1 && (
               <>
                 <button
@@ -145,7 +145,9 @@ const AchievementModal = ({
               <div>
                 <h2 className="text-2xl font-bold">{achievement.title}</h2>
                 <p className="text-gray-600">By {achievement.organizer}</p>
-                <span className="text-orange-500 text-sm font-medium">{achievement.date}</span>
+                <span className="text-orange-500 text-sm font-medium">
+                  {achievement.date}
+                </span>
               </div>
               <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
                 {achievement.category}
@@ -162,33 +164,45 @@ const AchievementModal = ({
 };
 
 export default function AchievementPage() {
-  const [selectedAchievement, setSelectedAchievement] = useState<Achievement | null>(null);
+  const [selectedAchievement, setSelectedAchievement] =
+    useState<Achievement | null>(null);
 
   const achievements: Achievement[] = [
     {
       id: 1,
       title: "BIT Social Scale Up 2024",
-      description: "Selected for business, project management, and soft skills training in BIT Social Scale Up 2024: Incubation Program by Edvisory and NIA",
-      longDescription: "Extended description about the BIT Social Scale Up 2024 achievement and its significance...",
+      description:
+        "Selected for business, project management, and soft skills training in BIT Social Scale Up 2024: Incubation Program by Edvisory and NIA",
+      longDescription:
+        "Selected as a participant in the prestigious BIT Social Scale Up program, which provided extensive training in business development, project management methodologies, and essential soft skills. This program aimed to equip participants with the knowledge and capabilities to effectively address real-world challenges and drive impactful solutions within their respective fields.",
       date: "2024",
       icon: "🚀",
-      category: "Product",
+      category: "Incubation",
       organizer: "Edvisory and NIA",
       coverImage: "/achievements/achievement1/achievement1.jpg",
-      images: ["/achievements/achievement1/achievement1_1.jpg", "/achievements/achievement1/achievement1_2.jpg"]
+      images: [
+        "/achievements/achievement1/achievement1_1.png",
+        "/achievements/achievement1/achievement1_2.png",
+      ],
     },
     {
       id: 2,
       title: "HealthTech X 2 The Future",
-      description: "Finalist in the top 22 teams, received a fund for development from HealthTech X 2 The Future by ThaiHealth",
-      longDescription: "Extended description about the HealthTech X 2 achievement and what it means for our project...",
+      description:
+        "Finalist in the top 22 teams, received a fund for development from HealthTech X 2 The Future by ThaiHealth",
+      longDescription:
+        "Finalist among the top 22 teams in the prestigious HealthTech X The Future competition, securing development funding to advance innovative solutions in healthcare technology. This recognition highlights our team's dedication, creativity, and ability to deliver impactful ideas that address pressing challenges in the healthcare industry. The funding provided has been instrumental in supporting our project, enabling us to further develop and refine our vision while positioning us to make a meaningful contribution to the field.",
       date: "2024",
-      icon: "🏆",
-      category: "Recognition",
+      icon: "💵",
+      category: "Funding",
       organizer: "ThaiHealth",
       coverImage: "/achievements/achievement2/achievement2.jpg",
-      images: ["/achievements/achievement2/achievement2_1.jpg", "/achievements/achievement2/achievement2_2.jpg"]
-    }
+      images: [
+        "/achievements/achievement2/achievement2_1.jpg",
+        "/achievements/achievement2/achievement2_2.jpg",
+        "/achievements/achievement2/achievement2_3.png",
+      ],
+    },
   ].reverse();
 
   return (
@@ -202,7 +216,8 @@ export default function AchievementPage() {
           </h1>
         </div>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Celebrating our milestones and successes as we continue to innovate and grow
+          Celebrating our milestones and successes as we continue to innovate
+          and grow
         </p>
       </div>
 
@@ -228,9 +243,12 @@ export default function AchievementPage() {
       {/* Footer Message */}
       <div className="text-center bg-orange-50 py-12 rounded-xl">
         <p className="text-gray-600 max-w-2xl mx-auto px-4">
-          These achievements represent our commitment to excellence and innovation.
+          These achievements represent our commitment to excellence and
+          innovation.
           <br />
-          <span className="text-orange-500 font-medium">Stay tuned for more exciting milestones!</span>
+          <span className="text-orange-500 font-medium">
+            Stay tuned for more exciting milestones!
+          </span>
         </p>
       </div>
     </div>

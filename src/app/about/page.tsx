@@ -66,27 +66,27 @@ const teamMembers: TeamMember[] = [
 const values = [
   {
     icon: <Users className="w-8 h-8 text-orange-500" />,
-    title: "Customer First",
+    title: "Inclusivity",
     description:
-      "We put our customers at the heart of everything we do, ensuring their success is our success.",
-  },
-  {
-    icon: <Target className="w-8 h-8 text-orange-500" />,
-    title: "Innovation",
-    description:
-      "We constantly push boundaries and explore new possibilities to solve complex problems.",
+      "We believe in creating a world where every space is accessible and welcoming for wheelchair users and people of all abilities.",
   },
   {
     icon: <Heart className="w-8 h-8 text-orange-500" />,
-    title: "Passion",
+    title: "Community-Driven",
     description:
-      "We're deeply passionate about our work and committed to making a positive impact.",
+      "Our strength comes from our community. We empower users to share experiences and support each other in making mobility more accessible.",
+  },
+  {
+    icon: <Target className="w-8 h-8 text-orange-500" />,
+    title: "Accessibility First",
+    description:
+      "Every feature we build starts with accessibility in mind, ensuring our solutions truly serve the needs of wheelchair users.",
   },
   {
     icon: <Clock className="w-8 h-8 text-orange-500" />,
-    title: "Reliability",
+    title: "Empowerment",
     description:
-      "We build trust through consistent delivery and unwavering commitment to quality.",
+      "We're dedicated to helping wheelchair users travel independently and confidently, transforming challenges into opportunities.",
   },
 ];
 

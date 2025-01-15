@@ -31,7 +31,7 @@ const solutions: Solution[] = [
       "Access reliable accessibility information",
       "Contribute to community knowledge",
     ],
-    image: "/api/placeholder/600/400",
+    image: "/solutions/solution1.png",
     category: "Navigation",
   },
   {
@@ -51,7 +51,7 @@ const solutions: Solution[] = [
       "Promote inclusive design",
       "Build supportive community",
     ],
-    image: "/api/placeholder/600/400",
+    image: "/solutions/solution2.png",
     category: "Social",
   },
   {
@@ -71,7 +71,7 @@ const solutions: Solution[] = [
       "Ensure safety and comfort",
       "Support from verified drivers",
     ],
-    image: "/api/placeholder/600/400",
+    image: "/solutions/solution3.png",
     category: "Transport",
   },
 ];

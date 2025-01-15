@@ -109,7 +109,7 @@ export default function CareerPage() {
         </div>
         <div className="relative h-96">
           <Image
-            src="/career/achievement2.jpg"
+            src="/career/vision-mission.jpg"
             alt="Company Culture"
             fill
             className="rounded-lg object-cover"

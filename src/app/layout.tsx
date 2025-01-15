@@ -6,8 +6,8 @@ import Navbar from "./components/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Your Startup Name",
-  description: "Your startup description",
+  title: "GOROLL",
+  description: "We are on the ROLL to GO for ALL",
 };
 
 export default function RootLayout({
@@ -28,7 +28,9 @@ export default function RootLayout({
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                   <h3 className="text-lg font-semibold mb-4">About Us</h3>
-                  <p className="text-gray-300">We are on the ROLL to GO for ALL</p>
+                  <p className="text-gray-300">
+                    We are on the ROLL to GO for ALL
+                  </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Contact</h3>
@@ -38,20 +40,43 @@ export default function RootLayout({
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                   <div className="space-x-4">
-                    <a href="#" className="text-gray-300 hover:text-white">
+                    <a
+                      href="https://www.facebook.com/people/Goroll-Thailand-%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%A7%E0%B8%B5%E0%B8%A5%E0%B9%81%E0%B8%8A%E0%B8%A3%E0%B9%8C/61567019297171/"
+                      className="text-gray-300 hover:text-white transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Facebook
                     </a>
-                    <a href="https://www.instagram.com/gorollth/" className="text-gray-300 hover:text-white">
+                    <a
+                      href="https://www.instagram.com/gorollth/"
+                      className="text-gray-300 hover:text-white transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Instagram
                     </a>
-                    <a href="#" className="text-gray-300 hover:text-white">
+                    <a 
+                      href="#" 
+                      className="text-gray-300 hover:text-white transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Twitter
                     </a>
-                    <a href="#" className="text-gray-300 hover:text-white">
+                    <a 
+                      href="#" 
+                      className="text-gray-300 hover:text-white transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       LinkedIn
                     </a>
                   </div>
                 </div>
+              </div>
+              <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>© 2024 GOROLL. All rights reserved.</p>
               </div>
             </div>
           </footer>

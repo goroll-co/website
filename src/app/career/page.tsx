@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Briefcase, MapPin, Clock, DollarSign, Search } from "lucide-react";
 
 interface JobPosting {
@@ -14,6 +13,7 @@ interface JobPosting {
   description: string;
   requirements: string[];
   responsibilities: string[];
+  applicationUrl: string;
 }
 
 const jobPostings: JobPosting[] = [
@@ -21,7 +21,7 @@ const jobPostings: JobPosting[] = [
     id: 3,
     title: "UX/UI Designer",
     department: "Design",
-    location: "Bangkok, Thailand  & Remote",
+    location: "Bangkok, Thailand & Remote",
     type: "Full-time",
     salary: "-",
     description:
@@ -39,22 +39,19 @@ const jobPostings: JobPosting[] = [
       "Conduct user research and usability testing",
       "Collaborate with product and engineering teams",
     ],
+    applicationUrl: "https://forms.gle/LVSuZWb1aLFpKCQR8",
   },
   {
     id: 2,
     title: "Legal Executive (Coming Soon)",
     department: "Legal",
-    location: "Bangkok, Thailand  & Remote",
+    location: "Bangkok, Thailand & Remote",
     type: "Full-time",
     salary: "-",
-    description:
-      "Coming Soon",
-    requirements: [
-      "Coming Soon",
-    ],
-    responsibilities: [
-      "Coming Soon",
-    ],
+    description: "Coming Soon",
+    requirements: ["Coming Soon"],
+    responsibilities: ["Coming Soon"],
+    applicationUrl: "",
   },
 ];
 
@@ -70,7 +67,7 @@ export default function CareerPage() {
   );
 
   return (
-    <div className="max-w-7xl mx-auto space-y-16 px-4 py-8">
+    <div className="space-y-16">
       {/* Hero Section */}
       <section className="text-center bg-gradient-to-r from-orange-400 to-orange-500 text-white py-16 rounded-xl">
         <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
@@ -108,35 +105,7 @@ export default function CareerPage() {
             </li>
           </ul>
         </div>
-        <div className="relative h-96">
-          <Image
-            src="/career/vision-mission.jpg"
-            alt="Company Culture"
-            fill
-            className="rounded-lg object-cover"
-          />
-        </div>
       </section>
-
-      {/* Benefits Section
-      <section className="bg-gray-50 py-16 px-4 rounded-xl">
-        <h2 className="text-3xl font-bold text-center mb-12">Benefits & Perks</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">{benefit.title}</h3>
-              <ul className="space-y-2">
-                {benefit.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="text-gray-600 flex items-start space-x-2">
-                    <span className="text-indigo-600 text-lg">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section> */}
 
       {/* Job Listings Section */}
       <section>
@@ -160,7 +129,7 @@ export default function CareerPage() {
             <div
               key={job.id}
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-              onClick={() => setSelectedJob(job)}
+              onClick={() => !job.applicationUrl && setSelectedJob(job)}
             >
               <div className="flex flex-wrap justify-between items-start gap-4">
                 <div>
@@ -185,15 +154,27 @@ export default function CareerPage() {
                     </span>
                   </div>
                 </div>
-                <button
-                  className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setSelectedJob(job);
-                  }}
-                >
-                  View Details
-                </button>
+                {job.applicationUrl ? (
+                  <a
+                    href={job.applicationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors text-center"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Apply Now
+                  </a>
+                ) : (
+                  <button
+                    className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedJob(job);
+                    }}
+                  >
+                    View Details
+                  </button>
+                )}
               </div>
             </div>
           ))}
@@ -207,9 +188,7 @@ export default function CareerPage() {
             <div className="p-6">
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">
-                    {selectedJob.title}
-                  </h2>
+                  <h2 className="text-2xl font-bold mb-2">{selectedJob.title}</h2>
                   <div className="flex flex-wrap gap-4">
                     <span className="flex items-center text-gray-600">
                       <Briefcase className="w-4 h-4 mr-1" />
@@ -255,9 +234,7 @@ export default function CareerPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">
-                    Responsibilities
-                  </h3>
+                  <h3 className="text-xl font-semibold mb-3">Responsibilities</h3>
                   <ul className="list-disc list-inside space-y-2">
                     {selectedJob.responsibilities.map((resp, index) => (
                       <li key={index} className="text-gray-600">
@@ -272,10 +249,7 @@ export default function CareerPage() {
                     className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                     onClick={() => setSelectedJob(null)}
                   >
-                    Cancel
-                  </button>
-                  <button className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors">
-                    Apply Now
+                    Close
                   </button>
                 </div>
               </div>

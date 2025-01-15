@@ -31,6 +31,7 @@ const jobPostings: JobPosting[] = [
       "Proficiency in Figma and design tools",
       "Strong portfolio demonstrating UI/UX work",
       "Experience with user research and testing",
+      "Working under pressure"
     ],
     responsibilities: [
       "Design user interfaces for mobile applications",

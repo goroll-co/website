@@ -102,7 +102,7 @@ export default function SolutionPage() {
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-2">Coming Soon!</h3>
           <p className="text-gray-600 mb-6">
-            We're working hard to bring you something amazing. Stay tuned!
+            We are working hard to bring you something amazing. Stay tuned!
           </p>
           <button
             onClick={() => setShowComingSoon(false)}

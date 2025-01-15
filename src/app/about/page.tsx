@@ -86,7 +86,7 @@ const values = [
     icon: <Clock className="w-8 h-8 text-orange-500" />,
     title: "Empowerment",
     description:
-      "We're dedicated to helping wheelchair users travel independently and confidently, transforming challenges into opportunities.",
+      "We are dedicated to helping wheelchair users travel independently and confidently, transforming challenges into opportunities.",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function AboutPage() {
       <section className="text-center">
         <h1 className="text-4xl font-bold mb-4 text-gray-600">About Us</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          We're on a mission to transform accessibility through innovation and
+          We are on a mission to transform accessibility through innovation and
           dedication to inclusive mobility.
         </p>
       </section>

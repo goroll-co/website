@@ -25,7 +25,7 @@ const jobPostings: JobPosting[] = [
     type: "Full-time",
     salary: "-",
     description:
-      "We're seeking a talented UX/UI Designer to create beautiful and intuitive user experiences.",
+      "We are seeking a talented UX/UI Designer to create beautiful and intuitive user experiences.",
     requirements: [
       "1+ years of UX/UI design experience",
       "Proficiency in Figma and design tools",
@@ -74,7 +74,7 @@ export default function CareerPage() {
       <section className="text-center bg-gradient-to-r from-orange-400 to-orange-500 text-white py-16 rounded-xl">
         <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
         <p className="text-xl max-w-3xl mx-auto">
-          We're building something special and we're always looking for talented
+          We are building something special and we are always looking for talented
           individuals to join our journey.
         </p>
       </section>

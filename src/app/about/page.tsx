@@ -55,25 +55,25 @@ const teamMembers: TeamMember[] = [
 
 const values = [
   {
-    icon: <Users className="w-8 h-8 text-orange-500" />,
+    icon: <Users className="w-8 h-8 text-blue-600" />,
     title: "Inclusivity",
     description:
       "We believe in creating a world where every space is accessible and welcoming for wheelchair users and people of all abilities.",
   },
   {
-    icon: <Heart className="w-8 h-8 text-orange-500" />,
+    icon: <Heart className="w-8 h-8 text-blue-600" />,
     title: "Community-Driven",
     description:
       "Our strength comes from our community. We empower users to share experiences and support each other in making mobility more accessible.",
   },
   {
-    icon: <Target className="w-8 h-8 text-orange-500" />,
+    icon: <Target className="w-8 h-8 text-blue-600" />,
     title: "Accessibility First",
     description:
       "Every feature we build starts with accessibility in mind, ensuring our solutions truly serve the needs of wheelchair users.",
   },
   {
-    icon: <Clock className="w-8 h-8 text-orange-500" />,
+    icon: <Clock className="w-8 h-8 text-blue-600" />,
     title: "Empowerment",
     description:
       "We are dedicated to helping wheelchair users travel independently and confidently, transforming challenges into opportunities.",
@@ -147,7 +147,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="bg-orange-50 py-16 px-4 rounded-xl">
+      <section className="bg-blue-50 py-16 px-4 rounded-xl">
         <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
@@ -174,10 +174,10 @@ export default function AboutPage() {
                 }`}
               >
                 <div className="w-1/2" />
-                <div className="w-4 h-4 bg-orange-500 rounded-full absolute left-1/2 transform -translate-x-1/2 z-10" />
+                <div className="w-4 h-4 bg-blue-600 rounded-full absolute left-1/2 transform -translate-x-1/2 z-10" />
                 <div className={`w-1/2 ${index % 2 === 0 ? "pr-12" : "pl-12"}`}>
                   <div className="bg-white p-6 rounded-lg shadow-md">
-                    <span className="text-sm text-orange-500 font-semibold">
+                    <span className="text-sm text-blue-600 font-semibold">
                       {milestone.year}
                     </span>
                     <h3 className="text-xl font-semibold mt-1 mb-2">
@@ -212,7 +212,7 @@ export default function AboutPage() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                <p className="text-orange-500 mb-2">{member.role}</p>
+                <p className="text-blue-600 mb-2">{member.role}</p>
                 <p className="text-gray-600 line-clamp-3">{member.bio}</p>
               </div>
             </div>
@@ -228,7 +228,7 @@ export default function AboutPage() {
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <h2 className="text-2xl font-bold">{selectedMember.name}</h2>
-                  <p className="text-orange-500">{selectedMember.role}</p>
+                  <p className="text-blue-600">{selectedMember.role}</p>
                 </div>
                 <button
                   onClick={() => setSelectedMember(null)}
@@ -253,7 +253,7 @@ export default function AboutPage() {
                     {selectedMember.social.linkedin && (
                       <a
                         href={selectedMember.social.linkedin}
-                        className="text-gray-600 hover:text-orange-500"
+                        className="text-gray-600 hover:text-blue-600"
                       >
                         LinkedIn
                       </a>
@@ -261,7 +261,7 @@ export default function AboutPage() {
                     {selectedMember.social.twitter && (
                       <a
                         href={selectedMember.social.twitter}
-                        className="text-gray-600 hover:text-orange-500"
+                        className="text-gray-600 hover:text-blue-600"
                       >
                         Twitter
                       </a>
@@ -269,7 +269,7 @@ export default function AboutPage() {
                     {selectedMember.social.github && (
                       <a
                         href={selectedMember.social.github}
-                        className="text-gray-600 hover:text-orange-500"
+                        className="text-gray-600 hover:text-blue-600"
                       >
                         GitHub
                       </a>
@@ -283,7 +283,7 @@ export default function AboutPage() {
       )}
 
       {/* Stats Section */}
-      <section className="bg-gradient-to-r from-orange-400 to-orange-500 text-white py-16 px-4 rounded-xl">
+      <section className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-16 px-4 rounded-xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <div>
             <div className="text-4xl font-bold mb-2">0</div>

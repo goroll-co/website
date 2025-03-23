@@ -94,7 +94,7 @@ export default function SolutionPage() {
           </button>
         </div>
         <div className="text-center pt-4">
-          <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <span className="text-3xl">🚀</span>
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -105,7 +105,7 @@ export default function SolutionPage() {
           </p>
           <button
             onClick={() => setShowComingSoon(false)}
-            className="bg-orange-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-600 transition-colors"
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
           >
             Got it!
           </button>
@@ -117,7 +117,7 @@ export default function SolutionPage() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="text-center bg-gradient-to-r from-orange-400 to-orange-500 text-white py-16 rounded-xl">
+      <section className="text-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-16 rounded-xl">
         <h1 className="text-4xl font-bold mb-4">Our Solutions</h1>
         <p className="text-xl max-w-3xl mx-auto px-4">
           Innovative solutions designed to make mobility accessible and
@@ -141,13 +141,13 @@ export default function SolutionPage() {
               />
             </div>
             <div className="p-6">
-              <span className="inline-block px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm mb-4">
+              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm mb-4">
                 {solution.category}
               </span>
               <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
               <p className="text-gray-600 mb-4">{solution.description}</p>
               <button
-                className="text-orange-500 hover:text-orange-600 font-medium flex items-center gap-1 transition-colors"
+                className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 transition-colors"
                 onClick={(e) => {
                   e.stopPropagation();
                   setSelectedSolution(solution);
@@ -173,7 +173,7 @@ export default function SolutionPage() {
                   <h2 className="text-2xl font-bold">
                     {selectedSolution.title}
                   </h2>
-                  <span className="inline-block px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm mt-2">
+                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm mt-2">
                     {selectedSolution.category}
                   </span>
                 </div>
@@ -202,7 +202,7 @@ export default function SolutionPage() {
                   <button
                     className={`pb-2 px-4 ${
                       activeTab === "features"
-                        ? "border-b-2 border-orange-500 text-orange-500"
+                        ? "border-b-2 border-blue-600 text-blue-600"
                         : "text-gray-500"
                     }`}
                     onClick={() => setActiveTab("features")}
@@ -212,7 +212,7 @@ export default function SolutionPage() {
                   <button
                     className={`pb-2 px-4 ${
                       activeTab === "benefits"
-                        ? "border-b-2 border-orange-500 text-orange-500"
+                        ? "border-b-2 border-blue-600 text-blue-600"
                         : "text-gray-500"
                     }`}
                     onClick={() => setActiveTab("benefits")}
@@ -244,7 +244,7 @@ export default function SolutionPage() {
 
               <div className="mt-8 flex justify-end">
                 <button
-                  className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors"
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                   onClick={() => setSelectedSolution(null)}
                 >
                   Close
@@ -256,7 +256,7 @@ export default function SolutionPage() {
       )}
 
       {/* Call to Action */}
-      <section className="text-center bg-orange-50 py-12 rounded-xl">
+      <section className="text-center bg-blue-50 py-12 rounded-xl">
         <h2 className="text-2xl font-bold mb-4">
           Ready to Make Mobility Accessible?
         </h2>
@@ -266,7 +266,7 @@ export default function SolutionPage() {
         </p>
         <button
           onClick={() => setShowComingSoon(true)}
-          className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+          className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
         >
           Get Started
         </button>
@@ -276,8 +276,8 @@ export default function SolutionPage() {
       {showComingSoon && <ComingSoonModal />}
 
       {/* Decorative Elements */}
-      <div className="fixed -z-10 top-20 right-0 w-64 h-64 bg-orange-400 rounded-full opacity-10 blur-3xl"></div>
-      <div className="fixed -z-10 bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl"></div>
+      <div className="fixed -z-10 top-20 right-0 w-64 h-64 bg-blue-500 rounded-full opacity-10 blur-3xl"></div>
+      <div className="fixed -z-10 bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full opacity-10 blur-3xl"></div>
     </div>
   );
 }

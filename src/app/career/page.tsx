@@ -59,7 +59,7 @@ export default function CareerPage() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="text-center bg-gradient-to-r from-orange-400 to-orange-500 text-white py-16 rounded-xl">
+      <section className="text-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-16 rounded-xl">
         <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
         <p className="text-xl max-w-3xl mx-auto">
           We are building something special and we are always looking for
@@ -78,19 +78,19 @@ export default function CareerPage() {
           </p>
           <ul className="space-y-4 text-gray-700">
             <li className="flex items-start space-x-3">
-              <span className="text-orange-500">✓</span>
+              <span className="text-blue-600">✓</span>
               <span>Collaborative and supportive environment</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-orange-500">✓</span>
+              <span className="text-blue-600">✓</span>
               <span>Focus on innovation and creativity</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-orange-500">✓</span>
+              <span className="text-blue-600">✓</span>
               <span>Work hard play hard (NO WORK-LIFE BALANCE)</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-orange-500">✓</span>
+              <span className="text-blue-600">✓</span>
               <span>Opportunities for growth and learning</span>
             </li>
           </ul>
@@ -109,7 +109,7 @@ export default function CareerPage() {
             placeholder="Search positions..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
           />
         </div>
 
@@ -146,7 +146,7 @@ export default function CareerPage() {
                 </div>
                 <div className="flex space-x-2">
                   <button
-                    className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors"
+                    className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                     onClick={(e) => {
                       e.stopPropagation();
                       setSelectedJob(job);
@@ -159,7 +159,7 @@ export default function CareerPage() {
                       href={job.applicationUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors text-center"
+                      className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center"
                       onClick={(e) => e.stopPropagation()}
                     >
                       Apply Now
@@ -251,7 +251,7 @@ export default function CareerPage() {
                       href={selectedJob.applicationUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors text-center"
+                      className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center"
                     >
                       Apply Now
                     </a>

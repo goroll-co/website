@@ -1,4 +1,4 @@
-// src/app/components/achievement-card.tsx
+// src/app/components/AchievementCard.tsx
 
 "use client";
 
@@ -28,7 +28,7 @@ export default function AchievementCard({
 
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
 
-        <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm mb-4">
+        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm mb-4">
           {category}
         </span>
 
@@ -39,7 +39,7 @@ export default function AchievementCard({
         {isExpanded && (
           <div className="mt-4 pt-4 border-t border-gray-200">
             <button
-              className="text-indigo-600 hover:text-indigo-800 font-medium"
+              className="text-blue-600 hover:text-blue-700 font-medium"
               onClick={(e) => {
                 e.stopPropagation();
                 // Add your detail view logic here

@@ -21,6 +21,8 @@ body {
 }
 
 /* globals.css */
-h2, h3 {
-  @apply text-orange-500;  /* หรือสีที่ต้องการ */
+h2,
+h3 {
+  @apply text-blue-600;
+  /* เปลี่ยนจาก text-orange-500 เป็น text-blue-600 */
 }

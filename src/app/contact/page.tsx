@@ -24,7 +24,7 @@ export default function ContactPage() {
 
           <div className="space-y-8">
             <div className="flex items-start space-x-4">
-              <Phone className="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" />
+              <Phone className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-900">Phone</h3>
                 <p className="text-gray-700">+66 830796796</p>
@@ -32,7 +32,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <Mail className="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" />
+              <Mail className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-900">Email</h3>
                 <p className="text-gray-700">gorollth@outlook.com</p>
@@ -40,7 +40,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <MapPin className="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" />
+              <MapPin className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-900">Location</h3>
                 <p className="text-gray-700">Bangkok, Thailand</p>
@@ -48,7 +48,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <Clock className="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" />
+              <Clock className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-900">Business Hours</h3>
                 <p className="text-gray-700">Monday - Friday: 10:00 - 18:00</p>
@@ -61,11 +61,11 @@ export default function ContactPage() {
 
       {/* Decorative Elements */}
       <div
-        className="fixed -z-10 top-20 right-0 w-64 h-64 bg-orange-400 rounded-full opacity-10 blur-3xl"
+        className="fixed -z-10 top-20 right-0 w-64 h-64 bg-blue-500 rounded-full opacity-10 blur-3xl"
         aria-hidden="true"
       ></div>
       <div
-        className="fixed -z-10 bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl"
+        className="fixed -z-10 bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full opacity-10 blur-3xl"
         aria-hidden="true"
       ></div>
     </div>

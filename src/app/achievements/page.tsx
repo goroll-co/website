@@ -22,7 +22,7 @@ const AchievementCard = ({
       className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
       onClick={onClick}
     >
-      <div className="bg-gradient-to-r from-orange-400 to-orange-500 p-4 text-white">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 text-white">
         <div className="flex justify-between items-center">
           <span className="text-3xl">{icon}</span>
           <span className="ml-2 text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
@@ -48,7 +48,7 @@ const AchievementCard = ({
       <div className="p-6 space-y-3">
         <div className="flex justify-between items-start">
           <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-          <span className="text-orange-500 text-sm font-medium">{date}</span>
+          <span className="text-blue-600 text-sm font-medium">{date}</span>
         </div>
         <p className="text-gray-600 text-sm">By {organizer}</p>
         <p className="text-gray-600 line-clamp-2">{description}</p>
@@ -135,11 +135,11 @@ const AchievementModal = ({
               <div>
                 <h2 className="text-2xl font-bold">{achievement.title}</h2>
                 <p className="text-gray-600">By {achievement.organizer}</p>
-                <span className="text-orange-500 text-sm font-medium">
+                <span className="text-blue-600 text-sm font-medium">
                   {achievement.date}
                 </span>
               </div>
-              <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+              <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
                 {achievement.category}
               </span>
             </div>
@@ -202,7 +202,7 @@ export default function AchievementPage() {
         <div className="inline-block">
           <h1 className="text-4xl font-bold mb-4 relative text-gray-700">
             Our Achievements
-            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"></div>
+            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
           </h1>
         </div>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -231,12 +231,12 @@ export default function AchievementPage() {
       )}
 
       {/* Footer Message */}
-      <div className="text-center bg-orange-50 py-12 rounded-xl">
+      <div className="text-center bg-blue-50 py-12 rounded-xl">
         <p className="text-gray-600 max-w-2xl mx-auto px-4">
           These achievements represent our commitment to excellence and
           innovation.
           <br />
-          <span className="text-orange-500 font-medium">
+          <span className="text-blue-600 font-medium">
             Stay tuned for more exciting milestones!
           </span>
         </p>

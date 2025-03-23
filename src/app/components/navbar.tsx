@@ -2,17 +2,14 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentPath, setCurrentPath] = useState("");
-
-  useEffect(() => {
-    setCurrentPath(window.location.pathname);
-  }, []);
+  const pathname = usePathname();
 
   const navigation = [
     { name: "About", href: "/about" },
@@ -22,7 +19,7 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
-  const isActivePath = (path: string) => currentPath === path;
+  const isActivePath = (path: string) => pathname === path;
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
@@ -30,22 +27,22 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
                 GOROLL
               </span>
             </Link>
           </div>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors text-center min-w-[112px] ${
                   isActivePath(item.href)
-                    ? "text-orange-500 bg-orange-50"
-                    : "text-gray-500 hover:text-orange-500 hover:bg-orange-50"
+                    ? "text-blue-500 bg-blue-50"
+                    : "text-gray-500 hover:text-blue-500 hover:bg-blue-50"
                 }`}
               >
                 {item.name}
@@ -57,7 +54,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-400 hover:text-orange-500 hover:bg-orange-50 transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-400 hover:text-blue-500 hover:bg-blue-50 transition-colors"
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (
@@ -85,13 +82,13 @@ export default function Navbar() {
             <div className="flex items-center justify-between mb-6">
               <Link
                 href="/"
-                className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
+                className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent"
               >
                 GOROLL
               </Link>
               <button
                 onClick={() => setIsOpen(false)}
-                className="rounded-lg p-2 text-gray-400 hover:text-orange-500 hover:bg-orange-50"
+                className="rounded-lg p-2 text-gray-400 hover:text-blue-500 hover:bg-blue-50"
               >
                 <X className="h-6 w-6" />
               </button>
@@ -103,8 +100,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`block px-3 py-2 rounded-lg text-base font-medium transition-colors ${
                     isActivePath(item.href)
-                      ? "text-orange-500 bg-orange-50"
-                      : "text-gray-500 hover:text-orange-500 hover:bg-orange-50"
+                      ? "text-blue-500 bg-blue-50"
+                      : "text-gray-500 hover:text-blue-500 hover:bg-blue-50"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >

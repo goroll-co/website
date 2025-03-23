@@ -24,7 +24,7 @@ export default function Home() {
           </button>
         </div>
         <div className="text-center pt-4">
-          <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <span className="text-3xl">🚀</span>
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -35,7 +35,7 @@ export default function Home() {
           </p>
           <button
             onClick={() => setShowModal(false)}
-            className="bg-orange-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-600 transition-colors"
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
           >
             Got it!
           </button>
@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="text-center py-20 bg-gradient-to-r from-orange-400 to-orange-500 text-white">
+      <section className="text-center py-20 bg-gradient-to-r from-blue-500 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Welcome to GOROLL
@@ -57,7 +57,7 @@ export default function Home() {
           </p>
           <button
             onClick={() => setShowModal(true)}
-            className="bg-white text-orange-500 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+            className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
           >
             Start Your Journey
           </button>
@@ -74,7 +74,7 @@ export default function Home() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-orange-400"
+                className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border-t-4 border-blue-500"
               >
                 <div className="flex items-center justify-center mb-4">
                   {feature.icon}
@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* Community Section */}
-      <section className="bg-orange-50 py-16">
+      <section className="bg-blue-50 py-16">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">
             Join Our Community
@@ -103,7 +103,7 @@ export default function Home() {
           </p>
           <button
             onClick={() => setShowModal(true)}
-            className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors"
+            className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
           >
             Get Started Now
           </button>
@@ -111,8 +111,8 @@ export default function Home() {
       </section>
 
       {/* Decorative Elements */}
-      <div className="fixed -z-10 top-0 left-0 w-64 h-64 bg-orange-400 rounded-full opacity-20 blur-3xl"></div>
-      <div className="fixed -z-10 bottom-0 right-0 w-96 h-96 bg-orange-500 rounded-full opacity-20 blur-3xl"></div>
+      <div className="fixed -z-10 top-0 left-0 w-64 h-64 bg-blue-500 rounded-full opacity-20 blur-3xl"></div>
+      <div className="fixed -z-10 bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
 
       {/* Modal */}
       {showModal && <ComingSoonModal />}
@@ -125,18 +125,18 @@ const features = [
     title: "Accessible Routes",
     description:
       "Find and share wheelchair-friendly paths with real-time updates and community-verified information.",
-    icon: <MapPin size={32} className="text-orange-500" />,
+    icon: <MapPin size={32} className="text-blue-600" />,
   },
   {
     title: "Inclusive Community",
     description:
       "Connect with others, share experiences, and contribute to making places more accessible for everyone.",
-    icon: <Users size={32} className="text-orange-500" />,
+    icon: <Users size={32} className="text-blue-600" />,
   },
   {
     title: "Safe Transportation",
     description:
       "Access reliable and affordable transportation options with our verified GOROLL Carpool service.",
-    icon: <Shield size={32} className="text-orange-500" />,
+    icon: <Shield size={32} className="text-blue-600" />,
   },
 ];

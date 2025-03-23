@@ -1,6 +1,8 @@
-'use client';
+// src/app/contact/page.tsx
 
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+"use client";
+
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -16,8 +18,10 @@ export default function ContactPage() {
       {/* Contact Information */}
       <div className="max-w-3xl mx-auto mb-8">
         <div className="bg-white rounded-xl shadow-md p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h2>
-          
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            Contact Information
+          </h2>
+
           <div className="space-y-8">
             <div className="flex items-start space-x-4">
               <Phone className="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" />
@@ -39,9 +43,7 @@ export default function ContactPage() {
               <MapPin className="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-gray-900">Location</h3>
-                <p className="text-gray-700">
-                  Bangkok, Thailand
-                </p>
+                <p className="text-gray-700">Bangkok, Thailand</p>
               </div>
             </div>
 
@@ -58,8 +60,14 @@ export default function ContactPage() {
       </div>
 
       {/* Decorative Elements */}
-      <div className="fixed -z-10 top-20 right-0 w-64 h-64 bg-orange-400 rounded-full opacity-10 blur-3xl" aria-hidden="true"></div>
-      <div className="fixed -z-10 bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl" aria-hidden="true"></div>
+      <div
+        className="fixed -z-10 top-20 right-0 w-64 h-64 bg-orange-400 rounded-full opacity-10 blur-3xl"
+        aria-hidden="true"
+      ></div>
+      <div
+        className="fixed -z-10 bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl"
+        aria-hidden="true"
+      ></div>
     </div>
   );
 }

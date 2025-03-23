@@ -1,21 +1,11 @@
+// src/app/about/page.tsx
+
 "use client";
 
 import Image from "next/image";
 import { useState } from "react";
 import { Users, Target, Heart, Clock } from "lucide-react";
-
-interface TeamMember {
-  id: number;
-  name: string;
-  role: string;
-  bio: string;
-  image: string;
-  social: {
-    linkedin?: string;
-    twitter?: string;
-    github?: string;
-  };
-}
+import { TeamMember } from "../interfaces";
 
 const teamMembers: TeamMember[] = [
   {

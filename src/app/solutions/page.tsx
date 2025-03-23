@@ -1,17 +1,10 @@
-'use client';
+// src/app/solutions/page.tsx
 
-import { useState } from 'react';
-import { X } from 'lucide-react';
+"use client";
 
-interface Solution {
-  id: number;
-  title: string;
-  description: string;
-  features: string[];
-  benefits: string[];
-  image: string;
-  category: string;
-}
+import { useState } from "react";
+import { X } from "lucide-react";
+import { Solution } from "../interfaces";
 
 const solutions: Solution[] = [
   {
@@ -77,13 +70,17 @@ const solutions: Solution[] = [
 ];
 
 export default function SolutionPage() {
-  const [selectedSolution, setSelectedSolution] = useState<Solution | null>(null);
-  const [activeTab, setActiveTab] = useState<"features" | "benefits">("features");
+  const [selectedSolution, setSelectedSolution] = useState<Solution | null>(
+    null
+  );
+  const [activeTab, setActiveTab] = useState<"features" | "benefits">(
+    "features"
+  );
   const [showComingSoon, setShowComingSoon] = useState(false);
 
   const ComingSoonModal = () => (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div 
+      <div
         className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
         onClick={() => setShowComingSoon(false)}
       ></div>
@@ -100,7 +97,9 @@ export default function SolutionPage() {
           <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <span className="text-3xl">🚀</span>
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Coming Soon!</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            Coming Soon!
+          </h3>
           <p className="text-gray-600 mb-6">
             We are working hard to bring you something amazing. Stay tuned!
           </p>
@@ -121,7 +120,8 @@ export default function SolutionPage() {
       <section className="text-center bg-gradient-to-r from-orange-400 to-orange-500 text-white py-16 rounded-xl">
         <h1 className="text-4xl font-bold mb-4">Our Solutions</h1>
         <p className="text-xl max-w-3xl mx-auto px-4">
-          Innovative solutions designed to make mobility accessible and inclusive for everyone
+          Innovative solutions designed to make mobility accessible and
+          inclusive for everyone
         </p>
       </section>
 
@@ -153,8 +153,10 @@ export default function SolutionPage() {
                   setSelectedSolution(solution);
                 }}
               >
-                Learn More 
-                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                Learn More
+                <span className="transform group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
               </button>
             </div>
           </div>
@@ -168,7 +170,9 @@ export default function SolutionPage() {
             <div className="p-6">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h2 className="text-2xl font-bold">{selectedSolution.title}</h2>
+                  <h2 className="text-2xl font-bold">
+                    {selectedSolution.title}
+                  </h2>
                   <span className="inline-block px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm mt-2">
                     {selectedSolution.category}
                   </span>
@@ -257,9 +261,10 @@ export default function SolutionPage() {
           Ready to Make Mobility Accessible?
         </h2>
         <p className="text-gray-600 mb-6">
-          Join us in creating an inclusive community where everyone can travel with confidence
+          Join us in creating an inclusive community where everyone can travel
+          with confidence
         </p>
-        <button 
+        <button
           onClick={() => setShowComingSoon(true)}
           className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors"
         >

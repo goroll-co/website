@@ -1,14 +1,9 @@
-'use client';
+// src/app/components/achievement-card.tsx
 
-import { useState } from 'react';
+"use client";
 
-interface AchievementCardProps {
-  title: string;
-  description: string;
-  date: string;
-  icon: string;
-  category: string;
-}
+import { useState } from "react";
+import { AchievementCardProps } from "../interfaces";
 
 export default function AchievementCard({
   title,
@@ -23,27 +18,27 @@ export default function AchievementCard({
     <div
       onClick={() => setIsExpanded(!isExpanded)}
       className={`bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer 
-        ${isExpanded ? 'md:col-span-2 md:row-span-2' : ''}`}
+        ${isExpanded ? "md:col-span-2 md:row-span-2" : ""}`}
     >
       <div className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="text-2xl">{icon}</div>
           <span className="text-sm text-gray-500">{date}</span>
         </div>
-        
+
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        
+
         <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm mb-4">
           {category}
         </span>
-        
-        <p className={`text-gray-600 ${isExpanded ? '' : 'line-clamp-3'}`}>
+
+        <p className={`text-gray-600 ${isExpanded ? "" : "line-clamp-3"}`}>
           {description}
         </p>
-        
+
         {isExpanded && (
           <div className="mt-4 pt-4 border-t border-gray-200">
-            <button 
+            <button
               className="text-indigo-600 hover:text-indigo-800 font-medium"
               onClick={(e) => {
                 e.stopPropagation();

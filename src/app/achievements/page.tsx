@@ -1,20 +1,10 @@
+// src/app/achievements/page.tsx
+
 "use client";
 
 import React, { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-
-interface Achievement {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-  icon: string;
-  category: string;
-  organizer: string;
-  coverImage: string;
-  images: string[];
-  longDescription?: string;
-}
+import { Achievement } from "../interfaces";
 
 const AchievementCard = ({
   title,

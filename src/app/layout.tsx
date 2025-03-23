@@ -1,7 +1,9 @@
+// src/app/layout.tsx
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
   title: "GOROLL",
   description: "We are on the ROLL to GO for ALL",
   icons: {
-    icon: "/icon-only.ico"
+    icon: "/icon-only.ico",
   },
 };
 

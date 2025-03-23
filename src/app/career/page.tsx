@@ -1,20 +1,10 @@
+// src/app/career/page.tsx
+
 "use client";
 
 import { useState } from "react";
 import { Briefcase, MapPin, Clock, DollarSign, Search } from "lucide-react";
-
-interface JobPosting {
-  id: number;
-  title: string;
-  department: string;
-  location: string;
-  type: string;
-  salary: string;
-  description: string;
-  requirements: string[];
-  responsibilities: string[];
-  applicationUrl: string;
-}
+import { JobPosting } from "../interfaces";
 
 const jobPostings: JobPosting[] = [
   {
@@ -31,7 +21,7 @@ const jobPostings: JobPosting[] = [
       "Proficiency in Figma and design tools",
       "Strong portfolio demonstrating UI/UX work",
       "Experience with user research and testing",
-      "Working under pressure"
+      "Working under pressure",
     ],
     responsibilities: [
       "Design user interfaces for mobile applications",
@@ -72,8 +62,8 @@ export default function CareerPage() {
       <section className="text-center bg-gradient-to-r from-orange-400 to-orange-500 text-white py-16 rounded-xl">
         <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
         <p className="text-xl max-w-3xl mx-auto">
-          We are building something special and we are always looking for talented
-          individuals to join our journey.
+          We are building something special and we are always looking for
+          talented individuals to join our journey.
         </p>
       </section>
 
@@ -189,7 +179,9 @@ export default function CareerPage() {
             <div className="p-6">
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">{selectedJob.title}</h2>
+                  <h2 className="text-2xl font-bold mb-2">
+                    {selectedJob.title}
+                  </h2>
                   <div className="flex flex-wrap gap-4">
                     <span className="flex items-center text-gray-600">
                       <Briefcase className="w-4 h-4 mr-1" />
@@ -235,7 +227,9 @@ export default function CareerPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">Responsibilities</h3>
+                  <h3 className="text-xl font-semibold mb-3">
+                    Responsibilities
+                  </h3>
                   <ul className="list-disc list-inside space-y-2">
                     {selectedJob.responsibilities.map((resp, index) => (
                       <li key={index} className="text-gray-600">

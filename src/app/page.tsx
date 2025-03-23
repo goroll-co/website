@@ -1,14 +1,16 @@
-'use client';
+// src/app/page.tsx
 
-import React, { useState } from 'react';
-import { MapPin, Users, Shield, X } from 'lucide-react';
+"use client";
+
+import React, { useState } from "react";
+import { MapPin, Users, Shield, X } from "lucide-react";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
 
   const ComingSoonModal = () => (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div 
+      <div
         className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
         onClick={() => setShowModal(false)}
       ></div>
@@ -25,7 +27,9 @@ export default function Home() {
           <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <span className="text-3xl">🚀</span>
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Coming Soon!</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            Coming Soon!
+          </h3>
           <p className="text-gray-600 mb-6">
             We are working hard to bring you something amazing. Stay tuned!
           </p>
@@ -51,7 +55,7 @@ export default function Home() {
           <p className="text-xl md:text-2xl mb-8">
             A platform for accessible journeys and inclusive communities
           </p>
-          <button 
+          <button
             onClick={() => setShowModal(true)}
             className="bg-white text-orange-500 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
           >
@@ -78,7 +82,9 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-4 text-gray-800 text-center">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 text-center">{feature.description}</p>
+                <p className="text-gray-600 text-center">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -88,11 +94,14 @@ export default function Home() {
       {/* Community Section */}
       <section className="bg-orange-50 py-16">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">Join Our Community</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            Join Our Community
+          </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Connect with others, share accessible routes, and make mobility easier for everyone
+            Connect with others, share accessible routes, and make mobility
+            easier for everyone
           </p>
-          <button 
+          <button
             onClick={() => setShowModal(true)}
             className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors"
           >
@@ -116,18 +125,18 @@ const features = [
     title: "Accessible Routes",
     description:
       "Find and share wheelchair-friendly paths with real-time updates and community-verified information.",
-    icon: <MapPin size={32} className="text-orange-500" />
+    icon: <MapPin size={32} className="text-orange-500" />,
   },
   {
     title: "Inclusive Community",
     description:
       "Connect with others, share experiences, and contribute to making places more accessible for everyone.",
-    icon: <Users size={32} className="text-orange-500" />
+    icon: <Users size={32} className="text-orange-500" />,
   },
   {
     title: "Safe Transportation",
     description:
       "Access reliable and affordable transportation options with our verified GOROLL Carpool service.",
-    icon: <Shield size={32} className="text-orange-500" />
+    icon: <Shield size={32} className="text-orange-500" />,
   },
 ];

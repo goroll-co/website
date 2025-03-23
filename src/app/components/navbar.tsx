@@ -1,23 +1,25 @@
-'use client';
+// src/app/components/Navbar.tsx
 
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import Link from 'next/link';
+"use client";
+
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentPath, setCurrentPath] = useState('');
+  const [currentPath, setCurrentPath] = useState("");
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
   }, []);
 
   const navigation = [
-    { name: 'About', href: '/about' },
-    { name: 'Solutions', href: '/solutions' },
-    { name: 'Achievements', href: '/achievements' },
-    { name: 'Career', href: '/career' },
-    { name: 'Contact', href: '/contact' },
+    { name: "About", href: "/about" },
+    { name: "Solutions", href: "/solutions" },
+    { name: "Achievements", href: "/achievements" },
+    { name: "Career", href: "/career" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const isActivePath = (path: string) => currentPath === path;
@@ -42,8 +44,8 @@ export default function Navbar() {
                 href={item.href}
                 className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                   isActivePath(item.href)
-                    ? 'text-orange-500 bg-orange-50'
-                    : 'text-gray-500 hover:text-orange-500 hover:bg-orange-50'
+                    ? "text-orange-500 bg-orange-50"
+                    : "text-gray-500 hover:text-orange-500 hover:bg-orange-50"
                 }`}
               >
                 {item.name}
@@ -69,16 +71,22 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      <div 
+      <div
         className={`${
-          isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         } md:hidden fixed inset-0 z-40 transform transition-all duration-300 ease-in-out`}
       >
-        <div className="fixed inset-0 bg-black bg-opacity-25" onClick={() => setIsOpen(false)} />
+        <div
+          className="fixed inset-0 bg-black bg-opacity-25"
+          onClick={() => setIsOpen(false)}
+        />
         <div className="relative float-right bg-white h-full w-64 shadow-xl">
           <div className="pt-5 pb-6 px-5">
             <div className="flex items-center justify-between mb-6">
-              <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+              <Link
+                href="/"
+                className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
+              >
                 GOROLL
               </Link>
               <button
@@ -95,8 +103,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`block px-3 py-2 rounded-lg text-base font-medium transition-colors ${
                     isActivePath(item.href)
-                      ? 'text-orange-500 bg-orange-50'
-                      : 'text-gray-500 hover:text-orange-500 hover:bg-orange-50'
+                      ? "text-orange-500 bg-orange-50"
+                      : "text-gray-500 hover:text-orange-500 hover:bg-orange-50"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >

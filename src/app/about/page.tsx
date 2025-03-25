@@ -32,23 +32,13 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 3,
-    name: "Maprang",
-    role: "Head of Marketing & Co-founder",
+    name: "CQ",
+    role: "Head of Marketing",
     bio: "Studying in Marketing",
-    image: "/about/teammember/maprang.jpg",
+    image: "/about/teammember/cq.jpg",
     social: {
       linkedin: "#",
       twitter: "#",
-    },
-  },
-  {
-    id: 4,
-    name: "Prima",
-    role: "Head of Design & Co-founder",
-    bio: "Studying in BAScii",
-    image: "/about/teammember/np.jpg",
-    social: {
-      linkedin: "#",
     },
   },
 ];

@@ -264,12 +264,14 @@ export default function SolutionPage() {
           Join us in creating an inclusive community where everyone can travel
           with confidence
         </p>
-        <button
-          onClick={() => setShowComingSoon(true)}
-          className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+        <a
+          href="https://gorollth-prototype.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
         >
           Get Started
-        </button>
+        </a>
       </section>
 
       {/* Coming Soon Modal */}

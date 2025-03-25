@@ -1,9 +1,10 @@
 // src/app/components/AchievementCard.tsx
 
-"use client";
+import { Achievement } from "../interfaces";
 
-import { useState } from "react";
-import { AchievementCardProps } from "../interfaces";
+interface AchievementCardProps extends Achievement {
+  onClick: () => void;
+}
 
 export default function AchievementCard({
   title,
@@ -11,44 +12,46 @@ export default function AchievementCard({
   date,
   icon,
   category,
+  organizer,
+  coverImage,
+  images,
+  onClick,
 }: AchievementCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
-
   return (
     <div
-      onClick={() => setIsExpanded(!isExpanded)}
-      className={`bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer 
-        ${isExpanded ? "md:col-span-2 md:row-span-2" : ""}`}
+      className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
+      onClick={onClick}
     >
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-4">
-          <div className="text-2xl">{icon}</div>
-          <span className="text-sm text-gray-500">{date}</span>
+      <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 text-white">
+        <div className="flex justify-between items-center">
+          <span className="text-3xl">{icon}</span>
+          <span className="ml-2 text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
+            {category}
+          </span>
         </div>
+      </div>
 
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-
-        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm mb-4">
-          {category}
-        </span>
-
-        <p className={`text-gray-600 ${isExpanded ? "" : "line-clamp-3"}`}>
-          {description}
-        </p>
-
-        {isExpanded && (
-          <div className="mt-4 pt-4 border-t border-gray-200">
-            <button
-              className="text-blue-600 hover:text-blue-700 font-medium"
-              onClick={(e) => {
-                e.stopPropagation();
-                // Add your detail view logic here
-              }}
-            >
-              View Details →
-            </button>
+      {/* Cover Image */}
+      <div className="relative h-48 bg-gray-100">
+        <img
+          src={coverImage}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
+        {images.length > 0 && (
+          <div className="absolute bottom-2 right-2 bg-black/50 text-white px-2 py-1 rounded-full text-sm">
+            +{images.length} photos
           </div>
         )}
+      </div>
+
+      <div className="p-6 space-y-3">
+        <div className="flex justify-between items-start">
+          <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
+          <span className="text-blue-600 text-sm font-medium">{date}</span>
+        </div>
+        <p className="text-gray-600 text-sm">By {organizer}</p>
+        <p className="text-gray-600 line-clamp-2">{description}</p>
       </div>
     </div>
   );

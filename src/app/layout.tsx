@@ -10,9 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "GOROLL",
   description: "We are on the ROLL to GO for ALL",
-  // icons: {
-  //   icon: "/icon-only.ico",
-  // },
+  icons: {
+    icon: "favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>{/* <link rel="icon" href="/icon-only.png" /> */}</head>
+      <head>
+        <link rel="icon" href="favicon.ico" />
+      </head>
       <body className={inter.className}>
         <div className="min-h-screen bg-gray-50">
           <Navbar />

@@ -55,12 +55,14 @@ export default function Home() {
           <p className="text-xl md:text-2xl mb-8">
             A platform for accessible journeys and inclusive communities
           </p>
-          <button
-            onClick={() => setShowModal(true)}
-            className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+          <a
+            href="https://gorollth-prototype.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-block"
           >
             Start Your Journey
-          </button>
+          </a>
         </div>
       </section>
 
@@ -101,12 +103,14 @@ export default function Home() {
             Connect with others, share accessible routes, and make mobility
             easier for everyone
           </p>
-          <button
-            onClick={() => setShowModal(true)}
-            className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+          <a
+            href="https://gorollth-prototype.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors inline-block"
           >
             Get Started Now
-          </button>
+          </a>
         </div>
       </section>
 
@@ -114,7 +118,7 @@ export default function Home() {
       <div className="fixed -z-10 top-0 left-0 w-64 h-64 bg-blue-500 rounded-full opacity-20 blur-3xl"></div>
       <div className="fixed -z-10 bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
 
-      {/* Modal */}
+      {/* Modal (ยังเก็บไว้เผื่อต้องการใช้ในอนาคต) */}
       {showModal && <ComingSoonModal />}
     </div>
   );

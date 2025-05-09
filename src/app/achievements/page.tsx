@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { Achievement } from "../interfaces";
 import AchievementCard from "../../components/AchievementCard";
 import AchievementModal from "../../components/AchievementModal";
-import { achievements } from "../data/achievements";
+import { achievements } from "../../data/achievements";
 
 export default function AchievementPage() {
   const [selectedAchievement, setSelectedAchievement] =

@@ -5,7 +5,7 @@
 import { useState } from "react";
 import { Briefcase, MapPin, Clock, DollarSign, Search } from "lucide-react";
 import { Career } from "../interfaces";
-import { careers } from "../data/career";
+import { careers } from "../../data/career";
 
 export default function CareerPage() {
   const [selectedJob, setSelectedJob] = useState<Career | null>(null);

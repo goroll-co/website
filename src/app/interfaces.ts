@@ -38,7 +38,7 @@ export interface AchievementCardProps {
 }
 
 // จาก src/app/career/page.tsx
-export interface JobPosting {
+export interface Career {
   id: number;
   title: string;
   department: string;

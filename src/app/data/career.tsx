@@ -1,8 +1,8 @@
 // src/app/data/career.ts
 
-import { JobPosting } from "../interfaces";
+import { Career } from "../interfaces";
 
-export const jobPostings: JobPosting[] = [
+export const careers: Career[] = [
   {
     id: 3,
     title: "UX/UI Designer (This work can help boost your portfolio.)",

@@ -1,7 +1,7 @@
 // src/app/components/about/TeamSection.tsx
 import { useState } from "react";
 import Image from "next/image";
-import { TeamMember } from "../../interfaces";
+import { TeamMember } from "../app/interfaces";
 
 export default function TeamSection() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import { Achievement } from "../interfaces";
+import { Achievement } from "../app/interfaces";
 
 interface AchievementModalProps {
   achievement: Achievement;

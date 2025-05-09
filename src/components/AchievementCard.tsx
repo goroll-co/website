@@ -1,6 +1,6 @@
 // src/app/components/AchievementCard.tsx
 
-import { Achievement } from "../interfaces";
+import { Achievement } from "../app/interfaces";
 
 interface AchievementCardProps extends Achievement {
   onClick: () => void;

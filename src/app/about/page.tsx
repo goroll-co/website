@@ -2,12 +2,12 @@
 
 "use client";
 
-import HeroSection from "../../components/about/HeroSection";
-import StorySection from "../../components/about/StorySection";
-import ValuesSection from "../../components/about/ValuesSection";
-import TimelineSection from "../../components/about/TimelineSection";
-import TeamSection from "../../components/about/TeamSection";
-import StatsSection from "../../components/about/StatsSection";
+import HeroSection from "../../components/HeroSection";
+import StorySection from "../../components/StorySection";
+import ValuesSection from "../../components/ValuesSection";
+import TimelineSection from "../../components/TimelineSection";
+import TeamSection from "../../components/TeamSection";
+import StatsSection from "../../components/StatsSection";
 
 export default function AboutPage() {
   return (

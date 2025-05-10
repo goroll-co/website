@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import { Solution } from "../interfaces";
+import AppShowcase from "@/components/solutions/AppShowcase";
 
 const solutions: Solution[] = [
   {
@@ -125,6 +126,9 @@ export default function SolutionPage() {
         </p>
       </section>
 
+      {/* App Showcase Section */}
+      <AppShowcase />
+
       {/* Solutions Grid */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {solutions.map((solution) => (
@@ -223,23 +227,17 @@ export default function SolutionPage() {
               </div>
 
               <div className="space-y-4">
-                {activeTab === "features" ? (
-                  <ul className="list-disc list-inside space-y-2">
-                    {selectedSolution.features.map((feature, index) => (
-                      <li key={index} className="text-gray-600">
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <ul className="list-disc list-inside space-y-2">
-                    {selectedSolution.benefits.map((benefit, index) => (
-                      <li key={index} className="text-gray-600">
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                {(activeTab === "features"
+                  ? selectedSolution.features
+                  : selectedSolution.benefits
+                ).map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-gray-600 list-disc list-inside"
+                  >
+                    {item}
+                  </li>
+                ))}
               </div>
 
               <div className="mt-8 flex justify-end">

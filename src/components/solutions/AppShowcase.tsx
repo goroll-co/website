@@ -1,72 +1,68 @@
 // src/components/solutions/AppShowcase.tsx
 import React, { useState } from "react";
-import {
-  MapPin,
-  Navigation,
-  Star,
-  Heart,
-  Settings,
-  Smartphone,
-} from "lucide-react";
+import { MapPin, Users, Car, Smartphone } from "lucide-react";
+import { Solution } from "@/app/interfaces";
 
-const features = [
-  {
-    id: "map",
-    title: "แผนที่เส้นทางที่เข้าถึงได้",
-    description:
-      "ค้นหาและนำทางไปยังสถานที่ที่เข้าถึงได้ด้วยเส้นทางที่รองรับวีลแชร์",
-    icon: <MapPin className="w-6 h-6" />,
-    color: "text-blue-500",
-    bgColor: "bg-blue-100",
-    mockup: "/solutions/mockup-map.png",
-  },
-  {
-    id: "navigation",
-    title: "นำทางแบบเรียลไทม์",
-    description:
-      "ติดตามเส้นทางแบบเรียลไทม์พร้อมการแจ้งเตือนเกี่ยวกับอุปสรรคบนเส้นทาง",
-    icon: <Navigation className="w-6 h-6" />,
-    color: "text-purple-500",
-    bgColor: "bg-purple-100",
-    mockup: "/solutions/mockup-navigation.png",
-  },
-  {
-    id: "reviews",
-    title: "รีวิวและคะแนน",
-    description:
-      "อ่านและเขียนรีวิวเกี่ยวกับความสามารถในการเข้าถึงของสถานที่ต่างๆ",
-    icon: <Star className="w-6 h-6" />,
-    color: "text-yellow-500",
-    bgColor: "bg-yellow-100",
-    mockup: "/solutions/mockup-reviews.png",
-  },
-  {
-    id: "community",
-    title: "ชุมชนและกิจกรรม",
-    description: "เชื่อมต่อกับชุมชนผู้ใช้วีลแชร์และค้นหากิจกรรมที่เข้าถึงได้",
-    icon: <Heart className="w-6 h-6" />,
-    color: "text-red-500",
-    bgColor: "bg-red-100",
-    mockup: "/solutions/mockup-community.png",
-  },
-  {
-    id: "preferences",
-    title: "การตั้งค่าส่วนบุคคล",
-    description: "ปรับแต่งการตั้งค่าตามความต้องการเฉพาะของคุณ",
-    icon: <Settings className="w-6 h-6" />,
-    color: "text-green-500",
-    bgColor: "bg-green-100",
-    mockup: "/solutions/mockup-preferences.png",
-  },
-];
+interface AppShowcaseProps {
+  solutions: Solution[];
+}
 
-export default function AppShowcase() {
-  const [activeFeature, setActiveFeature] = useState(features[0].id);
+export default function AppShowcase({ solutions }: AppShowcaseProps) {
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const [activeDetailTab, setActiveDetailTab] = useState<
+    "features" | "benefits"
+  >("features");
 
-  const getActiveFeature = () => {
-    return (
-      features.find((feature) => feature.id === activeFeature) || features[0]
-    );
+  const getActiveSolution = () => solutions[activeTabIndex];
+
+  const getCategoryColors = (category: string) => {
+    switch (category) {
+      case "Navigation":
+        return {
+          textColor: "text-blue-600",
+          bgColor: "bg-blue-100",
+          borderColor: "border-blue-600",
+          glowColor: "bg-blue-500",
+          buttonColor: "bg-blue-600 hover:bg-blue-700",
+        };
+      case "Social":
+        return {
+          textColor: "text-purple-600",
+          bgColor: "bg-purple-100",
+          borderColor: "border-purple-600",
+          glowColor: "bg-purple-500",
+          buttonColor: "bg-purple-600 hover:bg-purple-700",
+        };
+      case "Transport":
+        return {
+          textColor: "text-green-600",
+          bgColor: "bg-green-100",
+          borderColor: "border-green-600",
+          glowColor: "bg-green-500",
+          buttonColor: "bg-green-600 hover:bg-green-700",
+        };
+      default:
+        return {
+          textColor: "text-blue-600",
+          bgColor: "bg-blue-100",
+          borderColor: "border-blue-600",
+          glowColor: "bg-blue-500",
+          buttonColor: "bg-blue-600 hover:bg-blue-700",
+        };
+    }
+  };
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case "Navigation":
+        return <MapPin className="w-6 h-6" />;
+      case "Social":
+        return <Users className="w-6 h-6" />;
+      case "Transport":
+        return <Car className="w-6 h-6" />;
+      default:
+        return null;
+    }
   };
 
   return (
@@ -78,88 +74,150 @@ export default function AppShowcase() {
             <span className="ml-2 text-sm font-medium">แอพพลิเคชั่นมือถือ</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-            ฟีเจอร์ที่ช่วยให้การเดินทางง่ายขึ้น
+            โซลูชันที่ช่วยให้การเดินทางง่ายขึ้น
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            ค้นพบฟีเจอร์ที่ออกแบบมาเพื่อช่วยให้การเดินทางของคุณสะดวกและเข้าถึงได้มากขึ้น
+            ค้นพบโซลูชันที่ออกแบบมาเพื่อช่วยให้การเดินทางของคุณสะดวกและเข้าถึงได้มากขึ้น
           </p>
         </div>
 
+        <div className="flex justify-center mb-10">
+          <div className="inline-flex bg-gray-100 rounded-full p-1">
+            {solutions.map((solution, index) => {
+              const colors = getCategoryColors(solution.category);
+              return (
+                <button
+                  key={solution.id}
+                  className={`px-6 py-2 rounded-full transition-all ${
+                    activeTabIndex === index
+                      ? `${colors.textColor} ${colors.bgColor}`
+                      : "text-gray-600 hover:text-gray-800"
+                  }`}
+                  onClick={() => setActiveTabIndex(index)}
+                >
+                  <div className="flex items-center space-x-2">
+                    {getCategoryIcon(solution.category)}
+                    <span>{solution.title}</span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Device Mockup */}
           <div className="relative mx-auto max-w-xs fade-in-section">
             <div className="relative mx-auto w-[270px] h-[540px] bg-gray-900 rounded-[36px] shadow-xl overflow-hidden border-[8px] border-gray-900">
-              {/* Phone Notch */}
               <div className="absolute top-0 inset-x-0 h-6 bg-gray-900 rounded-b-lg z-10"></div>
-
-              {/* Screen Content */}
               <div className="w-full h-full rounded-[24px] overflow-hidden">
                 <img
-                  src={
-                    getActiveFeature().mockup ||
-                    "/solutions/mockup-placeholder.png"
-                  }
-                  alt={getActiveFeature().title}
+                  src={getActiveSolution().image}
+                  alt={getActiveSolution().title}
                   className="w-full h-full object-cover"
                 />
               </div>
-
-              {/* Phone Button */}
               <div className="absolute -right-1 top-24 w-1 h-10 bg-gray-800 rounded-l-lg"></div>
               <div className="absolute -left-1 top-20 w-1 h-8 bg-gray-800 rounded-r-lg"></div>
               <div className="absolute -left-1 top-32 w-1 h-8 bg-gray-800 rounded-r-lg"></div>
             </div>
-
-            {/* Glow Effect */}
             <div
               className={`absolute -inset-4 rounded-full blur-3xl opacity-30 transition-colors duration-500 ${
-                activeFeature === "map"
-                  ? "bg-blue-500"
-                  : activeFeature === "navigation"
-                  ? "bg-purple-500"
-                  : activeFeature === "reviews"
-                  ? "bg-yellow-500"
-                  : activeFeature === "community"
-                  ? "bg-red-500"
-                  : "bg-green-500"
+                getCategoryColors(getActiveSolution().category).glowColor
               }`}
             ></div>
           </div>
 
-          {/* Features List */}
           <div className="space-y-6">
-            {features.map((feature, index) => (
+            <div className="flex items-center space-x-3 mb-2">
               <div
-                key={feature.id}
-                className={`p-6 rounded-xl cursor-pointer transition-all duration-300 fade-in-section ${
-                  activeFeature === feature.id
-                    ? `${feature.bgColor} shadow-md`
-                    : "hover:bg-gray-50"
+                className={`p-2 rounded-full ${
+                  getCategoryColors(getActiveSolution().category).bgColor
                 }`}
-                onClick={() => setActiveFeature(feature.id)}
-                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-start gap-4">
-                  <div
-                    className={`w-12 h-12 rounded-full ${feature.bgColor} flex items-center justify-center flex-shrink-0 ${feature.color}`}
-                  >
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h3
-                      className={`text-lg font-bold mb-2 ${
-                        activeFeature === feature.id
-                          ? feature.color
-                          : "text-gray-800"
-                      }`}
-                    >
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </div>
-                </div>
+                {getCategoryIcon(getActiveSolution().category)}
               </div>
-            ))}
+              <h3 className="text-2xl font-bold">
+                {getActiveSolution().title}
+              </h3>
+            </div>
+
+            <p className="text-gray-600">{getActiveSolution().description}</p>
+
+            <div className="border-b border-gray-200 mb-6">
+              <div className="flex space-x-4">
+                <button
+                  className={`pb-2 px-4 ${
+                    activeDetailTab === "features"
+                      ? `border-b-2 ${
+                          getCategoryColors(getActiveSolution().category)
+                            .textColor
+                        }`
+                      : "text-gray-500"
+                  }`}
+                  onClick={() => setActiveDetailTab("features")}
+                >
+                  คุณสมบัติ
+                </button>
+                <button
+                  className={`pb-2 px-4 ${
+                    activeDetailTab === "benefits"
+                      ? `border-b-2 ${
+                          getCategoryColors(getActiveSolution().category)
+                            .textColor
+                        }`
+                      : "text-gray-500"
+                  }`}
+                  onClick={() => setActiveDetailTab("benefits")}
+                >
+                  ประโยชน์
+                </button>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {(activeDetailTab === "features"
+                ? getActiveSolution().features
+                : getActiveSolution().benefits
+              ).map((item, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div
+                    className={`flex-shrink-0 w-6 h-6 ${
+                      getCategoryColors(getActiveSolution().category).bgColor
+                    } ${
+                      getCategoryColors(getActiveSolution().category).textColor
+                    } rounded-full flex items-center justify-center`}
+                  >
+                    <span className="text-sm">✓</span>
+                  </div>
+                  <span className="text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8">
+              <a
+                href="#"
+                className={`text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center ${
+                  getCategoryColors(getActiveSolution().category).buttonColor
+                }`}
+              >
+                เรียนรู้เพิ่มเติม
+                <svg
+                  className="ml-2 w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>

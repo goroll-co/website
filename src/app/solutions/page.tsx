@@ -71,12 +71,6 @@ const solutions: Solution[] = [
 ];
 
 export default function SolutionPage() {
-  const [selectedSolution, setSelectedSolution] = useState<Solution | null>(
-    null
-  );
-  const [activeTab, setActiveTab] = useState<"features" | "benefits">(
-    "features"
-  );
   const [showComingSoon, setShowComingSoon] = useState(false);
 
   const ComingSoonModal = () => (
@@ -126,132 +120,8 @@ export default function SolutionPage() {
         </p>
       </section>
 
-      {/* App Showcase Section */}
-      <AppShowcase />
-
-      {/* Solutions Grid */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {solutions.map((solution) => (
-          <div
-            key={solution.id}
-            className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
-            onClick={() => setSelectedSolution(solution)}
-          >
-            <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-              <img
-                src={solution.image}
-                alt={solution.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="p-6">
-              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm mb-4">
-                {solution.category}
-              </span>
-              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
-              <p className="text-gray-600 mb-4">{solution.description}</p>
-              <button
-                className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedSolution(solution);
-                }}
-              >
-                Learn More
-                <span className="transform group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </button>
-            </div>
-          </div>
-        ))}
-      </section>
-
-      {/* Solution Details Modal */}
-      {selectedSolution && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h2 className="text-2xl font-bold">
-                    {selectedSolution.title}
-                  </h2>
-                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm mt-2">
-                    {selectedSolution.category}
-                  </span>
-                </div>
-                <button
-                  onClick={() => setSelectedSolution(null)}
-                  className="text-gray-500 hover:text-gray-700"
-                >
-                  ✕
-                </button>
-              </div>
-
-              <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden">
-                <img
-                  src={selectedSolution.image}
-                  alt={selectedSolution.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <div className="mb-6">
-                <p className="text-gray-600">{selectedSolution.description}</p>
-              </div>
-
-              <div className="border-b border-gray-200 mb-6">
-                <div className="flex space-x-4">
-                  <button
-                    className={`pb-2 px-4 ${
-                      activeTab === "features"
-                        ? "border-b-2 border-blue-600 text-blue-600"
-                        : "text-gray-500"
-                    }`}
-                    onClick={() => setActiveTab("features")}
-                  >
-                    Features
-                  </button>
-                  <button
-                    className={`pb-2 px-4 ${
-                      activeTab === "benefits"
-                        ? "border-b-2 border-blue-600 text-blue-600"
-                        : "text-gray-500"
-                    }`}
-                    onClick={() => setActiveTab("benefits")}
-                  >
-                    Benefits
-                  </button>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                {(activeTab === "features"
-                  ? selectedSolution.features
-                  : selectedSolution.benefits
-                ).map((item, index) => (
-                  <li
-                    key={index}
-                    className="text-gray-600 list-disc list-inside"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </div>
-
-              <div className="mt-8 flex justify-end">
-                <button
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                  onClick={() => setSelectedSolution(null)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* App Showcase */}
+      <AppShowcase solutions={solutions} />
 
       {/* Call to Action */}
       <section className="text-center bg-blue-50 py-12 rounded-xl">

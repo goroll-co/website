@@ -3,17 +3,19 @@
 "use client";
 
 import { useEffect } from "react";
-import HeroSection from "../../components/home/HeroSection";
 import StorySection from "../../components/about/StorySection";
 import ValuesSection from "../../components/about/ValuesSection";
 import TimelineSection from "../../components/TimelineSection";
 import TeamSection from "../../components/about/TeamSection";
 import StatsSection from "../../components/home/StatsSection";
 import FadeInSection from "../../components/about/FadeInSection";
+import { useLanguage } from "@/context/LanguageContext";
 import "../../components/home/animations.css";
 import "../../components/about/animations.css";
 
 export default function AboutPage() {
+  const { language } = useLanguage();
+
   // เพิ่ม classes สำหรับ animation ใน team cards
   useEffect(() => {
     const teamCards = document.querySelectorAll(".team-card");
@@ -24,8 +26,6 @@ export default function AboutPage() {
 
   return (
     <div className="max-w-7xl mx-auto space-y-16 px-4 py-8">
-      {/* Hero Section ด้วย animation fade-in */}
-
       {/* Story Section ด้วย FadeInSection */}
       <FadeInSection>
         <div className="relative overflow-hidden rounded-xl">
@@ -47,10 +47,6 @@ export default function AboutPage() {
 
       {/* Team Section ด้วย hover effects */}
       <FadeInSection>
-        <h2 className="text-3xl font-bold text-center mb-12 relative">
-          Our Team
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
-        </h2>
         <TeamSection />
       </FadeInSection>
 

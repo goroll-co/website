@@ -49,6 +49,33 @@
     }
 }
 
+/* เพิ่ม animation สำหรับการ์ดทีม */
+@keyframes card-appear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 .animate-float {
     animation: float 4s ease-in-out infinite;
 }
@@ -65,6 +92,10 @@
     animation: pop-up 0.5s ease-out forwards;
 }
 
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
 .animation-delay-100 {
     animation-delay: 0.1s;
 }
@@ -75,6 +106,14 @@
 
 .animation-delay-300 {
     animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+    animation-delay: 0.4s;
+}
+
+.animation-delay-500 {
+    animation-delay: 0.5s;
 }
 
 /* เอฟเฟกต์เมื่อเลื่อนเข้าสู่ viewport */
@@ -95,8 +134,12 @@
 }
 
 .team-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) !important;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.team-card.animate-fade-in {
+    animation: card-appear 0.8s ease-out forwards;
 }
 
 /* เอฟเฟกต์ parallax */
@@ -105,4 +148,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* ปรับแต่งการแสดงผลบนอุปกรณ์พกพา */
+@media (max-width: 768px) {
+    .team-card {
+        max-width: 320px;
+        margin: 0 auto;
+    }
 }

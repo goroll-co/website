@@ -1,0 +1,77 @@
+{
+  "home": {
+    "hero": {
+      "title": "Welcome to GOROLL",
+      "subtitle": "A platform for accessible journeys and inclusive communities",
+      "button": "Start Your Journey"
+    },
+    "features": {
+      "title": "Making Mobility Accessible",
+      "accessibleRoutes": {
+        "title": "Accessible Routes",
+        "description": "Find and share wheelchair-friendly paths with real-time updates and community-verified information."
+      },
+      "inclusiveCommunity": {
+        "title": "Inclusive Community",
+        "description": "Connect with others, share experiences, and contribute to making places more accessible for everyone."
+      },
+      "safeTransportation": {
+        "title": "Safe Transportation",
+        "description": "Access reliable and affordable transportation options with our verified GOROLL Carpool service."
+      }
+    },
+    "community": {
+      "title": "Join Our Community",
+      "description": "Connect with others, share accessible routes, and make mobility easier for everyone",
+      "button": "Get Started Now"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "We are on a mission to transform accessibility through innovation and dedication to inclusive mobility."
+    },
+    "story": {
+      "title": "Our Story",
+      "p1": "The GOROLL project is an application developed based on the experience of working with individuals with mobility impairments. This experience has led to a deeper awareness of the challenges faced by wheelchair users when traveling in Thailand.",
+      "p2": "The primary goal of this project is to create an equitable society by improving the travel experience for wheelchair users. It focuses on reducing travel expenses and raising social awareness about the travel challenges faced by wheelchair users."
+    },
+    "values": {
+      "title": "Our Values",
+      "inclusivity": {
+        "title": "Inclusivity",
+        "description": "We believe in creating a world where every space is accessible and welcoming for wheelchair users and people of all abilities."
+      },
+      "communityDriven": {
+        "title": "Community-Driven",
+        "description": "Our strength comes from our community. We empower users to share experiences and support each other in making mobility more accessible."
+      },
+      "accessibilityFirst": {
+        "title": "Accessibility First",
+        "description": "Every feature we build starts with accessibility in mind, ensuring our solutions truly serve the needs of wheelchair users."
+      },
+      "empowerment": {
+        "title": "Empowerment",
+        "description": "We are dedicated to helping wheelchair users travel independently and confidently, transforming challenges into opportunities."
+      }
+    }
+  },
+  "common": {
+    "menu": {
+      "about": "About",
+      "solutions": "Solutions",
+      "achievements": "Achievements",
+      "career": "Career",
+      "contact": "Contact"
+    },
+    "footer": {
+      "aboutUs": "About Us",
+      "aboutDescription": "We are on the ROLL to GO for ALL",
+      "contact": "Contact",
+      "email": "Email",
+      "phone": "Phone",
+      "followUs": "Follow Us",
+      "copyright": "© 2024 GOROLL. All rights reserved."
+    }
+  }
+}

@@ -1,22 +1,24 @@
-// src/app/components/Navbar.tsx
-
+// src/components/Navbar.tsx
 "use client";
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link } from "next-intl/navigation";
+import { usePathname } from "next-intl/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("common.menu");
 
   const navigation = [
-    { name: "About", href: "/about" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Achievements", href: "/achievements" },
-    { name: "Career", href: "/career" },
-    { name: "Contact", href: "/contact" },
+    { name: t("about"), href: "/about" },
+    { name: t("solutions"), href: "/solutions" },
+    { name: t("achievements"), href: "/achievements" },
+    { name: t("career"), href: "/career" },
+    { name: t("contact"), href: "/contact" },
   ];
 
   const isActivePath = (path: string) => pathname === path;
@@ -48,6 +50,7 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}
@@ -108,6 +111,9 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
+              <div className="mt-4">
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
         </div>

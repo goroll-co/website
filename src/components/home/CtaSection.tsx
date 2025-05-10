@@ -28,11 +28,12 @@ export default function CtaSection({ onVideoClick }: CtaSectionProps) {
           >
             {t("get_started")}
           </a>
+
           <button
             onClick={onVideoClick}
             className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors inline-block"
           >
-            ดูวิดีโอแนะนำ
+            {t("watch_video")}
           </button>
         </div>
 

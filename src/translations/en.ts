@@ -28,4 +28,52 @@ export const enTranslations = {
   working_hard:
     "We are working hard to bring you something amazing. Stay tuned!",
   got_it: "Got it!",
+
+  // เพิ่มส่วนใหม่ตรงนี้
+  // Testimonials Section
+  testimonials_title: "What Our Users Say",
+  testimonial1_name: "Somchai Jaidee",
+  testimonial1_role: "Wheelchair User",
+  testimonial1_content:
+    "GOROLL has made my travel much easier. I can plan accessible routes and share experiences with others.",
+  testimonial2_name: "Napa Wongsomboon",
+  testimonial2_role: "Tourist",
+  testimonial2_content:
+    "This app helped me plan trips for my mother who uses a wheelchair. Thank you GOROLL for making tourism accessible for everyone.",
+  testimonial3_name: "Wichai Sooksant",
+  testimonial3_role: "GOROLL Driver",
+  testimonial3_content:
+    "I'm glad to be part of the GOROLL community. Helping wheelchair users travel conveniently makes me proud.",
+
+  // FAQ Section
+  faq_title: "Frequently Asked Questions",
+  faq1_question: "What is GOROLL?",
+  faq1_answer:
+    "GOROLL is a platform that helps wheelchair users plan their trips, find accessible routes, and connect with like-minded communities. We are committed to making travel accessible for everyone.",
+  faq2_question: "How do I use GOROLL?",
+  faq2_answer:
+    "You can access GOROLL through our website or mobile app. Register a user account and start exploring accessible routes, sharing experiences, and connecting with the community.",
+  faq3_question: "How does GOROLL Carpool work?",
+  faq3_answer:
+    "GOROLL Carpool connects wheelchair users with verified drivers who have accessible vehicles. You can book a ride through the app, track your journey in real-time, and pay securely on our platform.",
+  faq4_question: "Where is GOROLL available?",
+  faq4_answer:
+    "Currently, GOROLL operates in Bangkok and surrounding areas. We plan to expand to other major cities in Thailand soon.",
+
+  // Stats Section
+  stats_satisfaction: "Satisfaction",
+  stats_accessible_places: "Accessible Places",
+  stats_verified_drivers: "Verified Drivers",
+  stats_support: "Support",
+
+  // Watch Video Button
+  watch_video: "Watch Demo Video",
+
+  // Navbar
+  about: "About",
+  solutions: "Solutions",
+  achievements: "Achievements",
+  career: "Career",
+  contact: "Contact",
+  learn_more: "Learn More",
 };

@@ -67,7 +67,7 @@ export default function FeaturesSection({
                     onClick={onLearnMoreClick}
                     className="text-blue-600 font-medium flex items-center hover:text-blue-700 transition-colors"
                   >
-                    เรียนรู้เพิ่มเติม
+                    {t("learn_more")}
                     <svg
                       className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"
                       fill="none"

@@ -1,30 +1,30 @@
 // src/components/home/TestimonialsSection.tsx
 import React from "react";
 import { Star } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function TestimonialsSection() {
+  const { t } = useLanguage();
+
   const testimonials = [
     {
-      name: "สมชาย ใจดี",
-      role: "ผู้ใช้วีลแชร์",
-      content:
-        "GOROLL ทำให้การเดินทางของผมง่ายขึ้นมาก ผมสามารถวางแผนเส้นทางที่เข้าถึงได้และแบ่งปันประสบการณ์กับคนอื่นๆ ได้",
+      name: t("testimonial1_name"),
+      role: t("testimonial1_role"),
+      content: t("testimonial1_content"),
       avatar: "/testimonials/user1.jpg",
       rating: 5,
     },
     {
-      name: "นภา วงศ์สมบูรณ์",
-      role: "นักท่องเที่ยว",
-      content:
-        "แอพนี้ช่วยให้ดิฉันวางแผนการเดินทางสำหรับคุณแม่ที่ใช้วีลแชร์ได้ดีมาก ขอบคุณ GOROLL ที่ทำให้การท่องเที่ยวเข้าถึงได้สำหรับทุกคน",
+      name: t("testimonial2_name"),
+      role: t("testimonial2_role"),
+      content: t("testimonial2_content"),
       avatar: "/testimonials/user2.jpg",
       rating: 5,
     },
     {
-      name: "วิชัย สุขสันต์",
-      role: "คนขับรถ GOROLL",
-      content:
-        "ผมดีใจที่ได้เป็นส่วนหนึ่งของชุมชน GOROLL การช่วยให้ผู้ใช้วีลแชร์เดินทางได้สะดวกทำให้ผมรู้สึกภูมิใจมาก",
+      name: t("testimonial3_name"),
+      role: t("testimonial3_role"),
+      content: t("testimonial3_content"),
       avatar: "/testimonials/user3.jpg",
       rating: 4,
     },
@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
     <section className="py-16 bg-blue-50">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-          เสียงจากผู้ใช้งานของเรา
+          {t("testimonials_title")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
@@ -45,7 +45,6 @@ export default function TestimonialsSection() {
               <div className="flex items-center mb-4">
                 <div className="flex-shrink-0">
                   <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                    {/* ใส่รูปจริงตรงนี้ถ้ามี */}
                     <span className="text-blue-600 font-bold">
                       {testimonial.name.charAt(0)}
                     </span>

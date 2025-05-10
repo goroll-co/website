@@ -1,12 +1,15 @@
 // src/components/home/StatsSection.tsx
 import React from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function StatsSection() {
+  const { t } = useLanguage();
+
   const stats = [
-    { value: "98%", label: "ความพึงพอใจ" },
-    { value: "200+", label: "สถานที่ที่เข้าถึงได้" },
-    { value: "50+", label: "คนขับที่ผ่านการตรวจสอบ" },
-    { value: "24/7", label: "การสนับสนุน" },
+    { value: "98%", label: t("stats_satisfaction") },
+    { value: "200+", label: t("stats_accessible_places") },
+    { value: "50+", label: t("stats_verified_drivers") },
+    { value: "24/7", label: t("stats_support") },
   ];
 
   return (

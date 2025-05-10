@@ -1,30 +1,28 @@
 // src/components/home/FaqSection.tsx
 import React, { useState } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function FaqSection() {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   const faqs = [
     {
-      question: "GOROLL คืออะไร?",
-      answer:
-        "GOROLL เป็นแพลตฟอร์มที่ช่วยให้ผู้ใช้วีลแชร์สามารถวางแผนการเดินทาง ค้นหาเส้นทางที่เข้าถึงได้ และเชื่อมต่อกับชุมชนที่มีความคิดเหมือนกัน เรามุ่งมั่นที่จะทำให้การเดินทางเข้าถึงได้สำหรับทุกคน",
+      question: t("faq1_question"),
+      answer: t("faq1_answer"),
     },
     {
-      question: "ฉันจะใช้ GOROLL ได้อย่างไร?",
-      answer:
-        "คุณสามารถเข้าถึง GOROLL ผ่านเว็บไซต์หรือแอพมือถือของเรา ลงทะเบียนบัญชีผู้ใช้ และเริ่มสำรวจเส้นทางที่เข้าถึงได้ แบ่งปันประสบการณ์ และเชื่อมต่อกับชุมชน",
+      question: t("faq2_question"),
+      answer: t("faq2_answer"),
     },
     {
-      question: "บริการ GOROLL Carpool ทำงานอย่างไร?",
-      answer:
-        "GOROLL Carpool เชื่อมโยงผู้ใช้วีลแชร์กับคนขับที่ผ่านการตรวจสอบซึ่งมียานพาหนะที่เข้าถึงได้ คุณสามารถจองการเดินทางผ่านแอพ ติดตามการเดินทางแบบเรียลไทม์ และชำระเงินอย่างปลอดภัยบนแพลตฟอร์มของเรา",
+      question: t("faq3_question"),
+      answer: t("faq3_answer"),
     },
     {
-      question: "GOROLL มีให้บริการที่ไหนบ้าง?",
-      answer:
-        "ปัจจุบัน GOROLL ให้บริการในพื้นที่กรุงเทพมหานครและปริมณฑล เรามีแผนที่จะขยายไปยังเมืองหลักอื่นๆ ในประเทศไทยในเร็วๆ นี้",
+      question: t("faq4_question"),
+      answer: t("faq4_answer"),
     },
   ];
 
@@ -37,7 +35,7 @@ export default function FaqSection() {
     <section className="py-16">
       <div className="max-w-3xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-          คำถามที่พบบ่อย
+          {t("faq_title")}
         </h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (

@@ -1,6 +1,6 @@
 // src/app/data/achievements.ts
 
-import { Achievement } from "../interfaces";
+import { Achievement } from "../app/interfaces";
 
 export const achievements: Achievement[] = [
   {

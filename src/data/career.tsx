@@ -1,6 +1,6 @@
 // src/app/data/career.ts
 
-import { Career } from "../interfaces";
+import { Career } from "../app/interfaces";
 
 export const careers: Career[] = [
   {

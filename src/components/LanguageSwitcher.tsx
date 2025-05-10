@@ -2,17 +2,29 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "next-intl/navigation";
+import { useRouter as useNextRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
+  const router = useNextRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const switchLocale = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
+    // สร้าง URL ใหม่โดยเปลี่ยนเฉพาะส่วนของภาษา
+    const currentPath = window.location.pathname;
+    const segments = currentPath.split("/");
+
+    // ถ้ามี locale อยู่แล้ว (segments[1] เป็น 'en' หรือ 'th')
+    if (segments.length > 1 && (segments[1] === "en" || segments[1] === "th")) {
+      segments[1] = newLocale;
+    } else {
+      // ถ้าไม่มี locale ใน path
+      segments.splice(1, 0, newLocale);
+    }
+
+    const newPath = segments.join("/");
+    router.push(newPath);
     setIsOpen(false);
   };
 

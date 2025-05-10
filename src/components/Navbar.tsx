@@ -4,8 +4,8 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Link } from "next-intl/navigation";
-import { usePathname } from "next-intl/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {

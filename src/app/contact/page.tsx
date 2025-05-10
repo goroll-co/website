@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactInfo from "@/components/contact/ContactInfo";
-import ContactForm from "@/components/contact/ContactForm";
 import ContactFAQ from "@/components/contact/ContactFAQ";
 
 export default function ContactPage() {
@@ -25,15 +24,10 @@ export default function ContactPage() {
       {/* Hero Section with Parallax Effect */}
       <ContactHero scrollY={scrollY} />
 
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Contact Information Side */}
-        <div className="order-2 lg:order-1">
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Contact Information Side - ปรับให้แสดงเต็มหน้าจอแทนที่จะเป็นครึ่งซ้าย */}
+        <div>
           <ContactInfo />
-        </div>
-
-        {/* Contact Form Side */}
-        <div className="order-1 lg:order-2">
-          <ContactForm />
         </div>
       </div>
 

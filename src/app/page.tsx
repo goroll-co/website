@@ -4,9 +4,11 @@
 
 import React, { useState } from "react";
 import { MapPin, Users, Shield, X } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
+  const { t } = useLanguage();
 
   const ComingSoonModal = () => (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -28,21 +30,37 @@ export default function Home() {
             <span className="text-3xl">🚀</span>
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            Coming Soon!
+            {t("coming_soon")}
           </h3>
-          <p className="text-gray-600 mb-6">
-            We are working hard to bring you something amazing. Stay tuned!
-          </p>
+          <p className="text-gray-600 mb-6">{t("working_hard")}</p>
           <button
             onClick={() => setShowModal(false)}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
           >
-            Got it!
+            {t("got_it")}
           </button>
         </div>
       </div>
     </div>
   );
+
+  const features = [
+    {
+      title: t("feature_accessible_routes_title"),
+      description: t("feature_accessible_routes_desc"),
+      icon: <MapPin size={32} className="text-blue-600" />,
+    },
+    {
+      title: t("feature_inclusive_community_title"),
+      description: t("feature_inclusive_community_desc"),
+      icon: <Users size={32} className="text-blue-600" />,
+    },
+    {
+      title: t("feature_safe_transportation_title"),
+      description: t("feature_safe_transportation_desc"),
+      icon: <Shield size={32} className="text-blue-600" />,
+    },
+  ];
 
   return (
     <div className="space-y-16">
@@ -50,18 +68,16 @@ export default function Home() {
       <section className="text-center py-20 bg-gradient-to-r from-blue-500 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Welcome to GOROLL
+            {t("welcome")}
           </h1>
-          <p className="text-xl md:text-2xl mb-8">
-            A platform for accessible journeys and inclusive communities
-          </p>
+          <p className="text-xl md:text-2xl mb-8">{t("tagline")}</p>
           <a
             href="https://gorollth-prototype.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-block"
           >
-            Start Your Journey
+            {t("start_journey")}
           </a>
         </div>
       </section>
@@ -70,7 +86,7 @@ export default function Home() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-            Making Mobility Accessible
+            {t("making_mobility_accessible")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -97,19 +113,16 @@ export default function Home() {
       <section className="bg-blue-50 py-16">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">
-            Join Our Community
+            {t("join_community")}
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Connect with others, share accessible routes, and make mobility
-            easier for everyone
-          </p>
+          <p className="text-xl text-gray-600 mb-8">{t("community_desc")}</p>
           <a
             href="https://gorollth-prototype.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors inline-block"
           >
-            Get Started Now
+            {t("get_started")}
           </a>
         </div>
       </section>
@@ -118,29 +131,8 @@ export default function Home() {
       <div className="fixed -z-10 top-0 left-0 w-64 h-64 bg-blue-500 rounded-full opacity-20 blur-3xl"></div>
       <div className="fixed -z-10 bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
 
-      {/* Modal (ยังเก็บไว้เผื่อต้องการใช้ในอนาคต) */}
+      {/* Modal */}
       {showModal && <ComingSoonModal />}
     </div>
   );
 }
-
-const features = [
-  {
-    title: "Accessible Routes",
-    description:
-      "Find and share wheelchair-friendly paths with real-time updates and community-verified information.",
-    icon: <MapPin size={32} className="text-blue-600" />,
-  },
-  {
-    title: "Inclusive Community",
-    description:
-      "Connect with others, share experiences, and contribute to making places more accessible for everyone.",
-    icon: <Users size={32} className="text-blue-600" />,
-  },
-  {
-    title: "Safe Transportation",
-    description:
-      "Access reliable and affordable transportation options with our verified GOROLL Carpool service.",
-    icon: <Shield size={32} className="text-blue-600" />,
-  },
-];

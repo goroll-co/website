@@ -17,7 +17,7 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative text-center py-24 bg-gradient-to-r from-blue-500 to-blue-600 text-white overflow-hidden"
+      className="relative text-center py-24 bg-gradient-to-r from-blue-500 to-blue-600 text-white overflow-hidden rounded-3xl mb-8 mt-4"
     >
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -left-32 top-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>

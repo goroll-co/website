@@ -10,7 +10,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+    <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-3xl overflow-hidden my-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((stat, index) => (

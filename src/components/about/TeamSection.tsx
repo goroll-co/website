@@ -7,15 +7,17 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function TeamSection() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const [hoveredMember, setHoveredMember] = useState<number | null>(null);
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
 
-  // ข้อมูลทีม
   const teamMembers: TeamMember[] = [
     {
       id: 1,
       name: "Title",
-      role: language === "th" ? "ซีอีโอและผู้ร่วมก่อตั้ง" : "CEO & Co-founder",
-      bio: "นักกายภาพบำบัดที่มีความหลงใหลในการทำให้การเดินทางเป็นเรื่องเข้าถึงได้สำหรับทุกคน มีประสบการณ์ทำงานกับผู้ใช้วีลแชร์มากว่า 5 ปี",
+      role: t("ceo_role"),
+      bio:
+        language === "th"
+          ? "นักกายภาพบำบัดที่มีความหลงใหลในการทำให้การเดินทางเป็นเรื่องเข้าถึงได้สำหรับทุกคน มีประสบการณ์ทำงานกับผู้ใช้วีลแชร์มากว่า 5 ปี"
+          : "A physiotherapist passionate about making travel accessible for everyone. Has over 5 years of experience working with wheelchair users.",
       image: "/about/teammember/title.jpg",
       social: {
         linkedin: "#",
@@ -25,8 +27,11 @@ export default function TeamSection() {
     {
       id: 2,
       name: "Film",
-      role: language === "th" ? "ซีทีโอและผู้ร่วมก่อตั้ง" : "CTO & Co-founder",
-      bio: "นักศึกษาวิศวกรรมคอมพิวเตอร์ที่มีความหลงใหลในการใช้เทคโนโลยีเพื่อสร้างผลกระทบเชิงบวกต่อสังคม เชี่ยวชาญด้านการพัฒนาแอพพลิเคชัน",
+      role: t("cto_role"),
+      bio:
+        language === "th"
+          ? "นักศึกษาวิศวกรรมคอมพิวเตอร์ที่มีความหลงใหลในการใช้เทคโนโลยีเพื่อสร้างผลกระทบเชิงบวกต่อสังคม เชี่ยวชาญด้านการพัฒนาแอพพลิเคชัน"
+          : "A computer engineering student passionate about using technology to create positive social impact. Specialized in application development.",
       image: "/about/teammember/film.JPG",
       social: {
         linkedin: "#",
@@ -36,8 +41,11 @@ export default function TeamSection() {
     {
       id: 3,
       name: "Coquette",
-      role: language === "th" ? "หัวหน้าฝ่ายการตลาด" : "Head of Marketing",
-      bio: "นักศึกษาด้านการตลาดที่มีความเชี่ยวชาญในการสร้างแบรนด์และการทำการตลาดดิจิทัล มีประสบการณ์ทำงานกับ startups หลายแห่ง",
+      role: t("marketing_role"),
+      bio:
+        language === "th"
+          ? "นักศึกษาด้านการตลาดที่มีความเชี่ยวชาญในการสร้างแบรนด์และการทำการตลาดดิจิทัล มีประสบการณ์ทำงานกับ startups หลายแห่ง"
+          : "A marketing student specialized in branding and digital marketing. Has experience working with several startups.",
       image: "/about/teammember/coquette.jpg",
       social: {
         linkedin: "#",
@@ -46,13 +54,12 @@ export default function TeamSection() {
     },
   ];
 
-  // เพิ่ม Animation เมื่อโหลดหน้า
   useEffect(() => {
     const teamCards = document.querySelectorAll(".team-card");
     teamCards.forEach((card, index) => {
       setTimeout(() => {
         card.classList.add("animate-fade-in");
-      }, index * 200); // ทำให้แต่ละการ์ดปรากฏทีละการ์ด
+      }, index * 200);
     });
   }, []);
 
@@ -61,7 +68,7 @@ export default function TeamSection() {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 relative">
           <span className="relative inline-block">
-            {language === "th" ? "ทีมของเรา" : "Our Team"}
+            {t("our_team")}
             <span className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></span>
           </span>
         </h2>
@@ -78,25 +85,17 @@ export default function TeamSection() {
               onClick={() => setSelectedMember(member)}
             >
               <div className="relative h-96 bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 cursor-pointer hover:-translate-y-2 hover:shadow-xl group">
-                {/* รูปภาพทีมเมมเบอร์ */}
                 <div className="relative h-64 overflow-hidden">
                   <div
                     className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                     style={{ backgroundImage: `url(${member.image})` }}
                   ></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  {/* ปุ่ม "Click for more details" เมื่อ hover */}
-                  {/* ปุ่ม "Click for more details" เมื่อ hover - ย้ายไปอยู่ตรงกลาง */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <button className="bg-blue-600 text-white text-sm px-6 py-2 rounded-full shadow-lg hover:bg-blue-700 transition-all">
-                      {language === "th"
-                        ? "คลิกเพื่อดูข้อมูลเพิ่มเติม"
-                        : "Click for more details"}
+                      {t("view_details")}
                     </button>
                   </div>
-
-                  {/* แสดงไอคอนโซเชียลเมื่อ hover - ย้ายไปอยู่มุมขวาบน */}
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <div className="flex space-x-2">
                       {member.social.linkedin && (
@@ -104,6 +103,8 @@ export default function TeamSection() {
                           href={member.social.linkedin}
                           className="bg-white p-2 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition-colors"
                           onClick={(e) => e.stopPropagation()}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <Linkedin size={16} />
                         </a>
@@ -113,6 +114,8 @@ export default function TeamSection() {
                           href={member.social.twitter}
                           className="bg-white p-2 rounded-full text-blue-400 hover:bg-blue-400 hover:text-white transition-colors"
                           onClick={(e) => e.stopPropagation()}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <Twitter size={16} />
                         </a>
@@ -122,6 +125,8 @@ export default function TeamSection() {
                           href={member.social.github}
                           className="bg-white p-2 rounded-full text-gray-800 hover:bg-gray-800 hover:text-white transition-colors"
                           onClick={(e) => e.stopPropagation()}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <Github size={16} />
                         </a>
@@ -130,7 +135,6 @@ export default function TeamSection() {
                   </div>
                 </div>
 
-                {/* ข้อมูลทีมเมมเบอร์ */}
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
                     {member.name}
@@ -146,7 +150,6 @@ export default function TeamSection() {
         </div>
       </div>
 
-      {/* โมดัลแสดงรายละเอียดทีมเมมเบอร์ */}
       {selectedMember && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl max-w-3xl w-full overflow-hidden animate-scale-in">
@@ -162,7 +165,6 @@ export default function TeamSection() {
               >
                 <X size={24} />
               </button>
-
               <div className="absolute bottom-6 left-6 text-white">
                 <h2 className="text-3xl font-bold">{selectedMember.name}</h2>
                 <p className="text-xl text-blue-300">{selectedMember.role}</p>
@@ -175,6 +177,8 @@ export default function TeamSection() {
                   <a
                     href={selectedMember.social.linkedin}
                     className="text-blue-600 hover:text-blue-800 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Linkedin size={24} />
                   </a>
@@ -183,6 +187,8 @@ export default function TeamSection() {
                   <a
                     href={selectedMember.social.twitter}
                     className="text-blue-400 hover:text-blue-600 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Twitter size={24} />
                   </a>
@@ -191,6 +197,8 @@ export default function TeamSection() {
                   <a
                     href={selectedMember.social.github}
                     className="text-gray-700 hover:text-gray-900 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Github size={24} />
                   </a>
@@ -206,7 +214,7 @@ export default function TeamSection() {
                   onClick={() => setSelectedMember(null)}
                   className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                 >
-                  {language === "th" ? "ปิด" : "Close"}
+                  {t("close")}
                 </button>
               </div>
             </div>

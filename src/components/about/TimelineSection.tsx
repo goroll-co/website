@@ -1,4 +1,5 @@
 // src/app/components/about/TimelineSection.tsx
+import { useLanguage } from "../../context/LanguageContext";
 
 type Milestone = {
   year: string;
@@ -7,23 +8,26 @@ type Milestone = {
 };
 
 export default function TimelineSection() {
+  const { t } = useLanguage();
   const milestones: Milestone[] = [
     {
       year: "2024",
-      title: "Company Founded",
-      description: "Started with a simple idea and a passionate team of four.",
+      title: t("milestone_founded"),
+      description: t("milestone_founded_desc"),
     },
     {
       year: "2024",
-      title: "Series A Funding",
-      description: "Raised THB 500K to accelerate growth and expand our team.",
+      title: t("milestone_funding"),
+      description: t("milestone_funding_desc"),
     },
     // สามารถเพิ่ม milestone อื่นๆ ได้ในอนาคต
   ];
 
   return (
     <section>
-      <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
+      <h2 className="text-3xl font-bold text-center mb-12">
+        {t("our_journey")}
+      </h2>
       <div className="relative">
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gray-200" />
         <div className="space-y-12">

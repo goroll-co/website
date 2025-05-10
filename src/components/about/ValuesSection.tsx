@@ -1,5 +1,6 @@
-// src/app/components/about/ValuesSection.tsx
+// src/components/about/ValuesSection.tsx
 import { Users, Target, Heart, Clock } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 type ValueItem = {
   icon: React.ReactNode;
@@ -8,36 +9,36 @@ type ValueItem = {
 };
 
 export default function ValuesSection() {
+  const { t } = useLanguage();
+
   const values: ValueItem[] = [
     {
       icon: <Users className="w-8 h-8 text-blue-600" />,
-      title: "Inclusivity",
-      description:
-        "We believe in creating a world where every space is accessible and welcoming for wheelchair users and people of all abilities.",
+      title: t("value_inclusivity"),
+      description: t("value_inclusivity_desc"),
     },
     {
       icon: <Heart className="w-8 h-8 text-blue-600" />,
-      title: "Community-Driven",
-      description:
-        "Our strength comes from our community. We empower users to share experiences and support each other in making mobility more accessible.",
+      title: t("value_community"),
+      description: t("value_community_desc"),
     },
     {
       icon: <Target className="w-8 h-8 text-blue-600" />,
-      title: "Accessibility First",
-      description:
-        "Every feature we build starts with accessibility in mind, ensuring our solutions truly serve the needs of wheelchair users.",
+      title: t("value_accessibility"),
+      description: t("value_accessibility_desc"),
     },
     {
       icon: <Clock className="w-8 h-8 text-blue-600" />,
-      title: "Empowerment",
-      description:
-        "We are dedicated to helping wheelchair users travel independently and confidently, transforming challenges into opportunities.",
+      title: t("value_empowerment"),
+      description: t("value_empowerment_desc"),
     },
   ];
 
   return (
     <section className="bg-blue-50 py-16 px-4 rounded-xl">
-      <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
+      <h2 className="text-3xl font-bold text-center mb-12">
+        {t("our_values")}
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {values.map((value, index) => (
           <div key={index} className="bg-white p-6 rounded-lg shadow-md">

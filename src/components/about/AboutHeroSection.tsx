@@ -10,7 +10,6 @@ export default function AboutHeroSection() {
     const handleScroll = () => {
       if (!heroRef.current) return;
       const scrollPosition = window.scrollY;
-      // Parallax effect
       heroRef.current.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
     };
 
@@ -19,20 +18,21 @@ export default function AboutHeroSection() {
   }, []);
 
   return (
-    <div
+    <section
       ref={heroRef}
-      className="relative h-[500px] bg-cover bg-center bg-no-repeat overflow-hidden flex items-center justify-center"
-      style={{
-        backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/about/hero-bg.jpg')",
-      }}
+      className="relative py-24 bg-gradient-to-r from-blue-500 to-blue-600 text-white overflow-hidden rounded-3xl mb-8 mt-4"
     >
-      <div className="absolute inset-0 bg-blue-600 opacity-30 mix-blend-multiply"></div>
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -left-32 top-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div className="absolute left-48 bottom-0 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute -right-32 top-32 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+      </div>
+
       <div className="max-w-4xl mx-auto text-center px-4 relative z-10 animate-fade-in">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-down">
           {language === "th" ? "เกี่ยวกับเรา" : "About Us"}
         </h1>
-        <p className="text-xl md:text-2xl text-white">
+        <p className="text-xl md:text-2xl mb-8 animate-fade-up animation-delay-300">
           {language === "th"
             ? "ค้นหาว่าเราเป็นใคร และทำไมเราถึงมุ่งมั่นที่จะทำให้การเดินทางเข้าถึงได้สำหรับทุกคน"
             : "Discover who we are and why we're committed to making travel accessible for everyone"}
@@ -40,26 +40,28 @@ export default function AboutHeroSection() {
         <div className="mt-8">
           <a
             href="#our-story"
-            className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors inline-flex items-center"
+            className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold transition-all inline-block hover:bg-gray-100 hover:shadow-lg animate-fade-up animation-delay-600"
           >
-            {language === "th" ? "ทำความรู้จักเรา" : "Get to Know Us"}
-            <svg
-              className="ml-2 w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 9l-7 7-7-7"
-              ></path>
-            </svg>
+            <span className="flex items-center">
+              {language === "th" ? "ทำความรู้จักเรา" : "Get to Know Us"}
+              <svg
+                className="ml-2 w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </span>
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

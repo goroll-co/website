@@ -36,9 +36,6 @@ export default function Home() {
       {/* Testimonials Section */}
       <TestimonialsSection />
 
-      {/* Stats Section */}
-      <StatsSection />
-
       {/* FAQ Section */}
       <FaqSection />
 

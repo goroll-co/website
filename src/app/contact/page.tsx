@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactInfo from "@/components/contact/ContactInfo";
+import ContactMap from "@/components/contact/ContactMap";
 import ContactFAQ from "@/components/contact/ContactFAQ";
 
 export default function ContactPage() {
@@ -25,9 +26,17 @@ export default function ContactPage() {
       <ContactHero scrollY={scrollY} />
 
       <div className="max-w-6xl mx-auto px-4">
-        {/* Contact Information Side - ปรับให้แสดงเต็มหน้าจอแทนที่จะเป็นครึ่งซ้าย */}
-        <div>
-          <ContactInfo />
+        {/* Grid Layout for Contact Info and Map */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Contact Information */}
+          <div>
+            <ContactInfo />
+          </div>
+
+          {/* Map */}
+          <div className="min-h-[500px]">
+            <ContactMap />
+          </div>
         </div>
       </div>
 

@@ -1,5 +1,3 @@
-// src/app/career/page.tsx
-
 "use client";
 
 import { useState } from "react";
@@ -7,10 +5,12 @@ import { Briefcase, MapPin, Clock, DollarSign, Search } from "lucide-react";
 import { Career } from "../interfaces";
 import CommonHeroSection from "@/components/CommonHeroSection";
 import { careers } from "../../data/career";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function CareerPage() {
   const [selectedJob, setSelectedJob] = useState<Career | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const { t, language } = useLanguage();
 
   const filteredJobs = careers.filter(
     (job) =>
@@ -23,50 +23,36 @@ export default function CareerPage() {
     <div className="space-y-16">
       {/* Hero Section */}
       <CommonHeroSection
-        title="Join Our Team"
-        subtitle="We are building something special and we are always looking for talented individuals to join our journey."
+        title={t("career_title")}
+        subtitle={t("career_subtitle")}
       />
 
       {/* Culture Section */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold">Our Culture</h2>
-          <p className="text-gray-600">
-            We believe in creating an environment where people can do their best
-            work. Our culture is built on collaboration, innovation, and mutual
-            respect.
-          </p>
+          <h2 className="text-3xl font-bold">{t("our_culture")}</h2>
+          <p className="text-gray-600">{t("culture_desc")}</p>
           <ul className="space-y-4 text-gray-700">
-            <li className="flex items-start space-x-3">
-              <span className="text-blue-600">✓</span>
-              <span>Collaborative and supportive environment</span>
-            </li>
-            <li className="flex items-start space-x-3">
-              <span className="text-blue-600">✓</span>
-              <span>Focus on innovation and creativity</span>
-            </li>
-            <li className="flex items-start space-x-3">
-              <span className="text-blue-600">✓</span>
-              <span>Work hard play hard (NO WORK-LIFE BALANCE)</span>
-            </li>
-            <li className="flex items-start space-x-3">
-              <span className="text-blue-600">✓</span>
-              <span>Opportunities for growth and learning</span>
-            </li>
+            {[1, 2, 3, 4].map((i) => (
+              <li key={i} className="flex items-start space-x-3">
+                <span className="text-blue-600">✓</span>
+                <span>{t(`culture_point${i}`)}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
 
       {/* Job Listings Section */}
       <section>
-        <h2 className="text-3xl font-bold mb-8">Open Positions</h2>
+        <h2 className="text-3xl font-bold mb-8">{t("open_positions")}</h2>
 
         {/* Search Bar */}
         <div className="relative mb-8">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           <input
             type="text"
-            placeholder="Search positions..."
+            placeholder={t("search_positions")}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
@@ -112,7 +98,7 @@ export default function CareerPage() {
                       setSelectedJob(job);
                     }}
                   >
-                    View Details
+                    {t("view_details")}
                   </button>
                   {job.applicationUrl && (
                     <a
@@ -122,7 +108,7 @@ export default function CareerPage() {
                       className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      Apply Now
+                      {t("apply_now")}
                     </a>
                   )}
                 </div>
@@ -171,12 +157,16 @@ export default function CareerPage() {
 
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">Description</h3>
+                  <h3 className="text-xl font-semibold mb-3">
+                    {t("description")}
+                  </h3>
                   <p className="text-gray-600">{selectedJob.description}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">Requirements</h3>
+                  <h3 className="text-xl font-semibold mb-3">
+                    {t("requirements")}
+                  </h3>
                   <ul className="list-disc list-inside space-y-2">
                     {selectedJob.requirements.map((req, index) => (
                       <li key={index} className="text-gray-600">
@@ -188,7 +178,7 @@ export default function CareerPage() {
 
                 <div>
                   <h3 className="text-xl font-semibold mb-3">
-                    Responsibilities
+                    {t("responsibilities")}
                   </h3>
                   <ul className="list-disc list-inside space-y-2">
                     {selectedJob.responsibilities.map((resp, index) => (
@@ -204,7 +194,7 @@ export default function CareerPage() {
                     className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                     onClick={() => setSelectedJob(null)}
                   >
-                    Close
+                    {t("close")}
                   </button>
                   {selectedJob.applicationUrl && (
                     <a
@@ -213,7 +203,7 @@ export default function CareerPage() {
                       rel="noopener noreferrer"
                       className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center"
                     >
-                      Apply Now
+                      {t("apply_now")}
                     </a>
                   )}
                 </div>

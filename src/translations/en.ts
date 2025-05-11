@@ -126,4 +126,24 @@ export const enTranslations = {
   share: "Share",
   achievements_footer: "These are just some of our achievements and successes",
   follow_updates: "Stay tuned for more updates!",
+
+  // เพิ่มต่อจากคำแปลที่มีอยู่แล้ว
+  // Career Page
+  career_title: "Join Our Team",
+  career_subtitle:
+    "We are building something special and we are always looking for talented individuals to join our journey.",
+  our_culture: "Our Culture",
+  culture_desc:
+    "We believe in creating an environment where people can do their best work. Our culture is built on collaboration, innovation, and mutual respect.",
+  culture_point1: "Collaborative and supportive environment",
+  culture_point2: "Focus on innovation and creativity",
+  culture_point3: "Work hard play hard (NO WORK-LIFE BALANCE)",
+  culture_point4: "Opportunities for growth and learning",
+  open_positions: "Open Positions",
+  search_positions: "Search positions...",
+
+  apply_now: "Apply Now",
+  description: "Description",
+  requirements: "Requirements",
+  responsibilities: "Responsibilities",
 };

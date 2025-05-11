@@ -19,7 +19,6 @@ export default function ContactHero({ scrollY }: ContactHeroProps) {
       }
       enableParallax={true}
       scrollY={scrollY}
-      height="h-64 md:h-80"
     />
   );
 }

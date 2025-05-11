@@ -29,11 +29,13 @@ export default function AboutPage() {
       <AboutHeroSection />
 
       <div className="max-w-7xl mx-auto space-y-16 px-4 py-8">
-        {/* Story Section */}
+        {/* Story Section - ลบ animation */}
         <FadeInSection>
           <div className="relative overflow-hidden rounded-xl">
-            <div className="absolute -left-20 -top-20 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-            <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+            {/* ลบ animate-blob ออก */}
+            <div className="absolute -left-20 -top-20 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+            {/* ลบ animate-blob และ animation-delay-2000 ออก */}
+            <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
             <StorySection />
           </div>
         </FadeInSection>

@@ -66,11 +66,8 @@ export default function TeamSection() {
   return (
     <section className="py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 relative">
-          <span className="relative inline-block">
-            {t("our_team")}
-            <span className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></span>
-          </span>
+        <h2 className="text-3xl font-bold text-center mb-12">
+          {t("our_team")}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">

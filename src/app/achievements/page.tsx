@@ -9,6 +9,7 @@ import AchievementFilter from "../../components/achievements/AchievementFilter";
 import FeaturedAchievement from "../../components/achievements/FeaturedAchievement";
 import { achievements } from "../../data/achievements";
 import { Achievement } from "../interfaces";
+import CommonHeroSection from "@/components/CommonHeroSection";
 import "../../components/achievements/animations.css";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -48,25 +49,10 @@ export default function AchievementPage() {
   return (
     <div className="space-y-10">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-500 to-blue-600 text-white py-20 rounded-3xl overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-32 -top-32 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 float"></div>
-          <div
-            className="absolute -right-32 -bottom-32 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 float"
-            style={{ animationDelay: "2s" }}
-          ></div>
-        </div>
-
-        <div className="relative text-center space-y-6 max-w-3xl mx-auto px-4">
-          <div className="inline-block">
-            <h1 className="text-4xl font-bold mb-4 relative slide-in-left">
-              {t("achievements_title")}
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-white/50 rounded-full"></div>
-            </h1>
-          </div>
-          <p className="text-xl slide-in-right">{t("achievements_subtitle")}</p>
-        </div>
-      </div>
+      <CommonHeroSection
+        title={t("achievements_title")}
+        subtitle={t("achievements_subtitle")}
+      />
 
       {/* ส่วนเนื้อหาหลัก */}
       <div className="max-w-7xl mx-auto px-4">

@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { Briefcase, MapPin, Clock, DollarSign, Search } from "lucide-react";
 import { Career } from "../interfaces";
+import CommonHeroSection from "@/components/CommonHeroSection";
 import { careers } from "../../data/career";
 
 export default function CareerPage() {
@@ -21,13 +22,10 @@ export default function CareerPage() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="text-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-16 rounded-xl">
-        <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
-        <p className="text-xl max-w-3xl mx-auto">
-          We are building something special and we are always looking for
-          talented individuals to join our journey.
-        </p>
-      </section>
+      <CommonHeroSection
+        title="Join Our Team"
+        subtitle="We are building something special and we are always looking for talented individuals to join our journey."
+      />
 
       {/* Culture Section */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

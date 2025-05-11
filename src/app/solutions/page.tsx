@@ -6,6 +6,7 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { Solution } from "../interfaces";
 import AppShowcase from "@/components/solutions/AppShowcase";
+import CommonHeroSection from "@/components/CommonHeroSection";
 
 const solutions: Solution[] = [
   {
@@ -112,13 +113,10 @@ export default function SolutionPage() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="text-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-16 rounded-xl">
-        <h1 className="text-4xl font-bold mb-4">Our Solutions</h1>
-        <p className="text-xl max-w-3xl mx-auto px-4">
-          Innovative solutions designed to make mobility accessible and
-          inclusive for everyone
-        </p>
-      </section>
+      <CommonHeroSection
+        title="Our Solutions"
+        subtitle="Innovative solutions designed to make mobility accessible and inclusive for everyone"
+      />
 
       {/* App Showcase */}
       <AppShowcase solutions={solutions} />

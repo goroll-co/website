@@ -73,14 +73,14 @@ export default function TeamSection() {
           {teamMembers.map((member, index) => (
             <div
               key={member.id}
-              className={`team-card relative group opacity-0 transition-all duration-500 delay-${
+              className={`team-card relative group opacity-0 transition-all rounded-3xl shadow-md hover:shadow-2xl duration-500 delay-${
                 index * 100
-              }`}
+              } transform hover:-translate-y-2 cursor-pointer overflow-hidden`}
               onMouseEnter={() => setHoveredMember(member.id)}
               onMouseLeave={() => setHoveredMember(null)}
               onClick={() => setSelectedMember(member)}
             >
-              <div className="relative h-[420px] bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer overflow-hidden">
+              <div className="relative h-[420px] bg-white rounded-3xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer overflow-hidden">
                 <div className="relative h-64 overflow-hidden rounded-t-3xl">
                   <div
                     className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"

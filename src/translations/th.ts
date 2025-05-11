@@ -111,4 +111,18 @@ export const thTranslations = {
   marketing_role: "หัวหน้าฝ่ายการตลาด",
   view_details: "คลิกเพื่อดูข้อมูลเพิ่มเติม",
   close: "ปิด",
+
+  // เพิ่มเข้าไปในไฟล์ src/translations/th.ts ในส่วนด้านล่าง
+  // ส่วนของหน้า Achievements
+  achievements_title: "ผลงานของเรา",
+  achievements_subtitle:
+    "เราภูมิใจที่ได้นำเสนอความสำเร็จและผลงานต่างๆ ที่ช่วยสร้างความแตกต่างให้กับชุมชน",
+  latest_achievement: "ผลงานล่าสุด",
+  all_achievements: "ผลงานทั้งหมด",
+  all_categories: "ทั้งหมด",
+  by_organizer: "โดย",
+  photos_count: "รูปภาพ",
+  share: "แชร์",
+  achievements_footer: "นี่เป็นเพียงส่วนหนึ่งของผลงานและความสำเร็จของเรา",
+  follow_updates: "ติดตามความเคลื่อนไหวล่าสุดของเราได้เสมอ!",
 };

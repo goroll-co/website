@@ -1,4 +1,4 @@
-// src/components/AchievementModal.tsx
+// src/components/achievements/AchievementModal.tsx
 import { useState, useEffect } from "react";
 import {
   X,
@@ -9,6 +9,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { Achievement } from "../../app/interfaces";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface AchievementModalProps {
   achievement: Achievement;
@@ -21,6 +22,7 @@ export default function AchievementModal({
 }: AchievementModalProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const { t, language } = useLanguage();
 
   // เพิ่มเอฟเฟกต์ Scale In
   useEffect(() => {
@@ -120,7 +122,9 @@ export default function AchievementModal({
                 </h2>
                 <div className="flex items-center text-gray-600 mb-2">
                   <Award size={18} className="mr-2" />
-                  <p>โดย {achievement.organizer}</p>
+                  <p>
+                    {t("by_organizer")} {achievement.organizer}
+                  </p>
                 </div>
                 <div className="flex items-center text-blue-600">
                   <Calendar size={18} className="mr-2" />
@@ -194,7 +198,7 @@ export default function AchievementModal({
                 onClick={onClose}
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
               >
-                ปิด
+                {t("close")}
               </button>
             </div>
           </div>

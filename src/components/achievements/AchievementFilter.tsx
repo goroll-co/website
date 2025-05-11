@@ -1,5 +1,6 @@
-// src/components/AchievementFilter.tsx
+// src/components/achievements/AchievementFilter.tsx
 import React from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface AchievementFilterProps {
   categories: string[];
@@ -12,6 +13,8 @@ export default function AchievementFilter({
   selectedCategory,
   onCategoryChange,
 }: AchievementFilterProps) {
+  const { t } = useLanguage();
+
   return (
     <div className="mb-8 slide-in-left">
       <div className="flex flex-wrap gap-2">
@@ -23,7 +26,7 @@ export default function AchievementFilter({
           }`}
           onClick={() => onCategoryChange("all")}
         >
-          ทั้งหมด
+          {t("all_categories")}
         </button>
 
         {categories.map((category) => (

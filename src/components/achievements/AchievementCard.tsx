@@ -1,6 +1,7 @@
-// src/components/AchievementCard.tsx
+// src/components/achievements/AchievementCard.tsx
 import { Achievement } from "../../app/interfaces";
 import { Calendar, ExternalLink } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface AchievementCardProps extends Achievement {
   onClick: () => void;
@@ -19,6 +20,8 @@ export default function AchievementCard({
   onClick,
   animationDelay,
 }: AchievementCardProps) {
+  const { t, language } = useLanguage();
+
   return (
     <div
       className={`achievement-card fade-in bg-white rounded-xl shadow-md overflow-hidden delay-${
@@ -48,7 +51,7 @@ export default function AchievementCard({
 
           {images.length > 0 && (
             <div className="absolute bottom-4 right-4 bg-black/60 text-white px-2 py-1 rounded-full text-xs">
-              +{images.length} รูปภาพ
+              +{images.length} {language === "th" ? "รูปภาพ" : "photos"}
             </div>
           )}
         </div>
@@ -63,7 +66,9 @@ export default function AchievementCard({
             <span className="text-sm">{date}</span>
           </div>
 
-          <p className="text-gray-500 text-sm mb-2">โดย {organizer}</p>
+          <p className="text-gray-500 text-sm mb-2">
+            {t("by_organizer")} {organizer}
+          </p>
 
           <p className="text-gray-600 line-clamp-3 mb-4">{description}</p>
 
@@ -71,7 +76,7 @@ export default function AchievementCard({
             className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
             onClick={onClick}
           >
-            ดูรายละเอียด <ExternalLink size={16} className="ml-1" />
+            {t("view_details")} <ExternalLink size={16} className="ml-1" />
           </button>
         </div>
       </div>

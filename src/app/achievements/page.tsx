@@ -10,12 +10,14 @@ import FeaturedAchievement from "../../components/achievements/FeaturedAchieveme
 import { achievements } from "../../data/achievements";
 import { Achievement } from "../interfaces";
 import "../../components/achievements/animations.css";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function AchievementPage() {
   const [selectedAchievement, setSelectedAchievement] =
     useState<Achievement | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [scrollPosition, setScrollPosition] = useState(0);
+  const { t, language } = useLanguage();
 
   // ดึงหมวดหมู่ที่ไม่ซ้ำกันจากข้อมูล achievements
   const categories = [
@@ -58,14 +60,11 @@ export default function AchievementPage() {
         <div className="relative text-center space-y-6 max-w-3xl mx-auto px-4">
           <div className="inline-block">
             <h1 className="text-4xl font-bold mb-4 relative slide-in-left">
-              ผลงานของเรา
+              {t("achievements_title")}
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-white/50 rounded-full"></div>
             </h1>
           </div>
-          <p className="text-xl slide-in-right">
-            เราภูมิใจที่ได้นำเสนอความสำเร็จและผลงานต่างๆ
-            ที่ช่วยสร้างความแตกต่างให้กับชุมชน
-          </p>
+          <p className="text-xl slide-in-right">{t("achievements_subtitle")}</p>
         </div>
       </div>
 
@@ -74,7 +73,7 @@ export default function AchievementPage() {
         {/* ส่วน Featured Achievement */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-gray-800 mb-8 slide-in-left">
-            ผลงานล่าสุด
+            {t("latest_achievement")}
           </h2>
           <FeaturedAchievement
             achievement={featuredAchievement}
@@ -85,7 +84,7 @@ export default function AchievementPage() {
         {/* ส่วนตัวกรองหมวดหมู่ */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 slide-in-left">
-            ผลงานทั้งหมด
+            {t("all_achievements")}
           </h2>
           <AchievementFilter
             categories={categories}
@@ -109,10 +108,10 @@ export default function AchievementPage() {
         {/* ข้อความเพิ่มเติมที่ด้านล่าง */}
         <div className="text-center bg-blue-50 py-12 rounded-xl mt-16 slide-in-left">
           <p className="text-gray-600 max-w-2xl mx-auto px-4">
-            นี่เป็นเพียงส่วนหนึ่งของผลงานและความสำเร็จของเรา
+            {t("achievements_footer")}
             <br />
             <span className="text-blue-600 font-medium">
-              ติดตามความเคลื่อนไหวล่าสุดของเราได้เสมอ!
+              {t("follow_updates")}
             </span>
           </p>
         </div>

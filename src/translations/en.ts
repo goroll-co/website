@@ -112,4 +112,18 @@ export const enTranslations = {
   marketing_role: "Head of Marketing",
   view_details: "Click for more details",
   close: "Close",
+
+  // เพิ่มเข้าไปในไฟล์ src/translations/en.ts ในส่วนด้านล่าง
+  // Achievements Page
+  achievements_title: "Our Achievements",
+  achievements_subtitle:
+    "We are proud to present our successes and achievements that make a difference in the community",
+  latest_achievement: "Latest Achievement",
+  all_achievements: "All Achievements",
+  all_categories: "All",
+  by_organizer: "By",
+  photos_count: "photos",
+  share: "Share",
+  achievements_footer: "These are just some of our achievements and successes",
+  follow_updates: "Stay tuned for more updates!",
 };

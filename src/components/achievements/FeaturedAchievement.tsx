@@ -1,7 +1,8 @@
-// src/components/FeaturedAchievement.tsx
+// src/components/achievements/FeaturedAchievement.tsx
 import React from "react";
 import { Achievement } from "../../app/interfaces";
 import { Calendar, Award, ExternalLink } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface FeaturedAchievementProps {
   achievement: Achievement;
@@ -12,6 +13,8 @@ export default function FeaturedAchievement({
   achievement,
   onClick,
 }: FeaturedAchievementProps) {
+  const { t } = useLanguage();
+
   return (
     <div
       className="achievement-featured bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer mb-12 scale-in"
@@ -48,13 +51,15 @@ export default function FeaturedAchievement({
             <div className="flex justify-between items-center">
               <div className="flex items-center text-gray-500">
                 <Award size={18} className="mr-2" />
-                <span>{achievement.organizer}</span>
+                <span>
+                  {t("by_organizer")} {achievement.organizer}
+                </span>
               </div>
               <button
                 className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
                 onClick={onClick}
               >
-                ดูรายละเอียด <ExternalLink size={16} className="ml-1" />
+                {t("view_details")} <ExternalLink size={16} className="ml-1" />
               </button>
             </div>
           </div>

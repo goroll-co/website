@@ -1,4 +1,3 @@
-// src/components/about/TeamSection.tsx
 import React, { useState, useEffect } from "react";
 import { Linkedin, Twitter, Github, X } from "lucide-react";
 import { TeamMember } from "@/app/interfaces";
@@ -81,15 +80,15 @@ export default function TeamSection() {
               onMouseLeave={() => setHoveredMember(null)}
               onClick={() => setSelectedMember(member)}
             >
-              <div className="relative h-96 bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 cursor-pointer hover:-translate-y-2 hover:shadow-xl group">
-                <div className="relative h-64 overflow-hidden">
+              <div className="relative h-[420px] bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer overflow-hidden">
+                <div className="relative h-64 overflow-hidden rounded-t-3xl">
                   <div
                     className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                     style={{ backgroundImage: `url(${member.image})` }}
                   ></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <button className="bg-blue-600 text-white text-sm px-6 py-2 rounded-full shadow-lg hover:bg-blue-700 transition-all">
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <button className="bg-blue-600 text-white text-sm px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition-all hover:scale-105 hover:shadow-xl">
                       {t("view_details")}
                     </button>
                   </div>
@@ -98,7 +97,7 @@ export default function TeamSection() {
                       {member.social.linkedin && (
                         <a
                           href={member.social.linkedin}
-                          className="bg-white p-2 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition-colors"
+                          className="bg-white p-2 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition-colors hover:scale-110 transform duration-300"
                           onClick={(e) => e.stopPropagation()}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -109,7 +108,7 @@ export default function TeamSection() {
                       {member.social.twitter && (
                         <a
                           href={member.social.twitter}
-                          className="bg-white p-2 rounded-full text-blue-400 hover:bg-blue-400 hover:text-white transition-colors"
+                          className="bg-white p-2 rounded-full text-blue-400 hover:bg-blue-400 hover:text-white transition-colors hover:scale-110 transform duration-300"
                           onClick={(e) => e.stopPropagation()}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -120,7 +119,7 @@ export default function TeamSection() {
                       {member.social.github && (
                         <a
                           href={member.social.github}
-                          className="bg-white p-2 rounded-full text-gray-800 hover:bg-gray-800 hover:text-white transition-colors"
+                          className="bg-white p-2 rounded-full text-gray-800 hover:bg-gray-800 hover:text-white transition-colors hover:scale-110 transform duration-300"
                           onClick={(e) => e.stopPropagation()}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -132,14 +131,16 @@ export default function TeamSection() {
                   </div>
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 pb-8">
                   <h3 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-blue-600 font-medium mb-2">
+                  <p className="text-blue-600 font-medium mb-3">
                     {member.role}
                   </p>
-                  <p className="text-gray-600 line-clamp-2">{member.bio}</p>
+                  <p className="text-gray-600 line-clamp-2 mb-3">
+                    {member.bio}
+                  </p>
                 </div>
               </div>
             </div>
@@ -149,7 +150,7 @@ export default function TeamSection() {
 
       {selectedMember && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-xl max-w-3xl w-full overflow-hidden animate-scale-in">
+          <div className="bg-white rounded-3xl max-w-3xl w-full overflow-hidden animate-scale-in shadow-2xl">
             <div className="relative h-64 md:h-80">
               <div
                 className="absolute inset-0 bg-cover bg-center"
@@ -158,7 +159,7 @@ export default function TeamSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
               <button
                 onClick={() => setSelectedMember(null)}
-                className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors"
+                className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors hover:scale-110 transform duration-300"
               >
                 <X size={24} />
               </button>
@@ -168,12 +169,12 @@ export default function TeamSection() {
               </div>
             </div>
 
-            <div className="p-6">
+            <div className="p-8">
               <div className="mb-6 flex space-x-4">
                 {selectedMember.social.linkedin && (
                   <a
                     href={selectedMember.social.linkedin}
-                    className="text-blue-600 hover:text-blue-800 transition-colors"
+                    className="text-blue-600 hover:text-blue-800 transition-colors hover:scale-125 transform duration-300"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -183,7 +184,7 @@ export default function TeamSection() {
                 {selectedMember.social.twitter && (
                   <a
                     href={selectedMember.social.twitter}
-                    className="text-blue-400 hover:text-blue-600 transition-colors"
+                    className="text-blue-400 hover:text-blue-600 transition-colors hover:scale-125 transform duration-300"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -193,7 +194,7 @@ export default function TeamSection() {
                 {selectedMember.social.github && (
                   <a
                     href={selectedMember.social.github}
-                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                    className="text-gray-700 hover:text-gray-900 transition-colors hover:scale-125 transform duration-300"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -209,7 +210,7 @@ export default function TeamSection() {
               <div className="mt-8 flex justify-end">
                 <button
                   onClick={() => setSelectedMember(null)}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors hover:scale-105 transform duration-300 shadow-md hover:shadow-lg"
                 >
                   {t("close")}
                 </button>

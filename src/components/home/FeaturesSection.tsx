@@ -17,19 +17,19 @@ export default function FeaturesSection({
       title: t("feature_accessible_routes_title"),
       description: t("feature_accessible_routes_desc"),
       icon: <MapPin size={32} className="text-blue-600" />,
-      image: "/features/accessible-routes.jpg",
+      image: "/home/Accessible_Routes.png",
     },
     {
       title: t("feature_inclusive_community_title"),
       description: t("feature_inclusive_community_desc"),
       icon: <Users size={32} className="text-blue-600" />,
-      image: "/features/community.jpg",
+      image: "/home/Inclusive_Community.png",
     },
     {
       title: t("feature_safe_transportation_title"),
       description: t("feature_safe_transportation_desc"),
       icon: <Shield size={32} className="text-blue-600" />,
-      image: "/features/transportation.jpg",
+      image: "/home/Safe_Transportation.png",
     },
   ];
 
@@ -47,15 +47,23 @@ export default function FeaturesSection({
             >
               <div className="h-48 overflow-hidden">
                 <div className="relative h-full w-full">
-                  {/* ถ้ามีรูปภาพจริง ให้ใช้รูปจริงแทน placeholder */}
-                  <div className="absolute inset-0 bg-blue-600 opacity-30 z-10"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
-                  <div className="absolute bottom-4 left-4 z-20 text-white">
-                    <h3 className="text-xl font-semibold mb-1">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* เพิ่มความทึบของ overlay */}
+                  <div className="absolute inset-0 bg-blue-600 opacity-40 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+
+                  {/* ปรับปรุงการแสดงชื่อหัวข้อให้อ่านง่ายขึ้น */}
+                  <div className="absolute bottom-4 left-4 z-20">
+                    <h3 className="text-xl font-bold text-white mb-1 bg-blue-600/70 px-3 py-1 rounded-md shadow-md">
                       {feature.title}
                     </h3>
                   </div>
-                  <div className="absolute top-4 left-4 z-20 bg-white/90 p-2 rounded-full">
+
+                  <div className="absolute top-4 left-4 z-20 bg-white p-2 rounded-full shadow-md">
                     {feature.icon}
                   </div>
                 </div>

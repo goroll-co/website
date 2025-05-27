@@ -7,6 +7,7 @@ import { X } from "lucide-react";
 import { Solution } from "../interfaces";
 import AppShowcase from "@/components/solutions/AppShowcase";
 import CommonHeroSection from "@/components/CommonHeroSection";
+import { useLanguage } from "@/context/LanguageContext";
 
 const solutions: Solution[] = [
   {
@@ -73,6 +74,7 @@ const solutions: Solution[] = [
 
 export default function SolutionPage() {
   const [showComingSoon, setShowComingSoon] = useState(false);
+  const { t } = useLanguage();
 
   const ComingSoonModal = () => (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -94,16 +96,14 @@ export default function SolutionPage() {
             <span className="text-3xl">🚀</span>
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            Coming Soon!
+            {t("coming_soon")}
           </h3>
-          <p className="text-gray-600 mb-6">
-            We are working hard to bring you something amazing. Stay tuned!
-          </p>
+          <p className="text-gray-600 mb-6">{t("working_hard")}</p>
           <button
             onClick={() => setShowComingSoon(false)}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
           >
-            Got it!
+            {t("got_it")}
           </button>
         </div>
       </div>
@@ -114,8 +114,8 @@ export default function SolutionPage() {
     <div className="space-y-16">
       {/* Hero Section */}
       <CommonHeroSection
-        title="Our Solutions"
-        subtitle="Innovative solutions designed to make mobility accessible and inclusive for everyone"
+        title={t("our_solutions")}
+        subtitle={t("solutions_hero_subtitle")}
       />
 
       {/* App Showcase */}
@@ -124,19 +124,16 @@ export default function SolutionPage() {
       {/* Call to Action */}
       <section className="text-center bg-blue-50 py-12 rounded-xl">
         <h2 className="text-2xl font-bold mb-4">
-          Ready to Make Mobility Accessible?
+          {t("ready_to_make_mobility_accessible")}
         </h2>
-        <p className="text-gray-600 mb-6">
-          Join us in creating an inclusive community where everyone can travel
-          with confidence
-        </p>
+        <p className="text-gray-600 mb-6">{t("join_inclusive_community")}</p>
         <a
           href="https://gorollth-prototype.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
         >
-          Get Started
+          {t("get_started")}
         </a>
       </section>
 

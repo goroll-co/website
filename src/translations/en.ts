@@ -197,4 +197,11 @@ export const enTranslations = {
   verified_drivers: "Verified Drivers",
   verified_drivers_desc:
     "Verified drivers with experience in providing services. Get reliable support from trusted professionals throughout your trip.",
+
+  our_solutions: "Our Solutions",
+  solutions_hero_subtitle:
+    "Innovative solutions designed to make mobility accessible and inclusive for everyone",
+  ready_to_make_mobility_accessible: "Ready to Make Mobility Accessible?",
+  join_inclusive_community:
+    "Join us in creating an inclusive community where everyone can travel with confidence",
 };

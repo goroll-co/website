@@ -7,9 +7,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react";
 import { LanguageProvider } from "@/context/LanguageContext";
-import CookieConsent from "@/components/CookieConsent"; // เพิ่มบรรทัดนี้
-import { useState } from "react"; // เพิ่มบรรทัดนี้
-import PrivacyPolicy from "@/components/PrivacyPolicy"; // เพิ่มบรรทัดนี้
+import CookieConsent from "@/components/CookieConsent";
+import { useState } from "react";
+import PrivacyPolicy from "@/components/PrivacyPolicy";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +24,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false); // เพิ่มบรรทัดนี้
+  const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
 
   return (
     <html lang="en">
@@ -94,13 +94,11 @@ export default function RootLayout({
                 </div>
                 <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
                   <p>© 2024 GOROLL. All rights reserved.</p>
-                  {/* เพิ่มลิงก์นโยบายความเป็นส่วนตัว */}
                   <div className="mt-2">
                     <button
                       onClick={() => setIsPrivacyPolicyOpen(true)}
                       className="text-gray-400 hover:text-white transition-colors"
                     >
-                      {/* แสดงภาษาตามการตั้งค่าภาษาปัจจุบัน */}
                       Privacy Policy / นโยบายความเป็นส่วนตัว
                     </button>
                   </div>
@@ -108,12 +106,11 @@ export default function RootLayout({
               </div>
             </footer>
           </div>
-          <CookieConsent /> {/* เพิ่ม Cookie Consent Component */}
+          <CookieConsent />
           <PrivacyPolicy
             isOpen={isPrivacyPolicyOpen}
             onClose={() => setIsPrivacyPolicyOpen(false)}
-          />{" "}
-          {/* เพิ่ม Privacy Policy Modal */}
+          />
         </LanguageProvider>
         <Analytics />
       </body>

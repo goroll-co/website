@@ -1,5 +1,5 @@
 // src/components/about/ValuesSection.tsx
-import { Users, Target, Heart, Clock } from "lucide-react";
+import { Users, Target, Heart, Zap } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 
 type ValueItem = {
@@ -28,7 +28,7 @@ export default function ValuesSection() {
       description: t("value_accessibility_desc"),
     },
     {
-      icon: <Clock className="w-8 h-8 text-blue-600" />,
+      icon: <Zap className="w-8 h-8 text-blue-600" />,
       title: t("value_empowerment"),
       description: t("value_empowerment_desc"),
     },

@@ -1,13 +1,6 @@
 // src/components/achievements/AchievementModal.tsx
 import { useState, useEffect } from "react";
-import {
-  X,
-  ChevronLeft,
-  ChevronRight,
-  Calendar,
-  Award,
-  ExternalLink,
-} from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Calendar, Award } from "lucide-react";
 import { Achievement } from "../../app/interfaces";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -22,7 +15,7 @@ export default function AchievementModal({
 }: AchievementModalProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   // เพิ่มเอฟเฟกต์ Scale In
   useEffect(() => {

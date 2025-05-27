@@ -5,7 +5,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function TeamSection() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
-  const [hoveredMember, setHoveredMember] = useState<number | null>(null);
+  const [, setHoveredMember] = useState<number | null>(null);
   const { language, t } = useLanguage();
 
   const teamMembers: TeamMember[] = [

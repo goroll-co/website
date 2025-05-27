@@ -153,4 +153,48 @@ export const enTranslations = {
     "We are grateful to our sponsors and partners who have supported us throughout our journey.",
   heartfelt_gratitude:
     "With heartfelt gratitude to all our sponsors and partners",
+
+  mobile_app: "Mobile Application",
+  solutions_that_help_travel: "Solutions That Make Travel Easier",
+  discover_solutions_desc:
+    "Discover solutions designed to make your travels more convenient and accessible",
+
+  // Navigation features
+  discover_accessible_routes: "Discover Accessible Routes",
+  discover_accessible_routes_desc:
+    "Real-time location tracking and accessible route planning. Find wheelchair-friendly paths easily and quickly.",
+
+  report_obstacles: "Report Route Obstacles",
+  report_obstacles_desc:
+    "Obstacle reporting system and community-verified paths. Save time on journey planning and access reliable accessibility information.",
+
+  share_knowledge: "Share Knowledge with Community",
+  share_knowledge_desc:
+    "Community-verified paths and experience sharing. Contribute to community knowledge and help others navigate more easily.",
+
+  // Social features
+  connect_community: "Connect with Community",
+  connect_community_desc:
+    "Social networking platform and experience sharing that helps you connect with like-minded people and build strong networks.",
+
+  review_places: "Review Places",
+  review_places_desc:
+    "Location reviews and accessibility awareness. Share valuable experiences and promote inclusive design for everyone.",
+
+  supportive_community: "Build Supportive Community",
+  supportive_community_desc:
+    "Raise awareness and transform places into UD places while building a supportive community that promotes inclusive design.",
+
+  // Transport features
+  wheelchair_vehicles: "Wheelchair-Accessible Vehicles",
+  wheelchair_vehicles_desc:
+    "Wheelchair-friendly vehicle matching and real-time ride tracking. Reduce transportation costs and access reliable transport options.",
+
+  secure_payment: "Secure Payment System",
+  secure_payment_desc:
+    "Secure payment system and driver verification. Ensure safety and comfort throughout your journey with trusted service.",
+
+  verified_drivers: "Verified Drivers",
+  verified_drivers_desc:
+    "Verified drivers with experience in providing services. Get reliable support from trusted professionals throughout your trip.",
 };

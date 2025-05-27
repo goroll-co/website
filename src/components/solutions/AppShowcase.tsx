@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { MapPin, Users, Car, Smartphone } from "lucide-react";
 import { Solution } from "@/app/interfaces";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface AppShowcaseProps {
   solutions: Solution[];
@@ -15,6 +16,7 @@ interface CombinedFeature {
 
 export default function AppShowcase({ solutions }: AppShowcaseProps) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const { t } = useLanguage();
 
   const getActiveSolution = () => solutions[activeTabIndex];
 
@@ -25,7 +27,6 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           textColor: "text-blue-600",
           bgColor: "bg-blue-100",
           borderColor: "border-blue-600",
-          glowColor: "bg-blue-500",
           buttonColor: "bg-blue-600 hover:bg-blue-700",
           iconBg: "bg-orange-100",
           iconColor: "text-orange-600",
@@ -35,7 +36,6 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           textColor: "text-purple-600",
           bgColor: "bg-purple-100",
           borderColor: "border-purple-600",
-          glowColor: "bg-purple-500",
           buttonColor: "bg-purple-600 hover:bg-purple-700",
           iconBg: "bg-green-100",
           iconColor: "text-green-600",
@@ -45,7 +45,6 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           textColor: "text-green-600",
           bgColor: "bg-green-100",
           borderColor: "border-green-600",
-          glowColor: "bg-green-500",
           buttonColor: "bg-green-600 hover:bg-green-700",
           iconBg: "bg-red-100",
           iconColor: "text-red-600",
@@ -55,7 +54,6 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           textColor: "text-blue-600",
           bgColor: "bg-blue-100",
           borderColor: "border-blue-600",
-          glowColor: "bg-blue-500",
           buttonColor: "bg-blue-600 hover:bg-blue-700",
           iconBg: "bg-blue-100",
           iconColor: "text-blue-600",
@@ -90,9 +88,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               📍
             </div>
           ),
-          title: "ค้นพบเส้นทางที่เข้าถึงได้",
-          description:
-            "ติดตามตำแหน่งแบบเรียลไทม์และวางแผนเส้นทางที่เข้าถึงได้ ทำให้คุณสามารถค้นหาเส้นทางที่เป็นมิตรกับวีลแชร์ได้อย่างง่ายดายและรวดเร็ว",
+          title: t("discover_accessible_routes"),
+          description: t("discover_accessible_routes_desc"),
         },
         {
           icon: (
@@ -102,9 +99,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               🚧
             </div>
           ),
-          title: "รายงานอุปสรรคในเส้นทาง",
-          description:
-            "ระบบรายงานอุปสรรคและเส้นทางที่ผ่านการตรวจสอบจากชุมชน ช่วยให้คุณประหยัดเวลาในการวางแผนการเดินทางและเข้าถึงข้อมูลที่เชื่อถือได้",
+          title: t("report_obstacles"),
+          description: t("report_obstacles_desc"),
         },
         {
           icon: (
@@ -114,9 +110,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               👥
             </div>
           ),
-          title: "แบ่งปันความรู้กับชุมชน",
-          description:
-            "เส้นทางที่ผ่านการตรวจสอบจากชุมชนและแบ่งปันประสบการณ์ เพื่อให้คุณมีส่วนร่วมในการสร้างความรู้ในชุมชนและช่วยเหลือผู้อื่น",
+          title: t("share_knowledge"),
+          description: t("share_knowledge_desc"),
         },
       ];
     } else if (solution.category === "Social") {
@@ -129,9 +124,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               🌐
             </div>
           ),
-          title: "เชื่อมต่อกับชุมชน",
-          description:
-            "แพลตฟอร์มเครือข่ายสังคมและการแบ่งปันประสบการณ์ที่ช่วยให้คุณเชื่อมต่อกับผู้คนที่มีความคิดเหมือนกันและสร้างเครือข่ายที่แข็งแกร่ง",
+          title: t("connect_community"),
+          description: t("connect_community_desc"),
         },
         {
           icon: (
@@ -141,9 +135,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               ⭐
             </div>
           ),
-          title: "รีวิวสถานที่ต่างๆ",
-          description:
-            "รีวิวสถานที่และสร้างความตระหนักรู้เรื่องการเข้าถึง เพื่อให้คุณสามารถแบ่งปันประสบการณ์อันมีค่าและส่งเสริมการออกแบบที่ครอบคลุม",
+          title: t("review_places"),
+          description: t("review_places_desc"),
         },
         {
           icon: (
@@ -153,9 +146,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               🤝
             </div>
           ),
-          title: "สร้างชุมชนที่สนับสนุน",
-          description:
-            "สร้างความตระหนักและเปลี่ยนแปลงสถานที่ให้เป็น UD places พร้อมสร้างชุมชนที่ให้การสนับสนุนและส่งเสริมการออกแบบที่ครอบคลุม",
+          title: t("supportive_community"),
+          description: t("supportive_community_desc"),
         },
       ];
     } else if (solution.category === "Transport") {
@@ -168,9 +160,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               🚗
             </div>
           ),
-          title: "รถที่เข้าถึงได้สำหรับวีลแชร์",
-          description:
-            "จับคู่ยานพาหนะที่เข้าถึงได้สำหรับวีลแชร์และติดตามการเดินทางแบบเรียลไทม์ ช่วยให้คุณลดค่าใช้จ่ายในการเดินทางและเข้าถึงตัวเลือกการขนส่งที่เชื่อถือได้",
+          title: t("wheelchair_vehicles"),
+          description: t("wheelchair_vehicles_desc"),
         },
         {
           icon: (
@@ -180,9 +171,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               🛡️
             </div>
           ),
-          title: "ระบบชำระเงินที่ปลอดภัย",
-          description:
-            "ระบบชำระเงินที่ปลอดภัยและการตรวจสอบคนขับ ทำให้คุณมั่นใจในความปลอดภัยและความสะดวกสบายตลอดการเดินทาง",
+          title: t("secure_payment"),
+          description: t("secure_payment_desc"),
         },
         {
           icon: (
@@ -192,9 +182,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               👨‍💼
             </div>
           ),
-          title: "คนขับที่ผ่านการตรวจสอบ",
-          description:
-            "คนขับที่ผ่านการตรวจสอบและมีประสบการณ์ในการให้บริการ เพื่อให้คุณได้รับการสนับสนุนที่เชื่อถือได้ตลอดการเดินทาง",
+          title: t("verified_drivers"),
+          description: t("verified_drivers_desc"),
         },
       ];
     }
@@ -208,13 +197,13 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
         <div className="text-center mb-16 fade-in-section">
           <div className="inline-flex items-center justify-center p-2 bg-blue-100 rounded-full text-blue-600 mb-4">
             <Smartphone className="w-5 h-5" />
-            <span className="ml-2 text-sm font-medium">แอพพลิเคชั่นมือถือ</span>
+            <span className="ml-2 text-sm font-medium">{t("mobile_app")}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-            โซลูชันที่ช่วยให้การเดินทางง่ายขึ้น
+            {t("solutions_that_help_travel")}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            ค้นพบโซลูชันที่ออกแบบมาเพื่อช่วยให้การเดินทางของคุณสะดวกและเข้าถึงได้มากขึ้น
+            {t("discover_solutions_desc")}
           </p>
         </div>
 
@@ -257,11 +246,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               <div className="absolute -left-1 top-20 w-1 h-8 bg-gray-800 rounded-r-lg"></div>
               <div className="absolute -left-1 top-32 w-1 h-8 bg-gray-800 rounded-r-lg"></div>
             </div>
-            <div
-              className={`absolute -inset-4 rounded-full blur-3xl opacity-30 transition-colors duration-500 ${
-                getCategoryColors(getActiveSolution().category).glowColor
-              }`}
-            ></div>
+            {/* ลบส่วน glow effect ออก */}
           </div>
 
           <div className="space-y-6">
@@ -288,7 +273,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
                   getCategoryColors(getActiveSolution().category).buttonColor
                 }`}
               >
-                เรียนรู้เพิ่มเติม
+                {t("learn_more")}
                 <svg
                   className="ml-2 w-4 h-4"
                   fill="none"

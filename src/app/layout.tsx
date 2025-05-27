@@ -10,6 +10,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import CookieConsent from "@/components/CookieConsent";
 import { useState } from "react";
 import PrivacyPolicy from "@/components/PrivacyPolicy";
+import TermsOfService from "@/components/TermsOfService"; // เพิ่มบรรทัดนี้
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
+  const [isTermsOfServiceOpen, setIsTermsOfServiceOpen] = useState(false); // เพิ่มบรรทัดนี้
 
   return (
     <html lang="en">
@@ -92,14 +94,22 @@ export default function RootLayout({
                     </div>
                   </div>
                 </div>
+                {/* แก้ไขส่วนนี้ - เพิ่ม Terms of Service */}
                 <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
                   <p>© 2024 GOROLL. All rights reserved.</p>
-                  <div className="mt-2">
+                  <div className="mt-2 space-x-4">
                     <button
                       onClick={() => setIsPrivacyPolicyOpen(true)}
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Privacy Policy / นโยบายความเป็นส่วนตัว
+                    </button>
+                    <span className="text-gray-600">|</span>
+                    <button
+                      onClick={() => setIsTermsOfServiceOpen(true)}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      Terms of Service / ข้อตกลงการใช้บริการ
                     </button>
                   </div>
                 </div>
@@ -110,6 +120,11 @@ export default function RootLayout({
           <PrivacyPolicy
             isOpen={isPrivacyPolicyOpen}
             onClose={() => setIsPrivacyPolicyOpen(false)}
+          />
+          {/* เพิ่ม Terms of Service Component */}
+          <TermsOfService
+            isOpen={isTermsOfServiceOpen}
+            onClose={() => setIsTermsOfServiceOpen(false)}
           />
         </LanguageProvider>
         <Analytics />

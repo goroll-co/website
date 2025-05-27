@@ -85,7 +85,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
         {
           icon: (
             <div
-              className={`w-8 h-8 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center text-2xl`}
             >
               📍
             </div>
@@ -97,7 +97,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
         {
           icon: (
             <div
-              className={`w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-2xl`}
             >
               🚧
             </div>
@@ -109,7 +109,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
         {
           icon: (
             <div
-              className={`w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-2xl`}
             >
               👥
             </div>
@@ -124,7 +124,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
         {
           icon: (
             <div
-              className={`w-8 h-8 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center text-2xl`}
             >
               🌐
             </div>
@@ -136,7 +136,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
         {
           icon: (
             <div
-              className={`w-8 h-8 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center text-2xl`}
             >
               ⭐
             </div>
@@ -148,7 +148,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
         {
           icon: (
             <div
-              className={`w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-2xl`}
             >
               🤝
             </div>
@@ -163,7 +163,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
         {
           icon: (
             <div
-              className={`w-8 h-8 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center text-2xl`}
             >
               🚗
             </div>
@@ -175,7 +175,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
         {
           icon: (
             <div
-              className={`w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-2xl`}
             >
               🛡️
             </div>
@@ -187,7 +187,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
         {
           icon: (
             <div
-              className={`w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-2xl`}
             >
               👨‍💼
             </div>
@@ -265,26 +265,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           </div>
 
           <div className="space-y-6">
-            <div className="flex items-center space-x-3 mb-2">
-              <div
-                className={`p-2 rounded-full ${
-                  getCategoryColors(getActiveSolution().category).bgColor
-                }`}
-              >
-                {getCategoryIcon(getActiveSolution().category)}
-              </div>
-              <h3 className="text-2xl font-bold">
-                {getActiveSolution().title}
-              </h3>
-            </div>
-
-            <p className="text-gray-600">{getActiveSolution().description}</p>
-
             <div className="space-y-8 mt-8">
-              <h4 className="text-xl font-semibold text-gray-800">
-                {getActiveSolution().title} ช่วยให้คุณสามารถ
-              </h4>
-
               {getCombinedFeatures(getActiveSolution()).map(
                 (feature, index) => (
                   <div key={index} className="flex items-start gap-4 group">

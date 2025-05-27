@@ -7,11 +7,14 @@ interface AppShowcaseProps {
   solutions: Solution[];
 }
 
+interface CombinedFeature {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
 export default function AppShowcase({ solutions }: AppShowcaseProps) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
-  const [activeDetailTab, setActiveDetailTab] = useState<
-    "features" | "benefits"
-  >("features");
 
   const getActiveSolution = () => solutions[activeTabIndex];
 
@@ -24,6 +27,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           borderColor: "border-blue-600",
           glowColor: "bg-blue-500",
           buttonColor: "bg-blue-600 hover:bg-blue-700",
+          iconBg: "bg-orange-100",
+          iconColor: "text-orange-600",
         };
       case "Social":
         return {
@@ -32,6 +37,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           borderColor: "border-purple-600",
           glowColor: "bg-purple-500",
           buttonColor: "bg-purple-600 hover:bg-purple-700",
+          iconBg: "bg-green-100",
+          iconColor: "text-green-600",
         };
       case "Transport":
         return {
@@ -40,6 +47,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           borderColor: "border-green-600",
           glowColor: "bg-green-500",
           buttonColor: "bg-green-600 hover:bg-green-700",
+          iconBg: "bg-red-100",
+          iconColor: "text-red-600",
         };
       default:
         return {
@@ -48,6 +57,8 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           borderColor: "border-blue-600",
           glowColor: "bg-blue-500",
           buttonColor: "bg-blue-600 hover:bg-blue-700",
+          iconBg: "bg-blue-100",
+          iconColor: "text-blue-600",
         };
     }
   };
@@ -63,6 +74,132 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
       default:
         return null;
     }
+  };
+
+  // รวมฟีเจอร์และประโยชน์เข้าด้วยกัน
+  const getCombinedFeatures = (solution: Solution): CombinedFeature[] => {
+    const colors = getCategoryColors(solution.category);
+
+    if (solution.category === "Navigation") {
+      return [
+        {
+          icon: (
+            <div
+              className={`w-8 h-8 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center`}
+            >
+              📍
+            </div>
+          ),
+          title: "ค้นพบเส้นทางที่เข้าถึงได้",
+          description:
+            "ติดตามตำแหน่งแบบเรียลไทม์และวางแผนเส้นทางที่เข้าถึงได้ ทำให้คุณสามารถค้นหาเส้นทางที่เป็นมิตรกับวีลแชร์ได้อย่างง่ายดายและรวดเร็ว",
+        },
+        {
+          icon: (
+            <div
+              className={`w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center`}
+            >
+              🚧
+            </div>
+          ),
+          title: "รายงานอุปสรรคในเส้นทาง",
+          description:
+            "ระบบรายงานอุปสรรคและเส้นทางที่ผ่านการตรวจสอบจากชุมชน ช่วยให้คุณประหยัดเวลาในการวางแผนการเดินทางและเข้าถึงข้อมูลที่เชื่อถือได้",
+        },
+        {
+          icon: (
+            <div
+              className={`w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center`}
+            >
+              👥
+            </div>
+          ),
+          title: "แบ่งปันความรู้กับชุมชน",
+          description:
+            "เส้นทางที่ผ่านการตรวจสอบจากชุมชนและแบ่งปันประสบการณ์ เพื่อให้คุณมีส่วนร่วมในการสร้างความรู้ในชุมชนและช่วยเหลือผู้อื่น",
+        },
+      ];
+    } else if (solution.category === "Social") {
+      return [
+        {
+          icon: (
+            <div
+              className={`w-8 h-8 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center`}
+            >
+              🌐
+            </div>
+          ),
+          title: "เชื่อมต่อกับชุมชน",
+          description:
+            "แพลตฟอร์มเครือข่ายสังคมและการแบ่งปันประสบการณ์ที่ช่วยให้คุณเชื่อมต่อกับผู้คนที่มีความคิดเหมือนกันและสร้างเครือข่ายที่แข็งแกร่ง",
+        },
+        {
+          icon: (
+            <div
+              className={`w-8 h-8 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center`}
+            >
+              ⭐
+            </div>
+          ),
+          title: "รีวิวสถานที่ต่างๆ",
+          description:
+            "รีวิวสถานที่และสร้างความตระหนักรู้เรื่องการเข้าถึง เพื่อให้คุณสามารถแบ่งปันประสบการณ์อันมีค่าและส่งเสริมการออกแบบที่ครอบคลุม",
+        },
+        {
+          icon: (
+            <div
+              className={`w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center`}
+            >
+              🤝
+            </div>
+          ),
+          title: "สร้างชุมชนที่สนับสนุน",
+          description:
+            "สร้างความตระหนักและเปลี่ยนแปลงสถานที่ให้เป็น UD places พร้อมสร้างชุมชนที่ให้การสนับสนุนและส่งเสริมการออกแบบที่ครอบคลุม",
+        },
+      ];
+    } else if (solution.category === "Transport") {
+      return [
+        {
+          icon: (
+            <div
+              className={`w-8 h-8 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center`}
+            >
+              🚗
+            </div>
+          ),
+          title: "รถที่เข้าถึงได้สำหรับวีลแชร์",
+          description:
+            "จับคู่ยานพาหนะที่เข้าถึงได้สำหรับวีลแชร์และติดตามการเดินทางแบบเรียลไทม์ ช่วยให้คุณลดค่าใช้จ่ายในการเดินทางและเข้าถึงตัวเลือกการขนส่งที่เชื่อถือได้",
+        },
+        {
+          icon: (
+            <div
+              className={`w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center`}
+            >
+              🛡️
+            </div>
+          ),
+          title: "ระบบชำระเงินที่ปลอดภัย",
+          description:
+            "ระบบชำระเงินที่ปลอดภัยและการตรวจสอบคนขับ ทำให้คุณมั่นใจในความปลอดภัยและความสะดวกสบายตลอดการเดินทาง",
+        },
+        {
+          icon: (
+            <div
+              className={`w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center`}
+            >
+              👨‍💼
+            </div>
+          ),
+          title: "คนขับที่ผ่านการตรวจสอบ",
+          description:
+            "คนขับที่ผ่านการตรวจสอบและมีประสบการณ์ในการให้บริการ เพื่อให้คุณได้รับการสนับสนุนที่เชื่อถือได้ตลอดการเดินทาง",
+        },
+      ];
+    }
+
+    return [];
   };
 
   return (
@@ -143,55 +280,24 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
 
             <p className="text-gray-600">{getActiveSolution().description}</p>
 
-            <div className="border-b border-gray-200 mb-6">
-              <div className="flex space-x-4">
-                <button
-                  className={`pb-2 px-4 ${
-                    activeDetailTab === "features"
-                      ? `border-b-2 ${
-                          getCategoryColors(getActiveSolution().category)
-                            .textColor
-                        }`
-                      : "text-gray-500"
-                  }`}
-                  onClick={() => setActiveDetailTab("features")}
-                >
-                  คุณสมบัติ
-                </button>
-                <button
-                  className={`pb-2 px-4 ${
-                    activeDetailTab === "benefits"
-                      ? `border-b-2 ${
-                          getCategoryColors(getActiveSolution().category)
-                            .textColor
-                        }`
-                      : "text-gray-500"
-                  }`}
-                  onClick={() => setActiveDetailTab("benefits")}
-                >
-                  ประโยชน์
-                </button>
-              </div>
-            </div>
+            <div className="space-y-8 mt-8">
+              <h4 className="text-xl font-semibold text-gray-800">
+                {getActiveSolution().title} ช่วยให้คุณสามารถ
+              </h4>
 
-            <div className="space-y-4">
-              {(activeDetailTab === "features"
-                ? getActiveSolution().features
-                : getActiveSolution().benefits
-              ).map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div
-                    className={`flex-shrink-0 w-6 h-6 ${
-                      getCategoryColors(getActiveSolution().category).bgColor
-                    } ${
-                      getCategoryColors(getActiveSolution().category).textColor
-                    } rounded-full flex items-center justify-center`}
-                  >
-                    <span className="text-sm">✓</span>
+              {getCombinedFeatures(getActiveSolution()).map(
+                (feature, index) => (
+                  <div key={index} className="flex items-start gap-4 group">
+                    {feature.icon}
+                    <div className="flex-1">
+                      <h5 className="font-semibold text-gray-800 mb-2">
+                        {feature.title}
+                      </h5>
+                      <p className="text-gray-600">{feature.description}</p>
+                    </div>
                   </div>
-                  <span className="text-gray-700">{item}</span>
-                </div>
-              ))}
+                )
+              )}
             </div>
 
             <div className="mt-8">

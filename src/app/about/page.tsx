@@ -14,8 +14,6 @@ import "../../components/home/animations.css";
 import "../../components/about/animations.css";
 
 export default function AboutPage() {
-  const { language } = useLanguage();
-
   useEffect(() => {
     const teamCards = document.querySelectorAll(".team-card");
     teamCards.forEach((card) => {

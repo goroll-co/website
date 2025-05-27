@@ -18,7 +18,7 @@ export default function AchievementPage() {
     useState<Achievement | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [scrollPosition, setScrollPosition] = useState(0);
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   // ดึงหมวดหมู่ที่ไม่ซ้ำกันจากข้อมูล achievements
   const categories = [

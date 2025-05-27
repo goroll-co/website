@@ -26,7 +26,6 @@ export default function CommonHeroSection({
   children,
 }: CommonHeroSectionProps) {
   const heroRef = useRef<HTMLDivElement>(null);
-  const { language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

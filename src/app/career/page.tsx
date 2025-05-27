@@ -10,7 +10,7 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function CareerPage() {
   const [selectedJob, setSelectedJob] = useState<Career | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const filteredJobs = careers.filter(
     (job) =>

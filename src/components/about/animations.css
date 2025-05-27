@@ -157,3 +157,66 @@
         margin: 0 auto;
     }
 }
+
+/* Sponsor Carousel Animations */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sponsor-carousel {
+    animation: fadeInSlide 0.8s ease-out;
+}
+
+.sponsor-logo {
+    transition: all 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Navigation buttons */
+.carousel-nav {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-nav:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dots animation */
+.carousel-dots {
+    transition: all 0.3s ease;
+}
+
+.carousel-dots:hover {
+    transform: scale(1.2);
+}
+
+/* Slide transition */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sponsor-item {
+    animation: slideIn 0.5s ease-out;
+}

@@ -146,4 +146,11 @@ export const enTranslations = {
   description: "Description",
   requirements: "Requirements",
   responsibilities: "Responsibilities",
+
+  // Sponsor Section
+  thank_you_sponsors: "Thank You",
+  sponsor_appreciation:
+    "We are grateful to our sponsors and partners who have supported us throughout our journey.",
+  heartfelt_gratitude:
+    "With heartfelt gratitude to all our sponsors and partners",
 };

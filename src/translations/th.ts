@@ -145,4 +145,11 @@ export const thTranslations = {
   description: "รายละเอียด",
   requirements: "คุณสมบัติ",
   responsibilities: "หน้าที่รับผิดชอบ",
+
+  // Sponsor Section
+  thank_you_sponsors: "ขอบคุณ",
+  sponsor_appreciation:
+    "เราขอขอบคุณผู้สนับสนุนและพันธมิตรทุกท่านที่ได้สนับสนุนเราตลอดการเดินทาง",
+  heartfelt_gratitude:
+    "ด้วยความขอบคุณจากใจจริงต่อผู้สนับสนุนและพันธมิตรทุกท่าน",
 };

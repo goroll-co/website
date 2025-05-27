@@ -3,7 +3,6 @@
 
 import React, { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { X } from "lucide-react";
 
 export default function CookieConsent() {
   const [showConsent, setShowConsent] = useState(false);

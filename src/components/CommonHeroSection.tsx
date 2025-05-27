@@ -1,6 +1,5 @@
 // src/components/CommonHeroSection.tsx
 import React, { useRef, useEffect, useState } from "react";
-import { useLanguage } from "@/context/LanguageContext";
 
 interface CommonHeroSectionProps {
   title: string;

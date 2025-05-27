@@ -8,7 +8,6 @@ import TimelineSection from "../../components/about/TimelineSection";
 import TeamSection from "../../components/about/TeamSection";
 import StatsSection from "../../components/home/StatsSection";
 import FadeInSection from "../../components/about/FadeInSection";
-import { useLanguage } from "@/context/LanguageContext";
 import AboutHeroSection from "../../components/about/AboutHeroSection";
 import "../../components/home/animations.css";
 import "../../components/about/animations.css";

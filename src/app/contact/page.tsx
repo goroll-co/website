@@ -10,7 +10,6 @@ import ContactFAQ from "@/components/contact/ContactFAQ";
 
 export default function ContactPage() {
   const [scrollY, setScrollY] = useState(0);
-  const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {

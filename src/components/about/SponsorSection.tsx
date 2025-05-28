@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { sponsors } from "../../data/sponsors";
-import { Sponsor } from "../../app/interfaces";
 
 export default function SponsorSection() {
   const { t } = useLanguage();

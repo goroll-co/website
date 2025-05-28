@@ -23,7 +23,7 @@ export const sponsors: Sponsor[] = [
   },
   {
     id: 4,
-    name: "Health Tech",
+    name: "HealthTech X 2 The Future",
     logo: "/sponsors/healthtechx2.png",
     website: "https://www.thaihealth.or.th/โครงการ-healthtech-x-2-the-future/",
   },

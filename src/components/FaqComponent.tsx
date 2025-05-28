@@ -1,7 +1,6 @@
 // src/components/FaqComponent.tsx
 import React, { useState } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
 
 interface FaqItem {
   question: string;

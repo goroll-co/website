@@ -48,7 +48,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
                 1. ข้อมูลที่เราเก็บรวบรวม
               </h3>
               <div className="mb-6">
-                <h4 className="text-lg font-semibold mb-2">
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
                   ข้อมูลที่คุณให้โดยตรง:
                 </h4>
                 <ul className="list-disc pl-8 mb-4 space-y-2 text-gray-700">
@@ -59,7 +59,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
                   <li>ข้อมูลการสื่อสารกับเรา</li>
                 </ul>
 
-                <h4 className="text-lg font-semibold mb-2">
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
                   ข้อมูลที่เก็บรวบรวมโดยอัตโนมัติ:
                 </h4>
                 <ul className="list-disc pl-8 mb-4 space-y-2 text-gray-700">
@@ -246,7 +246,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
                 1. Information We Collect
               </h3>
               <div className="mb-6">
-                <h4 className="text-lg font-semibold mb-2">
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
                   Information You Provide Directly:
                 </h4>
                 <ul className="list-disc pl-8 mb-4 space-y-2 text-gray-700">
@@ -259,7 +259,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
                   <li>Communications with us</li>
                 </ul>
 
-                <h4 className="text-lg font-semibold mb-2">
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
                   Information Collected Automatically:
                 </h4>
                 <ul className="list-disc pl-8 mb-4 space-y-2 text-gray-700">

@@ -48,30 +48,30 @@ export default function SponsorSection() {
 
         {/* Carousel Container */}
         <div className="relative">
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - ปรับตำแหน่งและขนาดสำหรับมือถือ */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all hover:scale-110 -ml-6"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all hover:scale-110 -ml-3 md:-ml-6"
             aria-label="Previous sponsors"
           >
-            <ChevronLeft className="w-6 h-6 text-gray-600" />
+            <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-gray-600" />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all hover:scale-110 -mr-6"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all hover:scale-110 -mr-3 md:-mr-6"
             aria-label="Next sponsors"
           >
-            <ChevronRight className="w-6 h-6 text-gray-600" />
+            <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-gray-600" />
           </button>
 
-          {/* Sponsors Display */}
-          <div className="bg-white rounded-2xl shadow-lg p-12 mx-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center min-h-[160px]">
+          {/* Sponsors Display - ปรับ padding และ gap */}
+          <div className="bg-white rounded-2xl shadow-lg p-6 md:p-12 mx-6 md:mx-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 items-center justify-items-center min-h-[120px] md:min-h-[160px]">
               {getCurrentSponsors().map((sponsor, index) => (
                 <div
                   key={sponsor.id}
-                  className="group cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-lg rounded-lg p-4"
+                  className="group cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-lg rounded-lg p-2 md:p-4 w-full"
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
@@ -86,8 +86,8 @@ export default function SponsorSection() {
                     }
                     className="block w-full h-full"
                   >
-                    {/* เพิ่มขนาด logo container */}
-                    <div className="h-32 w-48 md:h-36 md:w-52 lg:h-40 lg:w-56 flex items-center justify-center p-4 bg-gray-50 rounded-lg group-hover:bg-gray-100 transition-colors">
+                    {/* ปรับขนาด logo container ให้ responsive */}
+                    <div className="h-20 w-full sm:h-24 sm:w-36 md:h-32 md:w-48 lg:h-36 lg:w-52 xl:h-40 xl:w-56 flex items-center justify-center p-2 md:p-4 bg-gray-50 rounded-lg group-hover:bg-gray-100 transition-colors mx-auto">
                       <img
                         src={sponsor.logo}
                         alt={`${sponsor.name} logo`}
@@ -98,14 +98,14 @@ export default function SponsorSection() {
                           target.style.display = "none";
                           const parent = target.parentElement;
                           if (parent) {
-                            parent.innerHTML = `<div class="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-semibold text-base text-center px-4">${sponsor.name}</div>`;
+                            parent.innerHTML = `<div class="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-semibold text-xs sm:text-sm md:text-base text-center px-2 md:px-4">${sponsor.name}</div>`;
                           }
                         }}
                       />
                     </div>
-                    {/* เพิ่มชื่อ sponsor ด้านล่าง logo */}
-                    <div className="mt-3 text-center">
-                      <p className="text-sm text-gray-600 font-medium group-hover:text-blue-600 transition-colors">
+                    {/* ปรับขนาดชื่อ sponsor */}
+                    <div className="mt-2 md:mt-3 text-center">
+                      <p className="text-xs sm:text-sm text-gray-600 font-medium group-hover:text-blue-600 transition-colors">
                         {sponsor.name}
                       </p>
                     </div>
@@ -115,13 +115,13 @@ export default function SponsorSection() {
             </div>
           </div>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-3">
+          {/* Dots Indicator - ปรับขนาดสำหรับมือถือ */}
+          <div className="flex justify-center mt-6 md:mt-8 space-x-2 md:space-x-3">
             {Array.from({ length: totalSlides }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-all duration-300 ${
                   index === currentSlide
                     ? "bg-blue-600 scale-125 shadow-md"
                     : "bg-gray-300 hover:bg-gray-400 hover:scale-110"
@@ -133,8 +133,8 @@ export default function SponsorSection() {
         </div>
 
         {/* Optional: Add thank you message */}
-        <div className="text-center mt-12">
-          <p className="text-gray-500 italic text-sm">
+        <div className="text-center mt-8 md:mt-12">
+          <p className="text-gray-500 italic text-xs md:text-sm">
             {t("heartfelt_gratitude")}
           </p>
         </div>

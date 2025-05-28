@@ -2,68 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
-
-interface Sponsor {
-  id: number;
-  name: string;
-  logo: string;
-  website: string;
-}
+import { sponsors } from "../../data/sponsors"; // เพิ่มบรรทัดนี้
+import { Sponsor } from "../../app/interfaces"; // เพิ่มบรรทัดนี้
 
 export default function SponsorSection() {
   const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const sponsors: Sponsor[] = [
-    {
-      id: 1,
-      name: "Edvisory",
-      logo: "/sponsors/edvisory-logo.png",
-      website: "https://edvisory.com",
-    },
-    {
-      id: 2,
-      name: "National Innovation Agency (NIA)",
-      logo: "/sponsors/nia-logo.png",
-      website: "https://www.nia.or.th",
-    },
-    {
-      id: 3,
-      name: "ThaiHealth",
-      logo: "/sponsors/thaihealth-logo.png",
-      website: "https://www.thaihealth.or.th",
-    },
-    {
-      id: 4,
-      name: "U.S. Embassy Thailand",
-      logo: "/sponsors/us-embassy-logo.png",
-      website: "https://th.usembassy.gov",
-    },
-    {
-      id: 5,
-      name: "True Digital Park",
-      logo: "/sponsors/true-digital-park-logo.png",
-      website: "https://truedigitalpark.com",
-    },
-    {
-      id: 6,
-      name: "Y.I.Y. Foundation",
-      logo: "/sponsors/yiy-foundation-logo.png",
-      website: "#",
-    },
-    {
-      id: 7,
-      name: "Katalyst",
-      logo: "/sponsors/katalyst-logo.png",
-      website: "#",
-    },
-    {
-      id: 8,
-      name: "GPO",
-      logo: "/sponsors/gpo-logo.png",
-      website: "#",
-    },
-  ];
 
   const itemsPerSlide = 4; // แสดง 4 logos ต่อ slide
   const totalSlides = Math.ceil(sponsors.length / itemsPerSlide);

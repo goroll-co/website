@@ -61,3 +61,11 @@ export interface Solution {
   image: string;
   category: string;
 }
+
+// เพิ่มใหม่ - จาก src/components/about/SponsorSection.tsx
+export interface Sponsor {
+  id: number;
+  name: string;
+  logo: string;
+  website: string;
+}

@@ -176,8 +176,8 @@ export default function TermsOfService({
               <ul className="list-disc pl-8 mb-6 space-y-2 text-gray-700">
                 <li>Use the service for illegal or inappropriate activities</li>
                 <li>Share false or misleading information</li>
-                <li>Interfere with or disrupt the website's operation</li>
-                <li>Violate others' privacy rights</li>
+                <li>Interfere with or disrupt the website&apos;s operation</li>
+                <li>Violate others&apos; privacy rights</li>
                 <li>Use the service for unauthorized commercial purposes</li>
               </ul>
 

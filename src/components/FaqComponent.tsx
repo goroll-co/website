@@ -20,7 +20,6 @@ export default function FaqComponent({
   className = "",
 }: FaqComponentProps) {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
-  const { language } = useLanguage();
 
   const toggleAccordion = (index: number) => {
     setActiveAccordion(activeAccordion === index ? null : index);

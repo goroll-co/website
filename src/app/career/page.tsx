@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react"; // เพิ่ม useEffect
 import { Briefcase, MapPin, Clock, DollarSign, Search } from "lucide-react";
 import { Career } from "../interfaces";
 import CommonHeroSection from "@/components/CommonHeroSection";
@@ -12,10 +12,24 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function CareerPage() {
   const [selectedJob, setSelectedJob] = useState<Career | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [careers, setCareers] = useState<Career[]>([]); // เปลี่ยนจาก const เป็น state
   const { t, language } = useLanguage();
 
-  // ใช้ getCareers function เพื่อดึงข้อมูลตามภาษาที่เลือก
-  const careers = getCareers(language as "th" | "en");
+  // เพิ่ม useEffect เพื่อ update ข้อมูล career เมื่อภาษาเปลี่ยน
+  useEffect(() => {
+    const updatedCareers = getCareers(language as "th" | "en");
+    setCareers(updatedCareers);
+
+    // ถ้ามี selectedJob อยู่ ให้ update ข้อมูลใน modal ด้วย
+    if (selectedJob) {
+      const updatedSelectedJob = updatedCareers.find(
+        (career) => career.id === selectedJob.id
+      );
+      if (updatedSelectedJob) {
+        setSelectedJob(updatedSelectedJob);
+      }
+    }
+  }, [language, selectedJob?.id]); // dependency array รวม language และ selectedJob.id
 
   const filteredJobs = careers.filter(
     (job) =>

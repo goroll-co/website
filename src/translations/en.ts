@@ -1,11 +1,40 @@
 // src/translations/en.ts
 export const enTranslations = {
-  // Hero Section
+  // ===========================================
+  // NAVIGATION & COMMON
+  // ===========================================
+  about: "About",
+  solutions: "Solutions",
+  achievements: "Achievements",
+  career: "Career",
+  contact: "Contact",
+  learn_more: "Learn More",
+  view_details: "Click for more details",
+  close: "Close",
+  get_started: "Get Started Now",
+  apply_now: "Apply Now",
+
+  // ===========================================
+  // HERO SECTIONS
+  // ===========================================
   welcome: "Welcome to GOROLL",
   tagline: "A platform for accessible journeys and inclusive communities",
   start_journey: "Start Your Journey",
 
-  // Features Section
+  // Specific Hero Sections
+  achievements_title: "Our Achievements",
+  achievements_subtitle:
+    "We are proud to present our successes and achievements that make a difference in the community",
+  career_title: "Join Our Team",
+  career_subtitle:
+    "We are building something special and we are always looking for talented individuals to join our journey.",
+  our_solutions: "Our Solutions",
+  solutions_hero_subtitle:
+    "Innovative solutions designed to make mobility accessible and inclusive for everyone",
+
+  // ===========================================
+  // FEATURES SECTION
+  // ===========================================
   making_mobility_accessible: "Making Mobility Accessible",
   feature_accessible_routes_title: "Accessible Routes",
   feature_accessible_routes_desc:
@@ -17,20 +46,9 @@ export const enTranslations = {
   feature_safe_transportation_desc:
     "Access reliable and affordable transportation options with our verified GOROLL Carpool service.",
 
-  // Community Section
-  join_community: "Join Our Community",
-  community_desc:
-    "Connect with others, share accessible routes, and make mobility easier for everyone",
-  get_started: "Get Started Now",
-
-  // Modal
-  coming_soon: "Coming Soon!",
-  working_hard:
-    "We are working hard to bring you something amazing. Stay tuned!",
-  got_it: "Got it!",
-
-  // เพิ่มส่วนใหม่ตรงนี้
-  // Testimonials Section
+  // ===========================================
+  // TESTIMONIALS SECTION
+  // ===========================================
   testimonials_title: "What Our Users Say",
   testimonial1_name: "Somchai Jaidee",
   testimonial1_role: "Wheelchair User",
@@ -45,7 +63,9 @@ export const enTranslations = {
   testimonial3_content:
     "I'm glad to be part of the GOROLL community. Helping wheelchair users travel conveniently makes me proud.",
 
-  // FAQ Section
+  // ===========================================
+  // FAQ SECTION
+  // ===========================================
   faq_title: "Frequently Asked Questions",
   faq1_question: "What is GOROLL?",
   faq1_answer:
@@ -60,24 +80,35 @@ export const enTranslations = {
   faq4_answer:
     "Currently, GOROLL operates in Bangkok and surrounding areas. We plan to expand to other major cities in Thailand soon.",
 
-  // Stats Section
+  // ===========================================
+  // COMMUNITY/CTA SECTION
+  // ===========================================
+  join_community: "Join Our Community",
+  community_desc:
+    "Connect with others, share accessible routes, and make mobility easier for everyone",
+  watch_video: "Watch Demo Video",
+  ready_to_make_mobility_accessible: "Ready to Make Mobility Accessible?",
+  join_inclusive_community:
+    "Join us in creating an inclusive community where everyone can travel with confidence",
+
+  // ===========================================
+  // MODAL CONTENT
+  // ===========================================
+  coming_soon: "Coming Soon!",
+  working_hard:
+    "We are working hard to bring you something amazing. Stay tuned!",
+  got_it: "Got it!",
+
+  // ===========================================
+  // STATS SECTION
+  // ===========================================
   stats_satisfaction: "Satisfaction",
   stats_accessible_places: "Accessible Places",
   stats_verified_drivers: "Verified Drivers",
-  stats_support: "Support",
 
-  // Watch Video Button
-  watch_video: "Watch Demo Video",
-
-  // Navbar
-  about: "About",
-  solutions: "Solutions",
-  achievements: "Achievements",
-  career: "Career",
-  contact: "Contact",
-  learn_more: "Learn More",
-
-  // About page translations
+  // ===========================================
+  // ABOUT PAGE
+  // ===========================================
   our_story: "Our Story",
   story_desc1:
     "The GOROLL project is an application developed based on the experience of working with individuals with mobility impairments. This experience has led to a deeper awareness of the challenges faced by wheelchair users when traveling in Thailand.",
@@ -110,28 +141,70 @@ export const enTranslations = {
   ceo_role: "CEO & Co-founder",
   cto_role: "CTO & Co-founder",
   marketing_role: "Head of Marketing",
-  view_details: "Click for more details",
-  close: "Close",
 
-  // เพิ่มเข้าไปในไฟล์ src/translations/en.ts ในส่วนด้านล่าง
-  // Achievements Page
-  achievements_title: "Our Achievements",
-  achievements_subtitle:
-    "We are proud to present our successes and achievements that make a difference in the community",
+  // ===========================================
+  // SPONSOR SECTION
+  // ===========================================
+  thank_you_sponsors: "Thank You",
+  sponsor_appreciation:
+    "We are grateful to our sponsors and partners who have supported us throughout our journey.",
+  heartfelt_gratitude:
+    "With heartfelt gratitude to all our sponsors and partners",
+
+  // ===========================================
+  // ACHIEVEMENTS PAGE
+  // ===========================================
   latest_achievement: "Latest Achievement",
   all_achievements: "All Achievements",
   all_categories: "All",
   by_organizer: "By",
-  photos_count: "photos",
-  share: "Share",
   achievements_footer: "These are just some of our achievements and successes",
   follow_updates: "Stay tuned for more updates!",
 
-  // เพิ่มต่อจากคำแปลที่มีอยู่แล้ว
-  // Career Page
-  career_title: "Join Our Team",
-  career_subtitle:
-    "We are building something special and we are always looking for talented individuals to join our journey.",
+  // ===========================================
+  // SOLUTIONS PAGE
+  // ===========================================
+  mobile_app: "Mobile Application",
+  solutions_that_help_travel: "Solutions That Make Travel Easier",
+  discover_solutions_desc:
+    "Discover solutions designed to make your travels more convenient and accessible",
+
+  // Navigation Features
+  discover_accessible_routes: "Discover Accessible Routes",
+  discover_accessible_routes_desc:
+    "Real-time location tracking and accessible route planning. Find wheelchair-friendly paths easily and quickly.",
+  report_obstacles: "Report Route Obstacles",
+  report_obstacles_desc:
+    "Obstacle reporting system and community-verified paths. Save time on journey planning and access reliable accessibility information.",
+  share_knowledge: "Share Knowledge with Community",
+  share_knowledge_desc:
+    "Community-verified paths and experience sharing. Contribute to community knowledge and help others navigate more easily.",
+
+  // Social Features
+  connect_community: "Connect with Community",
+  connect_community_desc:
+    "Social networking platform and experience sharing that helps you connect with like-minded people and build strong networks.",
+  review_places: "Review Places",
+  review_places_desc:
+    "Location reviews and accessibility awareness. Share valuable experiences and promote inclusive design for everyone.",
+  supportive_community: "Build Supportive Community",
+  supportive_community_desc:
+    "Raise awareness and transform places into UD places while building a supportive community that promotes inclusive design.",
+
+  // Transport Features
+  wheelchair_vehicles: "Wheelchair-Accessible Vehicles",
+  wheelchair_vehicles_desc:
+    "Wheelchair-friendly vehicle matching and real-time ride tracking. Reduce transportation costs and access reliable transport options.",
+  secure_payment: "Secure Payment System",
+  secure_payment_desc:
+    "Secure payment system and driver verification. Ensure safety and comfort throughout your journey with trusted service.",
+  verified_drivers: "Verified Drivers",
+  verified_drivers_desc:
+    "Verified drivers with experience in providing services. Get reliable support from trusted professionals throughout your trip.",
+
+  // ===========================================
+  // CAREER PAGE
+  // ===========================================
   our_culture: "Our Culture",
   culture_desc:
     "We believe in creating an environment where people can do their best work. Our culture is built on collaboration, innovation, and mutual respect.",
@@ -141,67 +214,7 @@ export const enTranslations = {
   culture_point4: "Opportunities for growth and learning",
   open_positions: "Open Positions",
   search_positions: "Search positions...",
-
-  apply_now: "Apply Now",
   description: "Description",
   requirements: "Requirements",
   responsibilities: "Responsibilities",
-
-  // Sponsor Section
-  thank_you_sponsors: "Thank You",
-  sponsor_appreciation:
-    "We are grateful to our sponsors and partners who have supported us throughout our journey.",
-  heartfelt_gratitude:
-    "With heartfelt gratitude to all our sponsors and partners",
-
-  mobile_app: "Mobile Application",
-  solutions_that_help_travel: "Solutions That Make Travel Easier",
-  discover_solutions_desc:
-    "Discover solutions designed to make your travels more convenient and accessible",
-
-  // Navigation features
-  discover_accessible_routes: "Discover Accessible Routes",
-  discover_accessible_routes_desc:
-    "Real-time location tracking and accessible route planning. Find wheelchair-friendly paths easily and quickly.",
-
-  report_obstacles: "Report Route Obstacles",
-  report_obstacles_desc:
-    "Obstacle reporting system and community-verified paths. Save time on journey planning and access reliable accessibility information.",
-
-  share_knowledge: "Share Knowledge with Community",
-  share_knowledge_desc:
-    "Community-verified paths and experience sharing. Contribute to community knowledge and help others navigate more easily.",
-
-  // Social features
-  connect_community: "Connect with Community",
-  connect_community_desc:
-    "Social networking platform and experience sharing that helps you connect with like-minded people and build strong networks.",
-
-  review_places: "Review Places",
-  review_places_desc:
-    "Location reviews and accessibility awareness. Share valuable experiences and promote inclusive design for everyone.",
-
-  supportive_community: "Build Supportive Community",
-  supportive_community_desc:
-    "Raise awareness and transform places into UD places while building a supportive community that promotes inclusive design.",
-
-  // Transport features
-  wheelchair_vehicles: "Wheelchair-Accessible Vehicles",
-  wheelchair_vehicles_desc:
-    "Wheelchair-friendly vehicle matching and real-time ride tracking. Reduce transportation costs and access reliable transport options.",
-
-  secure_payment: "Secure Payment System",
-  secure_payment_desc:
-    "Secure payment system and driver verification. Ensure safety and comfort throughout your journey with trusted service.",
-
-  verified_drivers: "Verified Drivers",
-  verified_drivers_desc:
-    "Verified drivers with experience in providing services. Get reliable support from trusted professionals throughout your trip.",
-
-  our_solutions: "Our Solutions",
-  solutions_hero_subtitle:
-    "Innovative solutions designed to make mobility accessible and inclusive for everyone",
-  ready_to_make_mobility_accessible: "Ready to Make Mobility Accessible?",
-  join_inclusive_community:
-    "Join us in creating an inclusive community where everyone can travel with confidence",
 };

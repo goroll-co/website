@@ -48,7 +48,7 @@ export default function SponsorSection() {
 
         {/* Carousel Container */}
         <div className="relative">
-          {/* Navigation Arrows - ปรับตำแหน่งและขนาดสำหรับมือถือ */}
+          {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all hover:scale-110 -ml-3 md:-ml-6"
@@ -65,13 +65,13 @@ export default function SponsorSection() {
             <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-gray-600" />
           </button>
 
-          {/* Sponsors Display - ปรับ padding และ gap */}
+          {/* Sponsors Display - แก้ไขการจัดตำแหน่ง */}
           <div className="bg-white rounded-2xl shadow-lg p-6 md:p-12 mx-6 md:mx-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 items-center justify-items-center min-h-[120px] md:min-h-[160px]">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 items-center min-h-[120px] md:min-h-[160px]">
               {getCurrentSponsors().map((sponsor, index) => (
                 <div
                   key={sponsor.id}
-                  className="group cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-lg rounded-lg p-2 md:p-4 w-full"
+                  className="group cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-lg rounded-lg p-2 md:p-4 w-full flex flex-col items-center justify-center"
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
@@ -84,10 +84,10 @@ export default function SponsorSection() {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="block w-full h-full"
+                    className="block w-full h-full flex flex-col items-center justify-center"
                   >
-                    {/* ปรับขนาด logo container ให้ responsive */}
-                    <div className="h-20 w-full sm:h-24 sm:w-36 md:h-32 md:w-48 lg:h-36 lg:w-52 xl:h-40 xl:w-56 flex items-center justify-center p-2 md:p-4 bg-gray-50 rounded-lg group-hover:bg-gray-100 transition-colors mx-auto">
+                    {/* แก้ไข logo container ให้อยู่ตรงกลาง */}
+                    <div className="h-20 w-full sm:h-24 md:h-32 lg:h-36 xl:h-40 max-w-[200px] flex items-center justify-center p-2 md:p-4 bg-gray-50 rounded-lg group-hover:bg-gray-100 transition-all duration-300">
                       <img
                         src={sponsor.logo}
                         alt={`${sponsor.name} logo`}
@@ -103,7 +103,7 @@ export default function SponsorSection() {
                         }}
                       />
                     </div>
-                    {/* ปรับขนาดชื่อ sponsor */}
+                    {/* ชื่อ sponsor */}
                     <div className="mt-2 md:mt-3 text-center">
                       <p className="text-xs sm:text-sm text-gray-600 font-medium group-hover:text-blue-600 transition-colors">
                         {sponsor.name}
@@ -115,7 +115,7 @@ export default function SponsorSection() {
             </div>
           </div>
 
-          {/* Dots Indicator - ปรับขนาดสำหรับมือถือ */}
+          {/* Dots Indicator */}
           <div className="flex justify-center mt-6 md:mt-8 space-x-2 md:space-x-3">
             {Array.from({ length: totalSlides }).map((_, index) => (
               <button

@@ -7,7 +7,7 @@ import AchievementCard from "../../components/achievements/AchievementCard";
 import AchievementModal from "../../components/achievements/AchievementModal";
 import AchievementFilter from "../../components/achievements/AchievementFilter";
 import FeaturedAchievement from "../../components/achievements/FeaturedAchievement";
-import { getAchievements, getCategories } from "../../data/achievements";
+import { getAchievements } from "../../data/achievements";
 import { Achievement } from "../interfaces";
 import CommonHeroSection from "@/components/CommonHeroSection";
 import "../../components/achievements/animations.css";

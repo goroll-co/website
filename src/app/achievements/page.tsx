@@ -7,7 +7,7 @@ import AchievementCard from "../../components/achievements/AchievementCard";
 import AchievementModal from "../../components/achievements/AchievementModal";
 import AchievementFilter from "../../components/achievements/AchievementFilter";
 import FeaturedAchievement from "../../components/achievements/FeaturedAchievement";
-import { achievements } from "../../data/achievements";
+import { getAchievements, getCategories } from "../../data/achievements";
 import { Achievement } from "../interfaces";
 import CommonHeroSection from "@/components/CommonHeroSection";
 import "../../components/achievements/animations.css";
@@ -18,7 +18,10 @@ export default function AchievementPage() {
     useState<Achievement | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [scrollPosition, setScrollPosition] = useState(0);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  // ใช้ getAchievements function ที่รองรับ multilingual
+  const achievements = getAchievements(language as "th" | "en");
 
   // ดึงหมวดหมู่ที่ไม่ซ้ำกันจากข้อมูล achievements
   const categories = [
@@ -83,7 +86,7 @@ export default function AchievementPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredAchievements.map((achievement, index) => (
             <AchievementCard
-              key={index}
+              key={achievement.id}
               {...achievement}
               onClick={() => setSelectedAchievement(achievement)}
               animationDelay={index % 5} // สร้างดีเลย์ที่หลากหลาย

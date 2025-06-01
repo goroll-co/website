@@ -76,3 +76,11 @@ export interface Feature {
   icon: React.ReactNode;
   image: string;
 }
+
+export interface Testimonial {
+  name: string;
+  role: string;
+  content: string;
+  avatar: string;
+  rating: number;
+}

@@ -1,31 +1,32 @@
 // src/components/home/TestimonialsSection.tsx
 import React from "react";
-import { Star } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import TestimonialCard from "./TestimonialCard";
+import type { Testimonial } from "@/app/interfaces";
 
 export default function TestimonialsSection() {
   const { t } = useLanguage();
 
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       name: t("testimonial1_name"),
       role: t("testimonial1_role"),
       content: t("testimonial1_content"),
-      avatar: "/testimonials/user1.jpg",
+      avatar: "/testimonials/user1.jpg", // จะใช้ fallback เป็น initial
       rating: 5,
     },
     {
       name: t("testimonial2_name"),
       role: t("testimonial2_role"),
       content: t("testimonial2_content"),
-      avatar: "/testimonials/user2.jpg",
+      avatar: "/testimonials/user2.jpg", // จะใช้ fallback เป็น initial
       rating: 5,
     },
     {
       name: t("testimonial3_name"),
       role: t("testimonial3_role"),
       content: t("testimonial3_content"),
-      avatar: "/testimonials/user3.jpg",
+      avatar: "/testimonials/user3.jpg", // จะใช้ fallback เป็น initial
       rating: 4,
     },
   ];
@@ -36,41 +37,26 @@ export default function TestimonialsSection() {
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           {t("testimonials_title")}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-800">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <TestimonialCard
               key={index}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
-            >
-              <div className="flex items-center mb-4">
-                <div className="flex-shrink-0">
-                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                    <span className="text-blue-600 font-bold">
-                      {testimonial.name.charAt(0)}
-                    </span>
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-lg font-semibold">{testimonial.name}</h4>
-                  <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                </div>
-              </div>
-              <div className="mb-4 flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={16}
-                    className={
-                      i < testimonial.rating
-                        ? "text-yellow-400 fill-yellow-400"
-                        : "text-gray-300"
-                    }
-                  />
-                ))}
-              </div>
-              <p className="text-gray-600">{testimonial.content}</p>
-            </div>
+              name={testimonial.name}
+              role={testimonial.role}
+              content={testimonial.content}
+              avatar={testimonial.avatar}
+              rating={testimonial.rating}
+              className="group" // เพิ่ม group class สำหรับ hover effects
+            />
           ))}
+        </div>
+
+        {/* Optional: Add a CTA or additional content */}
+        <div className="text-center mt-12">
+          <p className="text-gray-600 mb-4">
+            {t("testimonials_title")} - {t("join_community")}
+          </p>
         </div>
       </div>
     </section>

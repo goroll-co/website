@@ -69,3 +69,10 @@ export interface Sponsor {
   logo: string;
   website: string;
 }
+
+export interface Feature {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  image: string;
+}

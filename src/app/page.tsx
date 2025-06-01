@@ -1,12 +1,10 @@
 // src/app/page.tsx
-
 "use client";
 
 import React, { useState } from "react";
 import HeroSection from "@/components/home/HeroSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
-
 import FaqSection from "@/components/home/FaqSection";
 import CtaSection from "@/components/home/CtaSection";
 import ComingSoonModal from "@/components/home/ComingsoonModal";
@@ -28,7 +26,7 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Features Section */}
+      {/* Features Section - ตอนนี้ใช้ FeatureCard component ข้างใน */}
       <FeaturesSection onLearnMoreClick={handleShowModal} />
 
       {/* Testimonials Section */}

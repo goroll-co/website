@@ -1,16 +1,21 @@
+// src/app/career/page.tsx
+
 "use client";
 
 import { useState } from "react";
 import { Briefcase, MapPin, Clock, DollarSign, Search } from "lucide-react";
 import { Career } from "../interfaces";
 import CommonHeroSection from "@/components/CommonHeroSection";
-import { careers } from "../../data/career";
+import { getCareers } from "../../data/career";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function CareerPage() {
   const [selectedJob, setSelectedJob] = useState<Career | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  // ใช้ getCareers function เพื่อดึงข้อมูลตามภาษาที่เลือก
+  const careers = getCareers(language as "th" | "en");
 
   const filteredJobs = careers.filter(
     (job) =>

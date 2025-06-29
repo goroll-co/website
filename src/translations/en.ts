@@ -210,7 +210,7 @@ export const enTranslations = {
     "We believe in creating an environment where people can do their best work. Our culture is built on collaboration, innovation, and mutual respect.",
   culture_point1: "Collaborative and supportive environment",
   culture_point2: "Focus on innovation and creativity",
-  culture_point3: "Work hard play hard (NO WORK-LIFE BALANCE)",
+  culture_point3: "Work hard play hard (work life integration)",
   culture_point4: "Opportunities for growth and learning",
   open_positions: "Open Positions",
   search_positions: "Search positions...",

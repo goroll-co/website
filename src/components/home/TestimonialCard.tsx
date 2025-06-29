@@ -1,5 +1,6 @@
 // src/components/home/TestimonialCard.tsx
 import React from "react";
+import Image from "next/image";
 import { Star } from "lucide-react";
 import type { Testimonial } from "@/app/interfaces";
 
@@ -23,9 +24,11 @@ export default function TestimonialCard({
       <div className="flex items-center mb-4">
         <div className="flex-shrink-0">
           {avatar && avatar !== "/testimonials/user1.jpg" ? (
-            <img
+            <Image
               src={avatar}
               alt={`${name} avatar`}
+              width={48}
+              height={48}
               className="h-12 w-12 rounded-full object-cover"
               onError={(e) => {
                 // Fallback to initials if image fails to load
@@ -79,9 +82,9 @@ export default function TestimonialCard({
       {/* Testimonial Content */}
       <blockquote className="text-gray-700 leading-relaxed">
         <p className="relative">
-          <span className="text-blue-600 text-2xl leading-none">"</span>
+          <span className="text-blue-600 text-2xl leading-none">&ldquo;</span>
           {content}
-          <span className="text-blue-600 text-2xl leading-none">"</span>
+          <span className="text-blue-600 text-2xl leading-none">&rdquo;</span>
         </p>
       </blockquote>
     </div>

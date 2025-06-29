@@ -36,10 +36,10 @@ export default function Footer() {
               <p className="text-gray-300">
                 {language === "th" ? "อีเมล: " : "Email: "}
                 <a
-                  href="mailto:gorollth@outlook.com"
+                  href="mailto:team@goroll.co"
                   className="hover:text-white transition-colors"
                 >
-                  gorollth@outlook.com
+                  team@goroll.co
                 </a>
               </p>
               <p className="text-gray-300">

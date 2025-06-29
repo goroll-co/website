@@ -217,7 +217,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
                 <p className="text-gray-700">
                   <strong>อีเมล:</strong> privacy@gorollth.com
                   <br />
-                  <strong>อีเมลทั่วไป:</strong> gorollth@outlook.com
+                  <strong>อีเมลทั่วไป:</strong> team@goroll.co
                   <br />
                   <strong>โทรศัพท์:</strong> +66 830796796
                   <br />
@@ -417,15 +417,12 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mb-6">
                 <p className="text-gray-700">
-                  <strong>Privacy Email:</strong> privacy@gorollth.com
-                  <br />
-                  <strong>General Email:</strong> gorollth@outlook.com
+                  <strong>General Email:</strong> team@goroll.co
                   <br />
                   <strong>Phone:</strong> +66 830796796
                   <br />
                   <strong>Address:</strong> Bangkok, Thailand
-                  <br />
-                  <strong>Data Protection Officer:</strong> privacy@gorollth.com
+                  <br />{" "}
                 </p>
               </div>
             </>

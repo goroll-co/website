@@ -15,8 +15,8 @@ export default function TeamSection() {
       role: t("ceo_role"),
       bio:
         language === "th"
-          ? "นักกายภาพบำบัดที่มีความหลงใหลในการทำให้การเดินทางเป็นเรื่องเข้าถึงได้สำหรับทุกคน มีประสบการณ์ทำงานกับผู้ใช้วีลแชร์มากว่า 5 ปี"
-          : "A physiotherapist passionate about making travel accessible for everyone. Has over 5 years of experience working with wheelchair users.",
+          ? "นักกายภาพบำบัดที่มีความหลงใหลในการทำให้การเดินทางเป็นเรื่องเข้าถึงได้สำหรับทุกคน มีประสบการณ์ทำงานกับผู้ใช้วีลแชร์มากว่า 3 ปี"
+          : "A physiotherapist passionate about making travel accessible for everyone. Has over 3 years of experience working with wheelchair users.",
       image: "/about/teammember/title.jpg",
       social: {
         linkedin: "#",

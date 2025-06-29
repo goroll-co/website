@@ -14,8 +14,8 @@ export default function ContactFAQ() {
           : "How can I contact the support team?",
       answer:
         language === "th"
-          ? "คุณสามารถติดต่อเราได้ทางอีเมล gorollth@outlook.com หรือโทรศัพท์ที่ +66 830796796 ในช่วงเวลาทำการ"
-          : "You can reach us via email at gorollth@outlook.com or by phone at +66 830796796 during business hours.",
+          ? "คุณสามารถติดต่อเราได้ทางอีเมล team@goroll.co หรือโทรศัพท์ที่ +66 830796796 ในช่วงเวลาทำการ"
+          : "You can reach us via email at team@goroll.co or by phone at +66 830796796 during business hours.",
     },
     {
       question:
@@ -34,8 +34,8 @@ export default function ContactFAQ() {
           : "How can I partner with GOROLL?",
       answer:
         language === "th"
-          ? "เรายินดีที่จะร่วมงานกับพันธมิตรที่มีวิสัยทัศน์เดียวกัน โปรดส่งอีเมลรายละเอียดเกี่ยวกับธุรกิจของคุณและข้อเสนอความร่วมมือไปที่ gorollth@outlook.com"
-          : "We welcome partnerships with like-minded organizations. Please email details about your business and partnership proposal to gorollth@outlook.com.",
+          ? "เรายินดีที่จะร่วมงานกับพันธมิตรที่มีวิสัยทัศน์เดียวกัน โปรดส่งอีเมลรายละเอียดเกี่ยวกับธุรกิจของคุณและข้อเสนอความร่วมมือไปที่ team@goroll.co"
+          : "We welcome partnerships with like-minded organizations. Please email details about your business and partnership proposal to team@goroll.co",
     },
   ];
 

@@ -43,10 +43,10 @@ export default function ContactInfo() {
               {language === "th" ? "อีเมล" : "Email"}
             </h3>
             <a
-              href="mailto:gorollth@outlook.com"
+              href="mailto:team@goroll.co"
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
-              gorollth@outlook.com
+              team@goroll.co
             </a>
           </div>
         </div>

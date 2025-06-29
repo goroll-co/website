@@ -127,7 +127,7 @@ export default function TermsOfService({
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mb-6">
                 <p className="text-gray-700">
-                  <strong>อีเมล:</strong> gorollth@outlook.com
+                  <strong>อีเมล:</strong> team@goroll.co
                   <br />
                   <strong>โทรศัพท์:</strong> +66 830796796
                   <br />
@@ -231,7 +231,7 @@ export default function TermsOfService({
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mb-6">
                 <p className="text-gray-700">
-                  <strong>Email:</strong> gorollth@outlook.com
+                  <strong>Email:</strong> team@goroll.co
                   <br />
                   <strong>Phone:</strong> +66 830796796
                   <br />

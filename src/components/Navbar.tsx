@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "../context/LanguageContext";
@@ -30,6 +31,17 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
+              {/* Logo Image */}
+              <div className="w-10 h-10 mr-3 relative">
+                <Image
+                  src="/logo.svg"
+                  alt="GOROLL Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+              </div>
+              {/* Brand Text */}
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
                 GOROLL
               </span>
@@ -86,11 +98,21 @@ export default function Navbar() {
         <div className="relative float-right bg-white h-full w-64 shadow-xl">
           <div className="pt-5 pb-6 px-5">
             <div className="flex items-center justify-between mb-6">
-              <Link
-                href="/"
-                className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent"
-              >
-                GOROLL
+              <Link href="/" className="flex items-center">
+                {/* Mobile Logo Image */}
+                <div className="w-8 h-8 mr-2 relative">
+                  <Image
+                    src="/logo.svg"
+                    alt="GOROLL Logo"
+                    width={32}
+                    height={32}
+                    className="object-contain"
+                  />
+                </div>
+                {/* Mobile Brand Text */}
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
+                  GOROLL
+                </span>
               </Link>
               <button
                 onClick={() => setIsOpen(false)}

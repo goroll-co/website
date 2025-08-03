@@ -215,7 +215,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mb-6">
                 <p className="text-gray-700">
-                  <strong>อีเมล:</strong> privacy@gorollth.com
+                  <strong>อีเมล:</strong> team@gorollth.com
                   <br />
                   <strong>อีเมลทั่วไป:</strong> team@goroll.co
                   <br />
@@ -223,8 +223,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
                   <br />
                   <strong>ที่อยู่:</strong> Bangkok, Thailand
                   <br />
-                  <strong>เจ้าหน้าที่คุมครองข้อมูล:</strong>{" "}
-                  privacy@gorollth.com
+                  <strong>เจ้าหน้าที่คุมครองข้อมูล:</strong> team@gorollth.com
                 </p>
               </div>
             </>

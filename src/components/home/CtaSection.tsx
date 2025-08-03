@@ -54,7 +54,7 @@ export default function CtaSection({ onVideoClick }: CtaSectionProps) {
             </svg>
           </a>
           <a
-            href="https://www.instagram.com/gorollth/"
+            href="https://www.instagram.com/goroll.co"
             className="text-blue-600 hover:text-blue-800 transition-colors"
             target="_blank"
             rel="noopener noreferrer"

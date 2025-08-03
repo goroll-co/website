@@ -78,6 +78,15 @@ export default function Footer() {
                   Instagram
                 </a>
                 <a
+                  href="https://www.tiktok.com/@goroll.co"
+                  className="text-gray-300 hover:text-white transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                >
+                  TikTok
+                </a>
+                <a
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors"
                   target="_blank"

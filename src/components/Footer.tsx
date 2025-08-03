@@ -23,8 +23,8 @@ export default function Footer() {
               </h3>
               <p className="text-gray-300">
                 {language === "th"
-                  ? "เราอยู่บนเส้นทางการ ROLL เพื่อ GO สำหรับทุกคน"
-                  : "We are on the ROLL to GO for ALL"}
+                  ? "Your route, Your right"
+                  : "Your route, Your rights"}
               </p>
             </div>
 

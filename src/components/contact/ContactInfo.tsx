@@ -87,7 +87,7 @@ export default function ContactInfo() {
         </h3>
         <div className="flex space-x-4">
           <a
-            href="https://www.facebook.com/people/Goroll-Thailand-%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%A7%E0%B8%B5%E0%B8%A5%E0%B9%81%E0%B8%8A%E0%B8%A3%E0%B9%8C/61567019297171/"
+            href="https://www.facebook.com/goroll.co"
             className="bg-gray-100 p-3 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-110"
             target="_blank"
             rel="noopener noreferrer"
@@ -97,7 +97,7 @@ export default function ContactInfo() {
           </a>
 
           <a
-            href="https://www.instagram.com/gorollth/"
+            href="https://www.instagram.com/goroll.co"
             className="bg-gray-100 p-3 rounded-full text-pink-600 hover:bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500 hover:text-white transition-all transform hover:scale-110"
             target="_blank"
             rel="noopener noreferrer"

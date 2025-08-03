@@ -39,7 +39,7 @@ export default function CtaSection({ onVideoClick }: CtaSectionProps) {
 
         <div className="mt-12 flex justify-center space-x-6">
           <a
-            href="https://www.facebook.com/people/Goroll-Thailand-%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%A7%E0%B8%B5%E0%B8%A5%E0%B9%81%E0%B8%8A%E0%B8%A3%E0%B9%8C/61567019297171/"
+            href="https://www.facebook.com/goroll.co"
             className="text-blue-600 hover:text-blue-800 transition-colors"
             target="_blank"
             rel="noopener noreferrer"

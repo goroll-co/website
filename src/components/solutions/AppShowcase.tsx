@@ -266,28 +266,32 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               )}
             </div>
 
-            <div className="mt-8">
+            {/* App Store Download Buttons */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              {/* App Store Button */}
               <a
                 href="#"
-                className={`text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center ${
-                  getCategoryColors(getActiveSolution().category).buttonColor
-                }`}
+                className="inline-block transition-transform hover:scale-105"
+                aria-label="Download on the App Store"
               >
-                {t("learn_more")}
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
+                <img
+                  src="/store/App_Store.svg"
+                  alt="Download on the App Store"
+                  className="h-14 w-auto"
+                />
+              </a>
+
+              {/* Google Play Button */}
+              <a
+                href="#"
+                className="inline-block transition-transform hover:scale-105"
+                aria-label="Get it on Google Play"
+              >
+                <img
+                  src="/store/Google_Play.png"
+                  alt="Get it on Google Play"
+                  className="h-14 w-auto"
+                />
               </a>
             </div>
           </div>

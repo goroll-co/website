@@ -267,30 +267,30 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
             </div>
 
             {/* App Store Download Buttons */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8 flex flex-row gap-2 sm:gap-4 justify-center sm:justify-start">
               {/* App Store Button */}
               <a
-                href="#"
+                href="https://testflight.apple.com/join/B1hnSF1F"
                 className="inline-block transition-transform hover:scale-105"
                 aria-label="Download on the App Store"
               >
                 <img
                   src="/store/App_Store.svg"
                   alt="Download on the App Store"
-                  className="h-14 w-auto"
+                  className="h-12 sm:h-14 w-auto"
                 />
               </a>
 
               {/* Google Play Button */}
               <a
-                href="#"
+                href="https://drive.google.com/file/d/1ir-7VQZrb1dGtt0-CA6btSfthRa2hAhm/view?usp=drive_link"
                 className="inline-block transition-transform hover:scale-105"
                 aria-label="Get it on Google Play"
               >
                 <img
-                  src="/store/Google_Play.png"
+                  src="/store/APK_Badge.png"
                   alt="Get it on Google Play"
-                  className="h-14 w-auto"
+                  className="h-12 sm:h-14 w-auto"
                 />
               </a>
             </div>

@@ -1,13 +1,4 @@
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-  Facebook,
-  Instagram,
-  Twitter,
-  Linkedin,
-} from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 // TikTok Icon component since it's not available in lucide-react

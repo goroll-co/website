@@ -209,10 +209,10 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           </p>
         </div>
 
-        {/* Responsive Tab Navigation */}
+        {/* Responsive Tab Navigation - Fixed for Desktop Centering */}
         <div className="flex justify-center mb-8 sm:mb-10 px-2">
-          <div className="inline-flex bg-gray-100 rounded-full p-1 w-full max-w-full overflow-x-auto scrollbar-hide">
-            <div className="flex space-x-1 min-w-full sm:min-w-0">
+          <div className="bg-gray-100 rounded-full p-1 w-full max-w-full sm:max-w-fit overflow-x-auto scrollbar-hide">
+            <div className="flex space-x-1 min-w-full sm:min-w-0 sm:justify-center">
               {solutions.map((solution, index) => {
                 const colors = getCategoryColors(solution.category);
                 return (

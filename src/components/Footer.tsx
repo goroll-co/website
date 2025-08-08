@@ -102,9 +102,9 @@ export default function Footer() {
                   className="text-gray-300 hover:text-white transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Twitter"
+                  aria-label="X"
                 >
-                  Twitter
+                  X
                 </a>
                 <a
                   href="https://line.me/R/ti/p/@314ndpou"

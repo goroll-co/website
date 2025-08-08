@@ -51,6 +51,17 @@ export default function Footer() {
                   +66 830796796
                 </a>
               </p>
+              <p className="text-gray-300">
+                {language === "th" ? "Line Official: " : "Line Official: "}
+                <a
+                  href="https://line.me/R/ti/p/@goroll"
+                  className="hover:text-white transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @314ndpou
+                </a>
+              </p>
             </div>
 
             {/* Social Media Section */}
@@ -96,6 +107,15 @@ export default function Footer() {
                   Twitter
                 </a>
                 <a
+                  href="https://line.me/R/ti/p/@314ndpou"
+                  className="text-gray-300 hover:text-white transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Line Official"
+                >
+                  Line
+                </a>
+                {/* <a
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors"
                   target="_blank"
@@ -103,7 +123,7 @@ export default function Footer() {
                   aria-label="LinkedIn"
                 >
                   LinkedIn
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

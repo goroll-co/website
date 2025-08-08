@@ -240,7 +240,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           {/* Phone Mockup - Responsive */}
           <div className="relative mx-auto max-w-xs fade-in-section order-2 lg:order-1">
             <div className="relative mx-auto w-[240px] sm:w-[270px] h-[480px] sm:h-[540px] bg-gray-900 rounded-[30px] sm:rounded-[36px] shadow-xl overflow-hidden border-[6px] sm:border-[8px] border-gray-900">
-              <div className="absolute top-0 inset-x-0 h-5 sm:h-6 bg-gray-900 rounded-b-lg z-10"></div>
+              {/* <div className="absolute top-0 inset-x-0 h-5 sm:h-6 bg-gray-900 rounded-b-lg z-10"></div> */}
               <div className="w-full h-full rounded-[20px] sm:rounded-[24px] overflow-hidden">
                 <img
                   src={getActiveSolution().image}

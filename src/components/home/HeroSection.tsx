@@ -10,7 +10,7 @@ export default function HeroSection() {
       title={t("welcome")}
       subtitle={t("tagline")}
       buttonText={t("start_journey")}
-      buttonLink="https://gorollth-prototype.vercel.app/"
+      buttonLink="/solutions"
     />
   );
 }

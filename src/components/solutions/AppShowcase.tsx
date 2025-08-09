@@ -280,7 +280,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
             {/* App Store Download Buttons */}
             <div className="mt-6 sm:mt-8 flex flex-row gap-2 sm:gap-4 justify-center lg:justify-start">
               {/* App Store Button */}
-              <a
+              {/* <a
                 href="https://testflight.apple.com/join/B1hnSF1F"
                 className="inline-block transition-transform hover:scale-105 flex-shrink-0"
                 aria-label="Download on the App Store"
@@ -290,10 +290,10 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
                   alt="Download on the App Store"
                   className="h-10 sm:h-12 md:h-14 w-auto"
                 />
-              </a>
+              </a> */}
 
               {/* Google Play Button */}
-              <a
+              {/* <a
                 href="https://drive.google.com/file/d/1ir-7VQZrb1dGtt0-CA6btSfthRa2hAhm/view?usp=drive_link"
                 className="inline-block transition-transform hover:scale-105 flex-shrink-0"
                 aria-label="Get it on Google Play"
@@ -303,7 +303,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
                   alt="Get it on Google Play"
                   className="h-10 sm:h-12 md:h-14 w-auto"
                 />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

@@ -51,15 +51,15 @@ export const thTranslations = {
   // TESTIMONIALS SECTION
   // ===========================================
   testimonials_title: "เสียงจากผู้ใช้งานของเรา",
-  testimonial1_name: "สมชาย ใจดี",
+  testimonial1_name: "Mock user 1",
   testimonial1_role: "ผู้ใช้วีลแชร์",
   testimonial1_content:
     "GOROLL ทำให้การเดินทางของผมง่ายขึ้นมาก ผมสามารถวางแผนเส้นทางที่เข้าถึงได้และแบ่งปันประสบการณ์กับคนอื่นๆ ได้",
-  testimonial2_name: "นภา วงศ์สมบูรณ์",
+  testimonial2_name: "Mock user 2",
   testimonial2_role: "นักท่องเที่ยว",
   testimonial2_content:
     "แอพนี้ช่วยให้ดิฉันวางแผนการเดินทางสำหรับคุณแม่ที่ใช้วีลแชร์ได้ดีมาก ขอบคุณ GOROLL ที่ทำให้การท่องเที่ยวเข้าถึงได้สำหรับทุกคน",
-  testimonial3_name: "วิชัย สุขสันต์",
+  testimonial3_name: "Mock user 3",
   testimonial3_role: "คนขับรถ GOROLL",
   testimonial3_content:
     "ผมดีใจที่ได้เป็นส่วนหนึ่งของชุมชน GOROLL การช่วยให้ผู้ใช้วีลแชร์เดินทางได้สะดวกทำให้ผมรู้สึกภูมิใจมาก",

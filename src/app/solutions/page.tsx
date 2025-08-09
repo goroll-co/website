@@ -128,7 +128,7 @@ export default function SolutionPage() {
         </h2>
         <p className="text-gray-600 mb-6">{t("join_inclusive_community")}</p>
         <a
-          href="https://gorollth-prototype.vercel.app/"
+          href="https://line.me/R/ti/p/@314ndpou"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"

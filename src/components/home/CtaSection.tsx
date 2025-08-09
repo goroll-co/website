@@ -21,7 +21,7 @@ export default function CtaSection({ onVideoClick }: CtaSectionProps) {
         <p className="text-xl text-gray-600 mb-8">{t("community_desc")}</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href="https://gorollth-prototype.vercel.app/"
+            href="https://line.me/R/ti/p/@314ndpou"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors inline-block"

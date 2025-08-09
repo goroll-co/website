@@ -50,15 +50,15 @@ export const enTranslations = {
   // TESTIMONIALS SECTION
   // ===========================================
   testimonials_title: "What Our Users Say",
-  testimonial1_name: "Somchai Jaidee",
+  testimonial1_name: "Mock user 1",
   testimonial1_role: "Wheelchair User",
   testimonial1_content:
     "GOROLL has made my travel much easier. I can plan accessible routes and share experiences with others.",
-  testimonial2_name: "Napa Wongsomboon",
+  testimonial2_name: "Mock user 2",
   testimonial2_role: "Tourist",
   testimonial2_content:
     "This app helped me plan trips for my mother who uses a wheelchair. Thank you GOROLL for making tourism accessible for everyone.",
-  testimonial3_name: "Wichai Sooksant",
+  testimonial3_name: "Mock user 3",
   testimonial3_role: "GOROLL Driver",
   testimonial3_content:
     "I'm glad to be part of the GOROLL community. Helping wheelchair users travel conveniently makes me proud.",

@@ -1,6 +1,6 @@
 // src/components/solutions/AppShowcase.tsx
 import React, { useState } from "react";
-import { MapPin, Users, Car, Smartphone } from "lucide-react";
+import { MapPin, Users, Car, Smartphone, BookOpen } from "lucide-react";
 import { Solution } from "@/app/interfaces";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -277,33 +277,51 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
               )}
             </div>
 
-            {/* App Store Download Buttons */}
-            <div className="mt-6 sm:mt-8 flex flex-row gap-2 sm:gap-4 justify-center lg:justify-start">
-              {/* App Store Button */}
-              {/* <a
-                href="https://testflight.apple.com/join/B1hnSF1F"
-                className="inline-block transition-transform hover:scale-105 flex-shrink-0"
-                aria-label="Download on the App Store"
-              >
-                <img
-                  src="/store/App_Store.svg"
-                  alt="Download on the App Store"
-                  className="h-10 sm:h-12 md:h-14 w-auto"
-                />
-              </a> */}
+            {/* Download Section */}
+            <div className="mt-6 sm:mt-8 space-y-4">
+              {/* App Store Download Buttons */}
+              <div className="flex flex-row gap-2 sm:gap-4 justify-center lg:justify-start">
+                {/* App Store Button */}
+                <a
+                  href="https://testflight.apple.com/join/B1hnSF1F"
+                  className="inline-block transition-transform hover:scale-105 flex-shrink-0"
+                  aria-label="Download on the App Store"
+                >
+                  <img
+                    src="/store/App_Store.svg"
+                    alt="Download on the App Store"
+                    className="h-10 sm:h-12 md:h-14 w-auto"
+                  />
+                </a>
 
-              {/* Google Play Button */}
-              {/* <a
-                href="https://drive.google.com/file/d/1ir-7VQZrb1dGtt0-CA6btSfthRa2hAhm/view?usp=drive_link"
-                className="inline-block transition-transform hover:scale-105 flex-shrink-0"
-                aria-label="Get it on Google Play"
-              >
-                <img
-                  src="/store/APK_Badge.png"
-                  alt="Get it on Google Play"
-                  className="h-10 sm:h-12 md:h-14 w-auto"
-                />
-              </a> */}
+                {/* Google Play Button */}
+                <a
+                  href="https://drive.google.com/file/d/1ir-7VQZrb1dGtt0-CA6btSfthRa2hAhm/view?usp=drive_link"
+                  className="inline-block transition-transform hover:scale-105 flex-shrink-0"
+                  aria-label="Get it on Google Play"
+                >
+                  <img
+                    src="/store/APK_Badge.png"
+                    alt="Get it on Google Play"
+                    className="h-10 sm:h-12 md:h-14 w-auto"
+                  />
+                </a>
+              </div>
+
+              {/* User Munual Button - Separate Row */}
+              <div className="flex justify-center lg:justify-start">
+                <a
+                  href="https://goroll.co/user-manual.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${
+                    getCategoryColors(getActiveSolution().category).buttonColor
+                  } text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium text-sm sm:text-base transition-all duration-300 hover:shadow-lg transform hover:scale-105 flex items-center justify-center gap-2 min-w-[200px] sm:min-w-[220px] no-underline`}
+                >
+                  <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span>{t("view_user_manual")}</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

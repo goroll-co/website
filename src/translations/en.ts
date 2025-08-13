@@ -202,6 +202,8 @@ export const enTranslations = {
   verified_drivers_desc:
     "Verified drivers with experience in providing services. Get reliable support from trusted professionals throughout your trip.",
 
+  view_user_manual: "View User Manual",
+
   // ===========================================
   // CAREER PAGE
   // ===========================================

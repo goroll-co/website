@@ -23,8 +23,8 @@ export default function Footer() {
               </h3>
               <p className="text-gray-300">
                 {language === "th"
-                  ? "Your route, Your rights"
-                  : "Your route, Your rights"}
+                  ? "Your route, your rights"
+                  : "Your route, your rights"}
               </p>
             </div>
 

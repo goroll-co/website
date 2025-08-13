@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const metadata = {
   title: "GOROLL",
-  description: "Your route, Your rights",
+  description: "Your route, your rights",
 };
 
 // ลบ Footer function ทั้งหมดออก

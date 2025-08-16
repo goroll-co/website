@@ -79,23 +79,6 @@ export default function ContactInfo() {
         </div>
 
         <div className="flex items-start space-x-4 group">
-          <LineIcon className="w-6 h-6 text-green-500 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
-          <div>
-            <h3 className="font-semibold text-gray-900">
-              {language === "th" ? "Line Official" : "Line Official"}
-            </h3>
-            <a
-              href="https://line.me/R/ti/p/@314ndpou"
-              className="text-gray-700 hover:text-green-500 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @314ndpou
-            </a>
-          </div>
-        </div>
-
-        <div className="flex items-start space-x-4 group">
           <MapPin className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
           <div>
             <h3 className="font-semibold text-gray-900">

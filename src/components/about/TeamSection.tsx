@@ -163,9 +163,10 @@ export default function TeamSection() {
               >
                 <X size={24} />
               </button>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white">
                 <h2 className="text-3xl font-bold">{selectedMember.name}</h2>
-                <p className="text-xl text-blue-300">{selectedMember.role}</p>
+                <p className="text-xl text-blue-200">{selectedMember.role}</p>
               </div>
             </div>
 

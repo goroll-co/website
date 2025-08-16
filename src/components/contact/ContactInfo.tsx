@@ -144,8 +144,10 @@ export default function ContactInfo() {
           </a>
 
           <a
-            href="#"
+            href="https://x.com/goroll_co"
             className="bg-gray-100 p-3 rounded-full text-black hover:bg-black hover:text-white transition-all transform hover:scale-110"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="X"
           >
             <XIcon className="w-5 h-5" />

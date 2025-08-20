@@ -6,9 +6,10 @@ export default function StatsSection() {
   const { t } = useLanguage();
 
   const stats = [
-    { value: "0%", label: t("stats_satisfaction") },
-    { value: "0+", label: t("stats_accessible_places") },
-    { value: "0+", label: t("stats_verified_drivers") },
+    { value: "80.7%", label: t("stats_satisfaction") },
+    { value: "17+", label: t("stats_accessible_places") },
+    { value: "55+", label: t("stats_users") },
+    // { value: "0+", label: t("stats_verified_drivers") },
     // เอา { value: "24/7", label: t("stats_support") } ออก
   ];
 

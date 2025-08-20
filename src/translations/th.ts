@@ -106,6 +106,7 @@ export const thTranslations = {
   // ===========================================
   stats_satisfaction: "ความพึงพอใจ",
   stats_accessible_places: "สถานที่ที่เข้าถึงได้",
+  stats_users: "ผู้ใช้",
   stats_verified_drivers: "คนขับที่ผ่านการตรวจสอบ",
 
   // ===========================================

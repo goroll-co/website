@@ -7,7 +7,7 @@ export default function StatsSection() {
 
   const stats = [
     { value: "80.7%", label: t("stats_satisfaction") },
-    { value: "17+", label: t("stats_accessible_places") },
+    { value: "50+", label: t("stats_accessible_places") },
     { value: "55+", label: t("stats_users") },
     // { value: "0+", label: t("stats_verified_drivers") },
     // เอา { value: "24/7", label: t("stats_support") } ออก

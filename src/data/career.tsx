@@ -24,8 +24,8 @@ const careersData: BilingualCareer[] = [
   {
     id: 3,
     title: {
-      th: "นักออกแบบ UX/UI (งานนี้จะช่วยเพิ่มความแข็งแกร่งให้กับพอร์ตโฟลิโอของคุณ)",
-      en: "UX/UI Designer (This work can help boost your portfolio.)",
+      th: "นักออกแบบ UX/UI (เร็วๆ นี้)",
+      en: "UX/UI Designer (Coming Soon)",
     },
     department: {
       th: "ฝ่ายออกแบบ",
@@ -44,50 +44,22 @@ const careersData: BilingualCareer[] = [
       en: "-",
     },
     description: {
-      th: "เรากำลังมองหานักออกแบบ UX/UI ที่มีความสามารถเพื่อสร้างประสบการณ์ผู้ใช้ที่สวยงามและใช้งานง่าย",
-      en: "We are seeking a talented UX/UI Designer to create beautiful and intuitive user experiences.",
+      th: "เร็วๆ นี้",
+      en: "Coming Soon",
     },
     requirements: [
       {
-        th: "ประสบการณ์ในการออกแบบ UX/UI อย่างน้อย 1 ปี",
-        en: "1+ years of UX/UI design experience",
-      },
-      {
-        th: "ความชำนาญในการใช้ Figma และเครื่องมือออกแบบ",
-        en: "Proficiency in Figma and design tools",
-      },
-      {
-        th: "มีพอร์ตโฟลิโอที่แสดงผลงาน UI/UX ที่แข็งแกร่ง",
-        en: "Strong portfolio demonstrating UI/UX work",
-      },
-      {
-        th: "ประสบการณ์ในการวิจัยผู้ใช้และการทดสอบการใช้งาน",
-        en: "Experience with user research and testing",
-      },
-      {
-        th: "สามารถทำงานภายใต้ความกดดันได้",
-        en: "Working under pressure",
+        th: "เร็วๆ นี้",
+        en: "Coming Soon",
       },
     ],
     responsibilities: [
       {
-        th: "ออกแบบส่วนติดต่อผู้ใช้สำหรับแอปพลิเคชันมือถือ",
-        en: "Design user interfaces for mobile applications",
-      },
-      {
-        th: "สร้างโครงร่าง ต้นแบบ และการออกแบบความละเอียดสูง",
-        en: "Create wireframes, prototypes, and high-fidelity designs",
-      },
-      {
-        th: "ดำเนินการวิจัยผู้ใช้และการทดสอบการใช้งาน",
-        en: "Conduct user research and usability testing",
-      },
-      {
-        th: "ทำงานร่วมกับทีมผลิตภัณฑ์และวิศวกรรม",
-        en: "Collaborate with product and engineering teams",
+        th: "เร็วๆ นี้",
+        en: "Coming Soon",
       },
     ],
-    applicationUrl: "https://forms.gle/LVSuZWb1aLFpKCQR8",
+    applicationUrl: "",
   },
   {
     id: 2,

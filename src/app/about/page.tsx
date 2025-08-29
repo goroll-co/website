@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import StorySection from "../../components/about/StorySection";
 import ValuesSection from "../../components/about/ValuesSection";
 import TimelineSection from "../../components/about/TimelineSection";
-import TeamSection from "../../components/about/TeamSection";
+// import TeamSection from "../../components/about/TeamSection";
 import SponsorSection from "../../components/about/SponsorSection"; // เพิ่มบรรทัดนี้
 import StatsSection from "../../components/home/StatsSection";
 import FadeInSection from "../../components/about/FadeInSection";
@@ -47,9 +47,9 @@ export default function AboutPage() {
         </FadeInSection>
 
         {/* Team Section */}
-        <FadeInSection>
+        {/* <FadeInSection>
           <TeamSection />
-        </FadeInSection>
+        </FadeInSection> */}
 
         {/* Sponsor Section - เพิ่มส่วนนี้ */}
         <FadeInSection>

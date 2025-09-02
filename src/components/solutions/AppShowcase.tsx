@@ -296,7 +296,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
 
                 {/* Google Play Button */}
                 <a
-                  href="https://drive.google.com/file/d/13X6QwScR2OgB4YbVtstX2jzrcwYxPNgw/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1bQEVAXSnx1EXUWmZ9avDy-n0wRVyT_-h/view?usp=sharing"
                   className="inline-block transition-transform hover:scale-105 flex-shrink-0"
                   aria-label="Get it on Google Play"
                 >

@@ -192,16 +192,16 @@ export const enTranslations = {
   supportive_community_desc:
     "Raise awareness and transform places into UD places while building a supportive community that promotes inclusive design.",
 
-  // Transport Features
-  wheelchair_vehicles: "Wheelchair-Accessible Vehicles",
-  wheelchair_vehicles_desc:
-    "Wheelchair-friendly vehicle matching and real-time ride tracking. Reduce transportation costs and access reliable transport options.",
-  secure_payment: "Secure Payment System",
-  secure_payment_desc:
-    "Secure payment system and driver verification. Ensure safety and comfort throughout your journey with trusted service.",
-  verified_drivers: "Verified Drivers",
-  verified_drivers_desc:
-    "Verified drivers with experience in providing services. Get reliable support from trusted professionals throughout your trip.",
+  // Explore Features
+  explore_places: "Explore Accessible Places",
+  explore_places_desc:
+    "Discover places, shops, and cafés that are wheelchair-accessible, verified by our community for real accessibility.",
+  verified_badge: "Verified Accessible Locations",
+  verified_badge_desc:
+    "Look for the 'Verified Accessible' badge to ensure the place truly supports wheelchair users.",
+  map_promotion: "Deals & Nearby Activities",
+  map_promotion_desc:
+    "Access exclusive promotions and events from businesses featured in the GOROLL Accessible Business Spotlight program.",
 
   view_user_manual: "View User Manual",
 

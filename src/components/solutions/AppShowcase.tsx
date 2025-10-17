@@ -40,7 +40,7 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           iconBg: "bg-green-100",
           iconColor: "text-green-600",
         };
-      case "Transport":
+      case "Explore":
         return {
           textColor: "text-green-600",
           bgColor: "bg-green-100",
@@ -65,10 +65,10 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
     switch (category) {
       case "Navigation":
         return <MapPin className="w-4 h-4 sm:w-6 sm:h-6" />;
+      case "Explore":
+        return <Car className="w-4 h-4 sm:w-6 sm:h-6" />;
       case "Social":
         return <Users className="w-4 h-4 sm:w-6 sm:h-6" />;
-      case "Transport":
-        return <Car className="w-4 h-4 sm:w-6 sm:h-6" />;
       default:
         return null;
     }
@@ -114,6 +114,42 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           description: t("share_knowledge_desc"),
         },
       ];
+    } else if (solution.category === "Explore") {
+      return [
+        {
+          icon: (
+            <div
+              className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center text-xl sm:text-2xl`}
+            >
+              🚗
+            </div>
+          ),
+          title: t("explore_places"),
+          description: t("explore_places_desc"),
+        },
+        {
+          icon: (
+            <div
+              className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl sm:text-2xl`}
+            >
+              🛡️
+            </div>
+          ),
+          title: t("verified_badge"),
+          description: t("verified_badge_desc"),
+        },
+        {
+          icon: (
+            <div
+              className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xl sm:text-2xl`}
+            >
+              👨‍💼
+            </div>
+          ),
+          title: t("map_promotion"),
+          description: t("map_promotion_desc"),
+        },
+      ];
     } else if (solution.category === "Social") {
       return [
         {
@@ -148,42 +184,6 @@ export default function AppShowcase({ solutions }: AppShowcaseProps) {
           ),
           title: t("supportive_community"),
           description: t("supportive_community_desc"),
-        },
-      ];
-    } else if (solution.category === "Transport") {
-      return [
-        {
-          icon: (
-            <div
-              className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full ${colors.iconBg} ${colors.iconColor} flex items-center justify-center text-xl sm:text-2xl`}
-            >
-              🚗
-            </div>
-          ),
-          title: t("wheelchair_vehicles"),
-          description: t("wheelchair_vehicles_desc"),
-        },
-        {
-          icon: (
-            <div
-              className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl sm:text-2xl`}
-            >
-              🛡️
-            </div>
-          ),
-          title: t("secure_payment"),
-          description: t("secure_payment_desc"),
-        },
-        {
-          icon: (
-            <div
-              className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xl sm:text-2xl`}
-            >
-              👨‍💼
-            </div>
-          ),
-          title: t("verified_drivers"),
-          description: t("verified_drivers_desc"),
         },
       ];
     }

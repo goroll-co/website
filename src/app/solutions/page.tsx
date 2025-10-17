@@ -32,6 +32,26 @@ const solutions: Solution[] = [
   },
   {
     id: 2,
+    title: "Explore",
+    description:
+      "Provide suitable cost-saving transportation options (GOROLL Carpool service/other choices for transport) which fit with their wheelchair.",
+    features: [
+      "Wheelchair-friendly vehicle matching",
+      "Real-time ride tracking",
+      "Secure payment system",
+      "Driver verification",
+    ],
+    benefits: [
+      "Reduce transportation costs",
+      "Access reliable transport options",
+      "Ensure safety and comfort",
+      "Support from verified drivers",
+    ],
+    image: "/solutions/solution3.png",
+    category: "Explore",
+  },
+  {
+    id: 3,
     title: "Community",
     description:
       "Provide information, situation happened in society, leading people aware and change into UD places.",
@@ -49,26 +69,6 @@ const solutions: Solution[] = [
     ],
     image: "/solutions/solution2.jpg",
     category: "Social",
-  },
-  {
-    id: 3,
-    title: "Carpool",
-    description:
-      "Provide suitable cost-saving transportation options (GOROLL Carpool service/other choices for transport) which fit with their wheelchair.",
-    features: [
-      "Wheelchair-friendly vehicle matching",
-      "Real-time ride tracking",
-      "Secure payment system",
-      "Driver verification",
-    ],
-    benefits: [
-      "Reduce transportation costs",
-      "Access reliable transport options",
-      "Ensure safety and comfort",
-      "Support from verified drivers",
-    ],
-    image: "/solutions/solution3.png",
-    category: "Transport",
   },
 ];
 

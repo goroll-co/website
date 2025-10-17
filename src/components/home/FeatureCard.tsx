@@ -17,7 +17,7 @@ export default function FeatureCard({
   image,
   onLearnMoreClick,
 }: FeatureCardProps) {
-  const { t } = useLanguage();
+  // const { t } = useLanguage();
 
   return (
     <div className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">

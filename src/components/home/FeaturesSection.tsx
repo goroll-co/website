@@ -22,16 +22,16 @@ export default function FeaturesSection({
       image: "/home/Accessible_Routes.png",
     },
     {
+      title: t("feature_explore_title"),
+      description: t("feature_explore_desc"),
+      icon: <Shield size={32} className="text-blue-600" />,
+      image: "/home/Safe_Transportation.png",
+    },
+    {
       title: t("feature_inclusive_community_title"),
       description: t("feature_inclusive_community_desc"),
       icon: <Users size={32} className="text-blue-600" />,
       image: "/home/Inclusive_Community.png",
-    },
-    {
-      title: t("feature_safe_transportation_title"),
-      description: t("feature_safe_transportation_desc"),
-      icon: <Shield size={32} className="text-blue-600" />,
-      image: "/home/Safe_Transportation.png",
     },
   ];
 

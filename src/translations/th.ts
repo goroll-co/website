@@ -43,9 +43,9 @@ export const thTranslations = {
   feature_inclusive_community_title: "ชุมชนที่ครอบคลุม",
   feature_inclusive_community_desc:
     "เชื่อมต่อกับผู้อื่น แบ่งปันประสบการณ์ และมีส่วนร่วมในการทำให้สถานที่ต่างๆ เข้าถึงได้มากขึ้นสำหรับทุกคน",
-  feature_safe_transportation_title: "การเดินทางที่ปลอดภัย",
-  feature_safe_transportation_desc:
-    "เข้าถึงตัวเลือกการเดินทางที่เชื่อถือได้และราคาไม่แพงด้วยบริการ GOROLL Carpool ที่ผ่านการตรวจสอบแล้ว",
+  feature_explore_title: "สำรวจอย่างมั่นใจ",
+  feature_explore_desc:
+    "ค้นพบเส้นทางและสถานที่ที่เข้าถึงได้จริง พร้อมข้อมูลที่ผ่านการตรวจสอบจากชุมชน GOROLL เพื่อให้คุณเดินทางได้อย่างมั่นใจทุกครั้ง",
 
   // ===========================================
   // TESTIMONIALS SECTION

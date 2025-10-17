@@ -42,9 +42,9 @@ export const enTranslations = {
   feature_inclusive_community_title: "Inclusive Community",
   feature_inclusive_community_desc:
     "Connect with others, share experiences, and contribute to making places more accessible for everyone.",
-  feature_safe_transportation_title: "Safe Transportation",
-  feature_safe_transportation_desc:
-    "Access reliable and affordable transportation options with our verified GOROLL Carpool service.",
+  feature_explore_title: "Explore with Confidence",
+  feature_explore_desc:
+    "Discover accessible routes, verified places, and inclusive experiences near you — all powered by the GOROLL community.",
 
   // ===========================================
   // TESTIMONIALS SECTION

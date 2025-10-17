@@ -136,7 +136,7 @@ export const thTranslations = {
   milestone_founded: "ก่อตั้งบริษัท",
   milestone_founded_desc:
     "เริ่มต้นด้วยไอเดียที่เรียบง่ายและทีมงานที่มีความกระตือรือร้นสี่คน",
-  milestone_funding: "ได้รับเงินทุน Series A",
+  milestone_funding: "ได้รับเงินทุน",
   milestone_funding_desc:
     "ระดมทุนได้ 500,000 บาทเพื่อเร่งการเติบโตและขยายทีมของเรา",
 

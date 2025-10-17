@@ -134,7 +134,7 @@ export const enTranslations = {
   milestone_founded: "Company Founded",
   milestone_founded_desc:
     "Started with a simple idea and a passionate team of four.",
-  milestone_funding: "Series A Funding",
+  milestone_funding: "Funding",
   milestone_funding_desc:
     "Raised THB 500K to accelerate growth and expand our team.",
 

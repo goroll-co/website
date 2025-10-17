@@ -48,8 +48,8 @@ export default function FeatureCard({
             onClick={onLearnMoreClick}
             className="text-blue-600 font-medium flex items-center hover:text-blue-700 transition-colors"
           >
-            {t("learn_more")}
-            <svg
+            {/* {t("learn_more")} */}
+            {/* <svg
               className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
@@ -62,7 +62,7 @@ export default function FeatureCard({
                 strokeWidth="2"
                 d="M9 5l7 7-7 7"
               ></path>
-            </svg>
+            </svg> */}
           </button>
         </div>
       </div>

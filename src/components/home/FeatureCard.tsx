@@ -1,6 +1,6 @@
 // src/components/home/FeatureCard.tsx
 import React from "react";
-import { useLanguage } from "@/context/LanguageContext";
+// import { useLanguage } from "@/context/LanguageContext";
 
 interface FeatureCardProps {
   title: string;
